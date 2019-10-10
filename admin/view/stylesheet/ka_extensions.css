@@ -1,0 +1,53 @@
+/*
+  Project: Ka Extensions
+  Author : karapuz <support@ka-station.com>
+
+  Version: 3 ($Revision: 42 $)
+
+*/
+
+.field-name {
+	font-weight: bold;
+}
+
+.ka_list td {
+	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+}
+.ka_list thead td {
+	background-color: #EFEFEF;
+	padding: 0px 5px;
+}
+.ka_list thead td a, .ka_list thead td {
+	text-decoration: none;
+	color: #222222;
+	font-weight: bold;
+}
+.ka_list tbody td a {
+	text-decoration: underline;
+}
+.ka_list tbody td {
+	vertical-align: middle;
+	padding: 0px 5px;
+	background: #FFFFFF;
+}
+.ka_list tbody tr:hover td {
+	background-color: #FFFFCB;
+}
+.ka_list .left {
+	text-align: left;
+	padding: 7px;
+}
+.ka_list .right {
+	text-align: right;
+	padding: 7px;
+}
+.ka_list .center {
+	text-align: center;
+	padding: 7px;
+}
+
+.ka_list td a.link {
+    text-decoration: underline;
+    color: #00F;
+}

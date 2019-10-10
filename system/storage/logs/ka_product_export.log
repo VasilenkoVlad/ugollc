@@ -1,0 +1,213 @@
+2019-10-10 10:03:36 - Export started. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694616,
+  'lines_processed' => 0,
+  'products_processed' => 0,
+  'products_total' => '735',
+  'file_size' => 0,
+  'errors' => 
+  array (
+  ),
+  'status' => 'not_started',
+)
+2019-10-10 10:03:37 - Message: ERROR: Columns are undefined
+2019-10-10 10:03:56 - Export started. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694636,
+  'lines_processed' => 0,
+  'products_processed' => 0,
+  'products_total' => '735',
+  'file_size' => 0,
+  'errors' => 
+  array (
+  ),
+  'status' => 'not_started',
+)
+2019-10-10 10:04:00 - Export completed. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694636,
+  'lines_processed' => 735,
+  'products_processed' => 735,
+  'products_total' => '735',
+  'file_size' => 3189,
+  'errors' => 
+  array (
+  ),
+  'status' => 'completed',
+  'query' => 'SELECT p.product_id FROM oc_product p INNER JOIN oc_product_to_store pts ON p.product_id = pts.product_id  WHERE pts.store_id = \'0\' GROUP BY p.product_id ORDER BY p.model, p.product_id ',
+)
+2019-10-10 10:04:27 - Export started. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694667,
+  'lines_processed' => 0,
+  'products_processed' => 0,
+  'products_total' => '735',
+  'file_size' => 0,
+  'errors' => 
+  array (
+  ),
+  'status' => 'not_started',
+)
+2019-10-10 10:04:32 - Export completed. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694667,
+  'lines_processed' => 735,
+  'products_processed' => 735,
+  'products_total' => '735',
+  'file_size' => 3189,
+  'errors' => 
+  array (
+  ),
+  'status' => 'completed',
+  'query' => 'SELECT p.product_id FROM oc_product p INNER JOIN oc_product_to_store pts ON p.product_id = pts.product_id  WHERE pts.store_id = \'0\' GROUP BY p.product_id ORDER BY p.model, p.product_id ',
+)
+2019-10-10 10:05:00 - Export started. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694700,
+  'lines_processed' => 0,
+  'products_processed' => 0,
+  'products_total' => '735',
+  'file_size' => 0,
+  'errors' => 
+  array (
+  ),
+  'status' => 'not_started',
+)
+2019-10-10 10:05:04 - Export completed. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694700,
+  'lines_processed' => 735,
+  'products_processed' => 735,
+  'products_total' => '735',
+  'file_size' => 6380,
+  'errors' => 
+  array (
+  ),
+  'status' => 'completed',
+  'query' => 'SELECT p.product_id FROM oc_product p INNER JOIN oc_product_to_store pts ON p.product_id = pts.product_id  WHERE pts.store_id = \'0\' GROUP BY p.product_id ORDER BY p.model, p.product_id ',
+)
+2019-10-10 10:07:34 - Export started. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694854,
+  'lines_processed' => 0,
+  'products_processed' => 0,
+  'products_total' => '735',
+  'file_size' => 0,
+  'errors' => 
+  array (
+  ),
+  'status' => 'not_started',
+)
+2019-10-10 10:07:39 - Export completed. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694854,
+  'lines_processed' => 735,
+  'products_processed' => 735,
+  'products_total' => '735',
+  'file_size' => 6380,
+  'errors' => 
+  array (
+  ),
+  'status' => 'completed',
+  'query' => 'SELECT p.product_id FROM oc_product p INNER JOIN oc_product_to_store pts ON p.product_id = pts.product_id  WHERE pts.store_id = \'0\' GROUP BY p.product_id ORDER BY p.model, p.product_id ',
+)
+2019-10-10 10:08:08 - Export started. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694888,
+  'lines_processed' => 0,
+  'products_processed' => 0,
+  'products_total' => '735',
+  'file_size' => 0,
+  'errors' => 
+  array (
+  ),
+  'status' => 'not_started',
+)
+2019-10-10 10:08:12 - Export completed. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694888,
+  'lines_processed' => 735,
+  'products_processed' => 735,
+  'products_total' => '735',
+  'file_size' => 3189,
+  'errors' => 
+  array (
+  ),
+  'status' => 'completed',
+  'query' => 'SELECT p.product_id FROM oc_product p INNER JOIN oc_product_to_store pts ON p.product_id = pts.product_id  WHERE pts.store_id = \'0\' GROUP BY p.product_id ORDER BY p.model, p.product_id ',
+)
+2019-10-10 10:08:47 - Export started. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694927,
+  'lines_processed' => 0,
+  'products_processed' => 0,
+  'products_total' => '735',
+  'file_size' => 0,
+  'errors' => 
+  array (
+  ),
+  'status' => 'not_started',
+)
+2019-10-10 10:08:52 - Export completed. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694927,
+  'lines_processed' => 735,
+  'products_processed' => 735,
+  'products_total' => '735',
+  'file_size' => 3189,
+  'errors' => 
+  array (
+  ),
+  'status' => 'completed',
+  'query' => 'SELECT p.product_id FROM oc_product p INNER JOIN oc_product_to_store pts ON p.product_id = pts.product_id  WHERE pts.store_id = \'0\' GROUP BY p.product_id ORDER BY p.model, p.product_id ',
+)
+2019-10-10 10:09:43 - Export started. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694983,
+  'lines_processed' => 0,
+  'products_processed' => 0,
+  'products_total' => '735',
+  'file_size' => 0,
+  'errors' => 
+  array (
+  ),
+  'status' => 'not_started',
+)
+2019-10-10 10:09:47 - Export completed. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570694983,
+  'lines_processed' => 735,
+  'products_processed' => 735,
+  'products_total' => '735',
+  'file_size' => 3189,
+  'errors' => 
+  array (
+  ),
+  'status' => 'completed',
+  'query' => 'SELECT p.product_id FROM oc_product p INNER JOIN oc_product_to_store pts ON p.product_id = pts.product_id  WHERE pts.store_id = \'0\' GROUP BY p.product_id ORDER BY p.model, p.product_id ',
+)
+2019-10-10 10:12:41 - Export started. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570695161,
+  'lines_processed' => 0,
+  'products_processed' => 0,
+  'products_total' => '735',
+  'file_size' => 0,
+  'errors' => 
+  array (
+  ),
+  'status' => 'not_started',
+)
+2019-10-10 10:12:45 - Export completed. Parameters: array (
+  'offset' => 0,
+  'started_at' => 1570695161,
+  'lines_processed' => 735,
+  'products_processed' => 735,
+  'products_total' => '735',
+  'file_size' => 3189,
+  'errors' => 
+  array (
+  ),
+  'status' => 'completed',
+  'query' => 'SELECT p.product_id FROM oc_product p INNER JOIN oc_product_to_store pts ON p.product_id = pts.product_id  WHERE pts.store_id = \'0\' GROUP BY p.product_id ORDER BY p.model, p.product_id ',
+)

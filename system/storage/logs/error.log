@@ -1,0 +1,667 @@
+2019-10-07 15:02:14 - PHP Warning:  imagepng(/opt/lampp/htdocs/ugollc/image/cache/catalog/Category Images-80x80.png): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 66
+2019-10-07 15:02:14 - PHP Warning:  imagepng(/opt/lampp/htdocs/ugollc/image/cache/catalog/ring-pop-case_1024x1024-228x228.png): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 66
+2019-10-07 15:02:14 - PHP Warning:  imagegif(/opt/lampp/htdocs/ugollc/image/cache/catalog/New items/airheads-blue-raspberry-36ct-15-228x228.gif): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 68
+2019-10-07 15:02:14 - PHP Warning:  imagegif(/opt/lampp/htdocs/ugollc/image/cache/catalog/New items/airheads-cherry-4ct-8-228x228.gif): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 68
+2019-10-07 15:02:14 - PHP Warning:  imagegif(/opt/lampp/htdocs/ugollc/image/cache/catalog/2017 fall 2/airheads green apple-228x228.gif): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 68
+2019-10-07 15:02:14 - PHP Warning:  imagegif(/opt/lampp/htdocs/ugollc/image/cache/catalog/New items/airheads-white-mystery-4ct-8-228x228.gif): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 68
+2019-10-07 15:02:14 - PHP Warning:  imagejpeg(/opt/lampp/htdocs/ugollc/image/cache/catalog/2017 fall 3/extremes-228x228.jpg): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 64
+2019-10-07 15:02:14 - PHP Warning:  imagejpeg(/opt/lampp/htdocs/ugollc/image/cache/catalog/New items/blow pops-228x228.jpg): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 64
+2019-10-07 15:02:14 - PHP Warning:  imagegif(/opt/lampp/htdocs/ugollc/image/cache/catalog/2017 Fall/baby-bottle-pop-candy-18ct-5-228x228.gif): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 68
+2019-10-07 15:02:14 - PHP Warning:  imagejpeg(/opt/lampp/htdocs/ugollc/image/cache/catalog/Baby ruth-228x228.jpg): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 64
+2019-10-07 15:02:14 - PHP Warning:  imagepng(/opt/lampp/htdocs/ugollc/image/cache/catalog/New items/ferrero-228x228.png): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 66
+2019-10-07 15:02:14 - PHP Warning:  imagepng(/opt/lampp/htdocs/ugollc/image/cache/catalog/New items/Haribo-Original-Gold-Bears-Gummi-Candy-228x228.png): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 66
+2019-10-07 15:02:14 - PHP Warning:  imagejpeg(/opt/lampp/htdocs/ugollc/image/cache/catalog/2017 Fall/7048-morinaga-hi-chew-grape-228x228.jpg): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 64
+2019-10-07 15:02:14 - PHP Warning:  imagejpeg(/opt/lampp/htdocs/ugollc/image/cache/catalog/2017 fall 3/green apple-228x228.jpeg): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 64
+2019-10-07 15:02:14 - PHP Warning:  imagejpeg(/opt/lampp/htdocs/ugollc/image/cache/catalog/2018 March/hi chew mango-228x228.jpeg): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 64
+2019-10-07 15:02:14 - PHP Warning:  imagejpeg(/opt/lampp/htdocs/ugollc/image/cache/catalog/2017 fall 2/hichew strawberry-228x228.jpeg): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 64
+2019-10-07 15:25:02 - PHP Warning:  imagejpeg(/opt/lampp/htdocs/ugollc/image/cache/catalog/f6af49228d071b1b55de2111a85835b2fc3c1094-228x228.jpeg): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 64
+2019-10-07 15:25:03 - PHP Warning:  imagejpeg(/opt/lampp/htdocs/ugollc/image/cache/catalog/2018 January/Salted Caramel-228x228.jpeg): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 64
+2019-10-07 15:25:03 - PHP Warning:  imagepng(/opt/lampp/htdocs/ugollc/image/cache/catalog/_origin_Fakti-par-Monster-energy-2-228x228.png): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 66
+2019-10-07 15:25:03 - PHP Warning:  imagepng(/opt/lampp/htdocs/ugollc/image/cache/catalog/GT-5HE-Berry-228x228.png): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 66
+2019-10-07 15:25:03 - PHP Warning:  imagepng(/opt/lampp/htdocs/ugollc/image/cache/catalog/GT-5HE-PinkLemonade-228x228.png): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 66
+2019-10-07 15:25:03 - PHP Warning:  imagejpeg(/opt/lampp/htdocs/ugollc/image/cache/catalog/Red bull 8-228x228.jpg): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 64
+2019-10-07 15:25:03 - PHP Warning:  imagejpeg(/opt/lampp/htdocs/ugollc/image/cache/catalog/Red bull 8 sf-228x228.jpg): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/image.php on line 64
+2019-10-07 15:25:51 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:25:51 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:25:51 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:25:51 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:25:51 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:29:22 - PHP Notice:  Undefined index: validation in /opt/lampp/htdocs/ugollc/catalog/model/account/custom_field.php on line 38
+2019-10-07 15:29:22 - PHP Notice:  Undefined index: validation in /opt/lampp/htdocs/ugollc/catalog/model/account/custom_field.php on line 38
+2019-10-07 15:29:22 - PHP Notice:  Undefined index: validation in /opt/lampp/htdocs/ugollc/catalog/model/account/custom_field.php on line 38
+2019-10-07 15:29:22 - PHP Notice:  Undefined index: validation in /opt/lampp/htdocs/ugollc/catalog/model/account/custom_field.php on line 38
+2019-10-07 15:29:22 - PHP Notice:  Undefined index: validation in /opt/lampp/htdocs/ugollc/catalog/model/account/custom_field.php on line 38
+2019-10-07 15:29:22 - PHP Notice:  Undefined index: validation in /opt/lampp/htdocs/ugollc/catalog/model/account/custom_field.php on line 38
+2019-10-07 15:41:43 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:41:43 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:41:43 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:41:43 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:41:43 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:48:07 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:48:07 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:48:07 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:48:07 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:48:07 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:58:48 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:58:48 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:58:48 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:58:48 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 15:58:48 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:03:59 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:03:59 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:03:59 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:03:59 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:03:59 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:30:50 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:30:50 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:30:50 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:30:50 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:30:50 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:30:53 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:30:53 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:30:53 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:30:53 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:30:53 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:30:53 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:53 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:53 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:53 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:53 - PHP Warning:  Division by zero in /opt/lampp/htdocs/ugollc/catalog/controller/product/category.php on line 358
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:30:58 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:30:58 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:30:58 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:30:58 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:30:58 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:30:58 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:30:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:30:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:30:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:30:58 - PHP Warning:  Division by zero in /opt/lampp/htdocs/ugollc/catalog/controller/product/category.php on line 358
+2019-10-07 16:32:35 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:32:35 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:32:35 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:32:35 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:32:35 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:43:15 - PHP Warning:  implode(): Invalid arguments passed in /opt/lampp/htdocs/ugollc/admin/controller/common/header.php on line 58
+2019-10-07 16:43:16 - PHP Warning:  implode(): Invalid arguments passed in /opt/lampp/htdocs/ugollc/admin/controller/common/header.php on line 59
+2019-10-07 16:43:16 - PHP Warning:  implode(): Invalid arguments passed in /opt/lampp/htdocs/ugollc/admin/controller/common/header.php on line 62
+2019-10-07 16:43:16 - PHP Warning:  implode(): Invalid arguments passed in /opt/lampp/htdocs/ugollc/admin/controller/common/header.php on line 63
+2019-10-07 16:43:16 - PHP Warning:  implode(): Invalid arguments passed in /opt/lampp/htdocs/ugollc/admin/controller/common/column_left.php on line 847
+2019-10-07 16:43:16 - PHP Warning:  implode(): Invalid arguments passed in /opt/lampp/htdocs/ugollc/admin/controller/common/column_left.php on line 855
+2019-10-07 16:50:48 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:50:48 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:50:48 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:50:48 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:50:48 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:52:12 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:52:12 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:52:12 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:52:12 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:52:12 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:52:12 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:12 - PHP Warning:  Division by zero in /opt/lampp/htdocs/ugollc/catalog/controller/product/category.php on line 358
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:52:55 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:52:55 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:52:55 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:52:55 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:52:55 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:52:55 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:55 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:55 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:55 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:55 - PHP Warning:  Division by zero in /opt/lampp/htdocs/ugollc/catalog/controller/product/category.php on line 358
+2019-10-07 16:52:57 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:57 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:57 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:57 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:57 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:57 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:57 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:57 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:57 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:57 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:57 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:57 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:58 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 16:52:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:58 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 16:52:58 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 16:52:58 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 16:52:58 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 16:52:58 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 16:52:58 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 16:52:58 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 16:52:58 - PHP Warning:  Division by zero in /opt/lampp/htdocs/ugollc/catalog/controller/product/category.php on line 358
+2019-10-07 17:03:59 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:03:59 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:03:59 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:03:59 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:03:59 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:03:59 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:03:59 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:03:59 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:03:59 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:03:59 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:03:59 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:03:59 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:04:00 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:04:00 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:04:00 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:04:00 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:04:00 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:04:00 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 17:04:00 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 17:04:00 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 17:04:00 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 17:04:00 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:04:00 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:04:00 - PHP Warning:  Division by zero in /opt/lampp/htdocs/ugollc/catalog/controller/product/category.php on line 358
+2019-10-07 17:04:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:04:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:04:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:04:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:04:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:04:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:04:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:04:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:04:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:04:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:04:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:04:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:04:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:04:12 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:04:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:04:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:04:12 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:04:12 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 17:04:12 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 17:04:12 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 17:04:12 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 17:04:12 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:04:12 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:04:12 - PHP Warning:  Division by zero in /opt/lampp/htdocs/ugollc/catalog/controller/product/category.php on line 358
+2019-10-07 17:07:22 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:07:22 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:07:22 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:07:22 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:07:22 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:07:22 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:07:22 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:07:22 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:07:22 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:07:22 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:07:22 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:07:22 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:07:23 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:07:23 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 113
+2019-10-07 17:07:23 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:07:23 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:07:23 - PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /opt/lampp/htdocs/ugollc/system/library/image.php on line 105
+2019-10-07 17:07:23 - PHP Warning:  imagealphablending() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 108
+2019-10-07 17:07:23 - PHP Warning:  imagesavealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 109
+2019-10-07 17:07:23 - PHP Warning:  imagecolorallocatealpha() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 110
+2019-10-07 17:07:23 - PHP Warning:  imagecolortransparent() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 111
+2019-10-07 17:07:23 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 116
+2019-10-07 17:07:23 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/image.php on line 118
+2019-10-07 17:07:23 - PHP Warning:  Division by zero in /opt/lampp/htdocs/ugollc/catalog/controller/product/category.php on line 358
+2019-10-07 17:09:14 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:09:14 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:09:14 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:09:14 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:09:14 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:09:49 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:09:49 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:09:49 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:09:49 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:09:49 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:59:25 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:59:25 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:59:25 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:59:25 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-07 17:59:25 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:22:20 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:22:20 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:22:20 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:22:20 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:22:20 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:23:35 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:23:35 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:23:35 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:23:35 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:23:35 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:24:19 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:24:19 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:24:19 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:24:19 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 9:24:19 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:16:44 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:16:44 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:16:44 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:16:44 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:16:44 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:18:31 - PHP Warning:  Invalid argument supplied for foreach() in /opt/lampp/htdocs/ugollc/admin/controller/extension/module/tt_product_tab.php on line 163
+2019-10-09 11:34:42 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:34:42 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:34:42 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:34:42 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:34:42 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:37:40 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/extension/module/tt_mega_category.tpl! in /opt/lampp/htdocs/ugollc/system/library/template/php.php on line 23
+2019-10-09 11:40:27 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/extension/module/tt_mega_category.tpl! in /opt/lampp/htdocs/ugollc/system/library/template/php.php on line 23
+2019-10-09 11:40:35 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/extension/module/tt_mega_category.tpl! in /opt/lampp/htdocs/ugollc/system/library/template/php.php on line 23
+2019-10-09 11:47:45 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:47:45 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:47:45 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:47:45 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 11:47:45 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 12:18:34 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 12:18:34 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 12:18:34 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 12:18:34 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 12:18:34 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 12:42:05 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 12:42:05 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 12:42:05 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 12:42:05 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 12:42:05 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 13:17:26 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 13:17:26 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 13:17:26 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 13:33:52 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 13:33:52 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 13:33:52 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 13:40:13 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 13:40:13 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 13:40:13 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-09 14:07:07 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/admin/view/template/module/referral_coupon.tpl! in /opt/lampp/htdocs/ugollc/system/library/template/php.php on line 23
+2019-10-09 14:07:17 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/admin/view/template/module/referral_coupon.tpl! in /opt/lampp/htdocs/ugollc/system/library/template/php.php on line 23
+2019-10-09 16:20:46 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/module/referral_coupon_table.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
+2019-10-09 16:21:19 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/module/referral_coupon_table.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
+2019-10-09 16:22:10 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/module/referral_coupon_table.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
+2019-10-09 16:22:59 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/module/referral_coupon_table.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
+2019-10-09 16:23:28 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/module/referral_coupon_table.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
+2019-10-09 16:25:02 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/module/referral_coupon_table.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
+2019-10-09 16:25:25 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/module/referral_coupon_table.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
+2019-10-09 16:28:41 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/ugollc/catalog/controller/extension/module/referral_coupon.php on line 58
+2019-10-09 16:30:02 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/ugollc/catalog/controller/extension/module/referral_coupon.php on line 58
+2019-10-09 16:30:21 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/ugollc/catalog/controller/extension/module/referral_coupon.php on line 58
+2019-10-09 16:30:31 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/ugollc/catalog/controller/extension/module/referral_coupon.php on line 58
+2019-10-09 16:35:17 - PHP Notice:  Undefined variable: config_send_sms_status in /opt/lampp/htdocs/ugollc/admin/view/template/setting/setting.tpl on line 970
+2019-10-09 16:35:17 - PHP Notice:  Undefined variable: config_send_sms_status in /opt/lampp/htdocs/ugollc/admin/view/template/setting/setting.tpl on line 979
+2019-10-10 9:27:52 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-10 9:32:37 - PHP Warning:  ftp_login(): Login incorrect. in /opt/lampp/htdocs/ugollc/admin/controller/extension/installer.php on line 294
+2019-10-10 9:33:54 - PHP Warning:  ftp_login(): Login incorrect. in /opt/lampp/htdocs/ugollc/admin/controller/extension/installer.php on line 294
+2019-10-10 9:37:47 - PHP Warning:  ftp_login(): Login incorrect. in /opt/lampp/htdocs/ugollc/admin/controller/extension/installer.php on line 294
+2019-10-10 9:39:14 - PHP Warning:  ftp_login(): Login incorrect. in /opt/lampp/htdocs/ugollc/admin/controller/extension/installer.php on line 294
+2019-10-10 9:41:24 - PHP Warning:  ftp_login(): Login incorrect. in /opt/lampp/htdocs/ugollc/admin/controller/extension/installer.php on line 294
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/catalog/controller/common/ka_top.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/common/ka_top.tpl): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/common/ka_breadcrumbs.tpl): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/model/tool/ka_product_export.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/model/extension/ka_extensions.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/controller/tool/ka_product_export.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/controller/extension/ka_extensions.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  mkdir(): Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 341
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/controller/ka_extensions/ka_product_export.php): failed to open stream: No such file or directory in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/language/en-gb/tool/ka_product_export.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/language/en-gb/extension/ka_extensions.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/language/en-gb/ka_format.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  mkdir(): Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 341
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/language/en-gb/ka_extensions/ka_product_export.php): failed to open stream: No such file or directory in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/view/javascript/ka.alert.js): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/view/template/tool/ka_product_export.tpl): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/view/template/extension/ka_extensions.tpl): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/view/template/common/ka_top.tpl): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/view/template/common/ka_breadcrumbs.tpl): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  mkdir(): Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 341
+2019-10-10 9:44:12 - PHP Warning:  mkdir(): No such file or directory in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 341
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/view/template/ka_extensions/elements/select.tpl): failed to open stream: No such file or directory in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/view/template/ka_extensions/ka_product_export.tpl): failed to open stream: No such file or directory in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 9:44:12 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/view/stylesheet/ka_extensions.css): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 10:13:17 - PHP Warning:  vsprintf(): Too few arguments in /opt/lampp/htdocs/ugollc/admin/controller/extension/dashboard/activity.php on line 115
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/catalog/model/checkout/buy_credit.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/catalog/controller/account/buy_credit.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/catalog/controller/api/buy_credit.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/catalog/language/en-gb/account/buy_credit.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/catalog/language/en-gb/api/buy_credit.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/account/buy_credit.tpl): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/model/extension/module/buy_credit.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/model/report/customer_buy_credit.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/controller/extension/module/buy_credit.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/controller/report/customer_buy_credit.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/language/en-gb/extension/module/buy_credit.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/language/en-gb/report/customer_buy_credit.php): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/view/template/extension/module/buy_credit.tpl): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:25:19 - PHP Warning:  copy(/opt/lampp/htdocs/ugollc/admin/view/template/report/customer_buy_credit.tpl): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/storage/modification/admin/controller/extension/installer.php on line 345
+2019-10-10 11:52:08 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/default/template/account/buy_credit.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
+2019-10-10 11:52:13 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/default/template/account/buy_credit.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
+2019-10-10 12:28:34 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/default/template/account/buy_credit.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
+2019-10-10 12:28:42 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/catalog/view/theme/default/template/default/template/account/buy_credit.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
