@@ -59,7 +59,17 @@ class ControllerCommonHeader extends Controller {
 		} else {
 			$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
 		}
+                
+                // Store Credit
+		if ($this->customer->isLogged()) {
+			$this->load->model('account/store_credit');
 
+			$data['store_credit_balance'] = round($this->customer->getBalance(),2);
+		} else {
+			$data['store_credit_balance'] = '0.00';
+		}
+                
+                $data['text_store_credit'] = $this->language->get('text_store_credit');
 		$data['text_shopping_cart'] = $this->language->get('text_shopping_cart');
 		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', true), $this->customer->getFirstName(), $this->url->link('account/logout', '', true));
 
@@ -76,6 +86,7 @@ class ControllerCommonHeader extends Controller {
 
 		$data['home'] = $this->url->link('common/home');
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
+                $data['store_credit'] = $this->url->link('account/buy_credit', '', true);
 		$data['logged'] = $this->customer->isLogged();
 		$data['account'] = $this->url->link('account/account', '', true);
 		$data['register'] = $this->url->link('account/register', '', true);
@@ -173,7 +184,7 @@ class ControllerCommonHeader extends Controller {
 		} else {
 			$data['class'] = 'common-home';
 		}
-
+                
 		return $this->load->view('common/header', $data);
 	}
 }

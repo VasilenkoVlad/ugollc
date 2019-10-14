@@ -381,6 +381,7 @@ class ControllerCatalogProduct extends Controller {
 				'price'      => $result['price'],
 				'special'    => $special,
 				'quantity'   => $result['quantity'],
+                                'forbidden_for_DD' => $result['forbidden_for_DD'],
 				'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
 				'edit'       => $this->url->link('catalog/product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $result['product_id'] . $url, true)
 			);
@@ -1461,4 +1462,16 @@ class ControllerCatalogProduct extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+        
+        //Custom added : Function to mark/unmark product forbiddden
+        public function update_forbidden_status() {
+                $this->load->model('catalog/product');
+
+                if ($this->request->server['REQUEST_METHOD'] == 'POST') {
+                    $json['data'] = $this->model_catalog_product->editProductForbiddenStatus($this->request->post['product_id'], $this->request->post);
+                }
+
+                $this->response->addHeader('Content-Type: application/json');
+                $this->response->setOutput(json_encode($json));
+        }
 }

@@ -70,7 +70,7 @@
 	    <div id="top-links" class="nav pull-right">
       <ul class="list-inline">
 	  <li><?php echo $language; ?></li>
-	  <li><?php echo $currency; ?></li>
+	  <li><?php //echo $currency; ?></li>
        <li>
         <div class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-menu-right account-link-toggle">
@@ -88,7 +88,8 @@
         </div>
         </li>
 		<li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></li>
-		<!--
+		<li><a href="<?php echo $store_credit; ?>" id="store-credit-total" title="<?php echo $text_store_credit; ?>"><i class="fa fa-dollar"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $store_credit_balance; ?></span></a></li>
+                <!--
         <li><a href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_shopping_cart; ?></span></a></li>
         <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_checkout; ?></span></a></li>
 -->    </ul>

@@ -84,10 +84,10 @@
                   <option value="0"><?php echo $text_disabled; ?></option>
                   <?php } ?>
                 </select>
-              </div>
-              <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-filter"></i> <?php echo $button_filter; ?></button>
             </div>
+              <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-filter"></i> <?php echo $button_filter; ?></button>
           </div>
+        </div>
         </div>
         <form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form-product">
           <div class="table-responsive">
@@ -154,7 +154,16 @@
                     <span class="label label-success"><?php echo $product['quantity']; ?></span>
                     <?php } ?></td>
                   <td class="text-left"><?php echo $product['status']; ?></td>
-                  <td class="text-right"><a href="<?php echo $product['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                  <!--Custom modified : For mark/unmark product forbidden-->
+                  <?php 
+                        if($product['forbidden_for_DD'] == 0) {
+                   ?>    
+                        <td class="text-right"><button type="button" id="<?php echo 'btn-forbidden-'.$product['product_id'] ?>" data-toggle="tooltip" data-id="<?php echo $product['product_id'];?>" class="btn btn-success" onClick="Forbid(this)" title="Mark Forbidden"><i class="fa fa-ban"></i></button> <a href="<?php echo $product['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                    <?php } else { ?>
+                        <td class="text-right"><button type="button" id="<?php echo 'btn-forbidden-'.$product['product_id'] ?>" data-toggle="tooltip" data-id="<?php echo $product['product_id'];?>" class="btn btn-danger" onClick="Allow(this)" title="Allow for DD Payment"><i class="fa fa-ban"></i></button> <a href="<?php echo $product['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                    <?php }     
+                    ?>
+                  <!-- custom code end -->
                 </tr>
                 <?php } ?>
                 <?php } else { ?>
@@ -256,5 +265,49 @@ $('input[name=\'filter_model\']').autocomplete({
 		$('input[name=\'filter_model\']').val(item['label']);
 	}
 });
-//--></script></div>
+//--></script>
+<!-- Custom script to unmark/unmark product forbidden --> 
+<script type="text/javascript">
+    function Forbid(elem){
+        var productId = $(elem).data("id");
+       
+        $.ajax({
+                url: 'index.php?route=catalog/product/update_forbidden_status&token=<?php echo $token; ?>',
+                dataType: 'json',
+                type: 'post',
+                data: 'forbidden_for_DD=1&product_id='+ productId,
+                success: function(json) {
+                    console.log(json['data']);
+                    if(json['data'] === 1) {
+                        document.getElementById("btn-forbidden-"+productId).classList.remove('btn-success');
+                        document.getElementById("btn-forbidden-"+productId).classList.add('btn-danger');
+                        document.getElementById("btn-forbidden-"+productId).setAttribute('onclick','Allow(this)');
+                        document.getElementById("btn-forbidden-"+productId).setAttribute('title','Allow for DD Payment');
+                        document.getElementById("btn-forbidden-"+productId).innerHTML = '<i class="fa fa-ban"></i>';
+                    }
+            }
+        });
+    }
+    function Allow(elem){
+        var productId = $(elem).data("id");
+        
+        $.ajax({
+            url: 'index.php?route=catalog/product/update_forbidden_status&token=<?php echo $token; ?>',
+            dataType: 'json',
+            type: 'post',
+            data: 'forbidden_for_DD=0&product_id='+ productId,
+            success: function(json) {
+                console.log(json['data']);
+                if(json['data'] === 1) {
+                    document.getElementById("btn-forbidden-"+productId).classList.remove('btn-danger');
+                    document.getElementById("btn-forbidden-"+productId).classList.add('btn-success');
+                    document.getElementById("btn-forbidden-"+productId).setAttribute('onclick','Forbid(this)');
+                    document.getElementById("btn-forbidden-"+productId).setAttribute('title','Mark Forbidden');
+                    document.getElementById("btn-forbidden-"+productId).innerHTML = '<i class="fa fa-ban"></i>';
+                }
+            }   
+        });
+    };
+</script>
+</div>
 <?php echo $footer; ?>

@@ -1,0 +1,23 @@
+EXTENSION	SETTING	NUMBER	SUB-SETTING	SUB-NUMBER	SUB-SUB-SETTING	VALUE
+restrict_checkout	autocomplete_preloading					0
+restrict_checkout	autosave					0
+restrict_checkout	display					expanded
+restrict_checkout	distance_calculation					driving
+restrict_checkout	distance_units					mi
+restrict_checkout	product_group	1	name			
+restrict_checkout	product_group	1	sort_order			
+restrict_checkout	restriction	1	checkout_message			CLOSED! Summer Hours 3pm-3am! Feel free to browse our inventory in the meantime! 
+restrict_checkout	restriction	1	name			Closed Hours
+restrict_checkout	restriction	1	rule	1	comparison	after
+restrict_checkout	restriction	1	rule	1	type	time
+restrict_checkout	restriction	1	rule	1	value	08:00
+restrict_checkout	restriction	1	rule	2	comparison	before
+restrict_checkout	restriction	1	rule	2	type	time
+restrict_checkout	restriction	1	rule	2	value	20:00
+restrict_checkout	rule_set	1	name			
+restrict_checkout	rule_set	1	sort_order			
+restrict_checkout	sort_order					3
+restrict_checkout	status					0
+restrict_checkout	tax_class_id					0
+restrict_checkout	testing_mode					0
+restrict_checkout	tooltips					1

@@ -2,6 +2,7 @@
 // Text
 $_['text_home']          = 'Home';
 $_['text_wishlist']      = 'Wish List (%s)';
+$_['text_store_credit']  = 'Store Credit';
 $_['text_shopping_cart'] = 'Shopping Cart';
 $_['text_category']      = 'Categories';
 $_['text_account']       = 'My Account';

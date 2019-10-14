@@ -753,6 +753,11 @@ header .ttfullmenudiv {
     padding: 7px 0;
 	line-height: 25px;
 }
+.header-top-right #store-credit-total {
+    display: block;
+    padding: 7px 0;
+	line-height: 25px;
+}
 #form-language .language-select > img {
     margin: 0 2px 0 0;
 }

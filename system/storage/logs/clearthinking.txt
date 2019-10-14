@@ -1,0 +1,5 @@
+2019-10-10 16:29:54	127.0.0.1	restrict_checkout installed
+2019-10-10 16:30:47	127.0.0.1	restrict_checkout installed
+2019-10-10 16:36:50	127.0.0.1	restrict_checkout installed
+2019-10-10 16:37:32	127.0.0.1	restrict_checkout installed
+2019-10-10 16:41:57	127.0.0.1	restrict_checkout installed

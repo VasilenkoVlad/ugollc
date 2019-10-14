@@ -90,6 +90,16 @@ class ModelAccountCustomer extends Model {
 				}
 			}
 		}
+                if($customer_id != NULL){
+                    $query = "SELECT value FROM oc_setting where `key` = 'config_send_sms_status' and `code` = 'config'";
+                    $sms = $this->db->query($query);
+                    if($sms->row['value'] == 1){
+                        $this->load->library('clicksend_lib/clicksend');
+                        $obj_clicksend = Clicksend::get_instance($this->registry);
+                        $country_code = '+1';
+                        $result = $obj_clicksend->send_sms($data['telephone'],$country_code,$data['firstname']);	
+                    }
+                }
 
 		return $customer_id;
 	}
@@ -175,4 +185,23 @@ class ModelAccountCustomer extends Model {
 	public function deleteLoginAttempts($email) {
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "customer_login` WHERE email = '" . $this->db->escape(utf8_strtolower($email)) . "'");
 	}
+        
+        //Custom Added : To check if CWID exist else save in customer table CWID column
+        public function saveCwid($cwid) {
+                $query = $this->db->query("SELECT cwid FROM `" . DB_PREFIX . "customer` WHERE customer_id = '" . (int)$this->customer->getId() . "'");
+                
+                if ($query->row['cwid'] != $cwid) {
+                    $update_qry = $this->db->query("UPDATE `" . DB_PREFIX . "customer` SET `cwid`= '".$this->db->escape($cwid)."' WHERE customer_id = '" . (int)$this->customer->getId() . "'");
+                } else {
+                   return 1;
+                }
+        }
+        
+        //Custom Added : To get CWID
+        public function getCwid() {
+                $query = $this->db->query("SELECT cwid FROM `" . DB_PREFIX . "customer` WHERE customer_id = '" . (int)$this->customer->getId() . "'");
+                    
+                return $query->row['cwid'];
+                
+        }
 }

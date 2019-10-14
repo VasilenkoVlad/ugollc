@@ -709,4 +709,18 @@ class ModelCatalogProduct extends Model {
 
 		return $query->row['total'];
 	}
+        
+        //Custom added : Function to mark/unmark product forbidden
+        public function editProductForbiddenStatus($product_id, $data) {
+		
+                $row = $this->db->query("UPDATE " . DB_PREFIX . "product SET forbidden_for_DD = '" . $this->db->escape($data['forbidden_for_DD']) . "', date_modified = NOW() WHERE product_id = '" . (int)$product_id . "'");
+                
+		$this->cache->delete('product');
+                
+                if ($row > 0 ) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+        }
 }
