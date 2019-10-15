@@ -414,7 +414,7 @@ class ControllerCommonColumnLeft extends Controller {
 					'name'	   => $this->language->get('text_setting'),
 					'href'     => $this->url->link('setting/store', 'token=' . $this->session->data['token'], true),
 					'children' => array()		
-				);	
+				);
 			}
 		
 			// Users
@@ -604,6 +604,57 @@ class ControllerCommonColumnLeft extends Controller {
 					'children' => $localisation	
 				);
 			}
+                        
+                        $custom_delivery_fee = array();
+                        
+                        if ($this->user->hasPermission('access', 'custom_settings/delivery_fee/cash_on_delivery')) {
+				$custom_delivery_fee[] = array(
+					'name'	   => $this->language->get('text_cash_on_delivery'),
+					'href'     => $this->url->link('custom_settings/delivery_fee/cash_on_delivery', 'token=' . $this->session->data['token'], true),
+					'children' => array()
+				);
+			}
+                        
+                        if ($this->user->hasPermission('access', 'custom_settings/delivery_fee/card_payment')) {
+				$custom_delivery_fee[] = array(
+					'name'	   => $this->language->get('text_card_payment'),
+					'href'     => $this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'], true),
+					'children' => array()
+				);
+			}
+                        
+                        if ($this->user->hasPermission('access', 'custom_settings/delivery_fee/stripe')) {
+				$custom_delivery_fee[] = array(
+					'name'	   => $this->language->get('text_stripe'),
+					'href'     => $this->url->link('custom_settings/delivery_fee/stripe', 'token=' . $this->session->data['token'], true),
+					'children' => array()
+				);
+			}
+                        
+                        if ($this->user->hasPermission('access', 'custom_settings/delivery_fee/bama_cash')) {
+				$custom_delivery_fee[] = array(
+					'name'	   => $this->language->get('text_bama_cash'),
+					'href'     => $this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'], true),
+					'children' => array()
+				);
+			}
+                        
+                        if ($this->user->hasPermission('access', 'custom_settings/delivery_fee/dinning_dollars')) {
+				$custom_delivery_fee[] = array(
+					'name'	   => $this->language->get('text_dinning_dollars'),
+					'href'     => $this->url->link('custom_settings/delivery_fee/dinning_dollars', 'token=' . $this->session->data['token'], true),
+					'children' => array()
+				);
+			}
+                        
+                        if($custom_delivery_fee) {
+                            $system[] = array(
+					'name'	   => $this->language->get('text_delivery_fee'),
+					'href'     => '',
+					'children' => $custom_delivery_fee	
+				);
+                            
+                        }
 			
 			// Tools	
 			$tool = array();

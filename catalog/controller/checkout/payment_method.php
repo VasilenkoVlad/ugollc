@@ -193,7 +193,7 @@ class ControllerCheckoutPaymentMethod extends Controller {
                         $json['error']['warning'] = $this->language->get('error_payment');
                     }
                 }
-                
+
                 //Custom added : To check if payment id is not there
                 if  (($this->request->post['payment_method'] == 'BAMA Cash') && (!isset($this->request->post['payment_id']) || $this->request->post['payment_id'] == "") && ($this->request->post['order_type'] == "web")) {
                     $json['error']['warning'] = "Enter your " .$this->request->post['payment_method']. " unique id";
@@ -391,8 +391,7 @@ class ControllerCheckoutPaymentMethod extends Controller {
         
         //Custom Added : Get delivery fee based on selected payment type
         public function get_delivery_fee($payment_method_code) {
-            $this->load->model('shipping/flat');
-            
+            $this->load->model('extension/shipping/flat');
             if(isset($this->request->post['api_call']) && isset($this->request->post['payment_method'])){
                 $payment_method_code = $this->request->post['payment_method'];
                 if(($this->request->post['payment_method'] != 'BAMA Cash' && $this->request->post['payment_method'] !='DD')){
@@ -404,9 +403,10 @@ class ControllerCheckoutPaymentMethod extends Controller {
                    $this->session->data['speedy_delivery'] = "yes";
                 }
             }
-            
-            $payment_method_id = $this->model_shipping_flat->getPaymentCode($payment_method_code);
-            $result = $this->model_shipping_flat->getDeliveryFee($payment_method_id);
+
+            $payment_method_id = $this->model_extension_shipping_flat->getPaymentCode('BAMA Cash');
+           
+            $result = $this->model_extension_shipping_flat->getDeliveryFee($payment_method_id);
             
            
             $this->response->addHeader('Content-Type: application/json');
@@ -417,27 +417,27 @@ class ControllerCheckoutPaymentMethod extends Controller {
         
         //Custom Added : Get speed delivery fee based on selected payment type
         public function get_max_speedy_delivery_fee($payment_method_code) {
-            $this->load->model('shipping/flat');
+            $this->load->model('extension/shipping/flat');
         
-            $payment_method_id = $this->model_shipping_flat->getPaymentCode($payment_method_code);
+            $payment_method_id = $this->model_extension_shipping_flat->getPaymentCode($payment_method_code);
             
-            $delivery_fee_id = $this->model_shipping_flat->getDeliveryFeeId($payment_method_id);
+            $delivery_fee_id = $this->model_extension_shipping_flat->getDeliveryFeeId($payment_method_id);
             
-            $result = $this->model_shipping_flat->getSpeedyDeliveryFee($delivery_fee_id);
+            $result = $this->model_extension_shipping_flat->getSpeedyDeliveryFee($delivery_fee_id);
 
             return $result;
         }
         
         //Custom Added : Get speed delivery fee based on selected payment type
         public function get_distance_delivery_fee($payment_method_code) {
-            $this->load->model('shipping/flat');
+            $this->load->model('extension/shipping/flat');
             
             if(isset($this->request->get['payment_method']) && $this->request->get['payment_method'] != "") {
                 $payment_method_code = $this->request->get['payment_method'];
             }
         
-            $payment_method_id = $this->model_shipping_flat->getPaymentCode($payment_method_code);
-            $result = $this->model_shipping_flat->get_area_based_fee($payment_method_id);
+            $payment_method_id = $this->model_extension_shipping_flat->getPaymentCode($payment_method_code);
+            $result = $this->model_extension_shipping_flat->get_area_based_fee($payment_method_id);
             
             if(isset($this->request->get["api_call"]) && $this->request->get["api_call"] == "1") {
                 $json['distance_delivery_fee'] = $result;

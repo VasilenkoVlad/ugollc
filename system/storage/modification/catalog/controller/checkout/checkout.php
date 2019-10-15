@@ -1,7 +1,7 @@
 <?php
 class ControllerCheckoutCheckout extends Controller {
 	public function index() {
-		// Validate cart has products and has stock.
+            		// Validate cart has products and has stock.
 		
             if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers']) && empty($this->session->data['credits'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
             
@@ -62,8 +62,8 @@ class ControllerCheckoutCheckout extends Controller {
 		$data['text_checkout_payment_address'] = sprintf($this->language->get('text_checkout_payment_address'), 2);
 		$data['text_checkout_shipping_address'] = sprintf($this->language->get('text_checkout_shipping_address'), 3);
 		$data['text_checkout_shipping_method'] = sprintf($this->language->get('text_checkout_shipping_method'), 4);
-		
-		if ($this->cart->hasShipping()) {
+
+                if ($this->cart->hasShipping()) {
 			$data['text_checkout_payment_method'] = sprintf($this->language->get('text_checkout_payment_method'), 5);
 			$data['text_checkout_confirm'] = sprintf($this->language->get('text_checkout_confirm'), 6);
 		} else {

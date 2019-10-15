@@ -753,7 +753,7 @@ $(document).delegate('#button-payment-method', 'click', function() {
     $.ajax({
         url: 'index.php?route=checkout/payment_method/save',
         type: 'post',
-        data: $('#collapse-payment-method input[type=\'radio\']:checked, #collapse-payment-method input[type=\'checkbox\']:checked, #collapse-payment-method textarea'),
+        data: $('#collapse-payment-method input[type=\'radio\']:checked, #collapse-payment-method input[type=\'checkbox\']:checked, #collapse-payment-method textarea,#collapse-payment-method input[type=\'text\']'),
         dataType: 'json',
         beforeSend: function() {
          	$('#button-payment-method').button('loading');

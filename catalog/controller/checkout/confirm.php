@@ -29,8 +29,9 @@ class ControllerCheckoutConfirm extends Controller {
 			$redirect = $this->url->link('checkout/checkout', '', true);
 		}
 
-		// Validate cart has products and has stock.
-		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+		// Validate cart has products and has stock
+                if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers']) && empty($this->session->data['credits'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+            
 			$redirect = $this->url->link('checkout/cart');
 		}
 
@@ -107,14 +108,14 @@ class ControllerCheckoutConfirm extends Controller {
 			if ($order_data['store_id']) {
 				$order_data['store_url'] = $this->config->get('config_url');
 			} else {
-				if ($this->request->server['HTTPS']) {
-					$order_data['store_url'] = HTTPS_SERVER;
-				} else {
-					$order_data['store_url'] = HTTP_SERVER;
-				}
+                            if ($this->request->server['HTTPS']) {
+                                    $order_data['store_url'] = HTTPS_SERVER;
+                            } else {
+                                    $order_data['store_url'] = HTTP_SERVER;
+                            }
 			}
 
-			if ($this->customer->isLogged()) {
+                        if ($this->customer->isLogged()) {
 				$this->load->model('account/customer');
 
 				$customer_info = $this->model_account_customer->getCustomer($this->customer->getId());
@@ -126,7 +127,7 @@ class ControllerCheckoutConfirm extends Controller {
 				$order_data['email'] = $customer_info['email'];
 				$order_data['telephone'] = $customer_info['telephone'];
 				$order_data['fax'] = $customer_info['fax'];
-				$order_data['custom_field'] = json_decode($customer_info['custom_field'], true);
+				$order_data['custom_field'] = unserialize($customer_info['custom_field']);
 			} elseif (isset($this->session->data['guest'])) {
 				$order_data['customer_id'] = 0;
 				$order_data['customer_group_id'] = $this->session->data['guest']['customer_group_id'];
@@ -136,7 +137,7 @@ class ControllerCheckoutConfirm extends Controller {
 				$order_data['telephone'] = $this->session->data['guest']['telephone'];
 				$order_data['fax'] = $this->session->data['guest']['fax'];
 				$order_data['custom_field'] = $this->session->data['guest']['custom_field'];
-			}
+                        }
 
 			$order_data['payment_firstname'] = $this->session->data['payment_address']['firstname'];
 			$order_data['payment_lastname'] = $this->session->data['payment_address']['lastname'];
@@ -151,20 +152,27 @@ class ControllerCheckoutConfirm extends Controller {
 			$order_data['payment_country_id'] = $this->session->data['payment_address']['country_id'];
 			$order_data['payment_address_format'] = $this->session->data['payment_address']['address_format'];
 			$order_data['payment_custom_field'] = (isset($this->session->data['payment_address']['custom_field']) ? $this->session->data['payment_address']['custom_field'] : array());
-
-			if (isset($this->session->data['payment_method']['title'])) {
-				$order_data['payment_method'] = $this->session->data['payment_method']['title'];
-			} else {
-				$order_data['payment_method'] = '';
-			}
-
-			if (isset($this->session->data['payment_method']['code'])) {
-				$order_data['payment_code'] = $this->session->data['payment_method']['code'];
-			} else {
-				$order_data['payment_code'] = '';
-			}
-
-			if ($this->cart->hasShipping()) {
+                        
+                        if (isset($this->session->data['payment_method']['title']) && $this->session->data['payment_method'] != 'BAMA Cash' && $this->session->data['payment_method'] != 'DD'){
+                            $order_data['payment_method'] = $this->session->data['payment_method']['title']; 
+                        } elseif($this->session->data['payment_method'] == 'BAMA Cash' || $this->session->data['payment_method'] == 'DD'){
+                            $order_data['payment_method'] = $this->session->data['payment_method']; 
+                        }else {
+                                $order_data['payment_method'] = '';
+                        }
+			
+                        //Custom Modified : To set payment method code for new payment option
+                        if (($this->session->data['payment_method']== 'BAMA Cash') || ($this->session->data['payment_method']== 'DD')) {
+                            $this->session->data['payment_method'] = array();
+                            $this->session->data['payment_method']['code'] = "cod";
+                            $order_data['payment_code'] = $this->session->data['payment_method']['code'];
+                        } else if (isset($this->session->data['payment_method']['code'])) {
+                            $order_data['payment_code'] = $this->session->data['payment_method']['code'];
+                        } else {
+                            $order_data['payment_code'] = '';
+                        }
+			
+                        if ($this->cart->hasShipping()) {
 				$order_data['shipping_firstname'] = $this->session->data['shipping_address']['firstname'];
 				$order_data['shipping_lastname'] = $this->session->data['shipping_address']['lastname'];
 				$order_data['shipping_company'] = $this->session->data['shipping_address']['company'];
@@ -259,6 +267,22 @@ class ControllerCheckoutConfirm extends Controller {
 				}
 			}
 
+			// Store Credit
+			$order_data['credits'] = array();
+
+			if (!empty($this->session->data['credits'])) {
+				foreach ($this->session->data['credits'] as $credit) {
+					$order_data['credits'][] = array(
+    					'description'      => $credit['description'],
+    					'customer_id'      => $credit['customer_id'],
+    					'firstname'       => $credit['firstname'],
+    					'lastname'        => $credit['lastname'],
+    					'email'            => $credit['email'],
+    					'amount'           => $credit['amount']
+					);
+				}
+			}
+            
 			$order_data['comment'] = $this->session->data['comment'];
 			$order_data['total'] = $total_data['total'];
 
@@ -324,7 +348,7 @@ class ControllerCheckoutConfirm extends Controller {
 			}
 
 			$this->load->model('checkout/order');
-
+                        
 			$this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
 
 			$data['text_recurring_item'] = $this->language->get('text_recurring_item');
@@ -398,6 +422,23 @@ class ControllerCheckoutConfirm extends Controller {
 					'href'       => $this->url->link('product/product', 'product_id=' . $product['product_id'])
 				);
 			}
+                        //Speedy Delivery Fee
+			$data['speedy_fee'] = array();
+			if (!empty($this->session->data['speedy_delivery_fee']) && isset($this->session->data['speedy_delivery'])) {
+					$data['speedy_fee'][] = array(
+						'description' => 'Express Delivery Fee',
+						'amount'      => $this->currency->format($this->session->data['speedy_delivery_fee']['text'],$this->session->data['currency'])			
+                                        );
+			}
+                        
+                         //Distance Delivery Fee
+			$data['distance_fee'] = array();
+			if (!empty($this->session->data['distance_delivery_fee'])) {
+					$data['distance_fee'][] = array(
+						'description' => 'Distance Delivery Fee',
+						'amount'      => $this->currency->format($this->session->data['distance_delivery_fee']['text'],$this->session->data['currency'])			
+                                        );
+			}
 
 			// Gift Voucher
 			$data['vouchers'] = array();
@@ -406,25 +447,75 @@ class ControllerCheckoutConfirm extends Controller {
 				foreach ($this->session->data['vouchers'] as $voucher) {
 					$data['vouchers'][] = array(
 						'description' => $voucher['description'],
-						'amount'      => $this->currency->format($voucher['amount'], $this->session->data['currency'])
+						'amount'      => $this->currency->format($voucher['amount'],$this->session->data['currency'])
 					);
 				}
 			}
 
-			$data['totals'] = array();
+			// Store Credit
+			$data['credits'] = array();
 
+			if (!empty($this->session->data['credits'])) {
+				foreach ($this->session->data['credits'] as $credit) {
+					$data['credits'][] = array(
+						'description' => $credit['description'],
+						'amount'      => $this->currency->format($credit['amount'],$this->session->data['currency'])
+					);
+				}
+			}
+            
+			$data['totals'] = array(); 
+                        
 			foreach ($order_data['totals'] as $total) {
-				$data['totals'][] = array(
+                             if ($total['title'] != 'Delivery Fee' && $total['title'] != 'Free Shipping') {
+                                    $data['totals'][] = array(
 					'title' => $total['title'],
 					'text'  => $this->currency->format($total['value'], $this->session->data['currency'])
 				);
+                             } else if ($total['title']  == 'Delivery Fee'){
+                        
+                                $data['totals'][] = array(
+                                                'title' => $total['title'],
+                                                'text'  => $this->currency->format($this->session->data['shipping_method']['output_cost'],$this->session->data['currency']),
+                                        );
+                            } 
+                            else if ($total['title']  == 'Free Shipping' && isset($this->session->data['speedy_delivery'])){
+                        
+                                $data['totals'][] = array(
+                                                'title' => $total['title'],
+                                                'text'  => $this->currency->format($this->session->data['shipping_method']['output_cost'],$this->session->data['currency']),
+                                        );
+                            } 
 			}
-
-			$data['payment'] = $this->load->controller('extension/payment/' . $this->session->data['payment_method']['code']);
-		} else {
-			$data['redirect'] = $redirect;
+                        
+                        if(($this->session->data['payment_method']== 'BAMA Cash') || ($this->session->data['payment_method']== 'DD')){
+                            $data['payment'] = $this->load->controller('extension/payment/cod');
+                        }else{
+                            $data['payment'] = $this->load->controller('extension/payment/' . $this->session->data['payment_method']['code']);
+                        }
+                    } else {
+                        $data['redirect'] = $redirect;
 		}
-
+		
 		$this->response->setOutput($this->load->view('checkout/confirm', $data));
+		
 	}
+        
+        public function update_guest_detail() {
+            if(($this->request->post['guest'] == 1)){
+                $order_data['customer_id'] = 0;
+                $order_data['customer_group_id'] = 1;
+                $order_data['firstname'] = $this->request->post['firstname'];
+                $order_data['lastname'] = $this->request->post['lastname'];
+                $order_data['email'] = $this->request->post['email'];
+                $order_data['telephone'] = $this->request->post['telephone'];
+                $order_data['custom_field'] = $this->request->post['custom_field']['account'];
+                $order_data['order_id'] = $this->request->post['order_id'];
+                $this->load->model('checkout/order');
+		$orderId = $this->model_checkout_order->updateGuestOrder($order_data);
+            }
+        }
+        
+        
+        
 }
