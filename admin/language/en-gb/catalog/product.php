@@ -33,6 +33,7 @@ $_['entry_meta_description'] = 'Meta Tag Description';
 $_['entry_keyword']          = 'SEO URL';
 $_['entry_model']            = 'Model';
 $_['entry_sku']              = 'SKU';
+$_['entry_vend_product_id']  = 'Vend Product Id';
 $_['entry_upc']              = 'UPC';
 $_['entry_ean']              = 'EAN';
 $_['entry_jan']              = 'JAN';
@@ -83,6 +84,7 @@ $_['entry_recurring']        = 'Recurring Profile';
 
 // Help
 $_['help_keyword']           = 'Do not use spaces, instead replace spaces with - and make sure the SEO URL is globally unique.';
+$_['help_vend_product_id']   = 'Vend Product Id';
 $_['help_sku']               = 'Stock Keeping Unit';
 $_['help_upc']               = 'Universal Product Code';
 $_['help_ean']               = 'European Article Number';

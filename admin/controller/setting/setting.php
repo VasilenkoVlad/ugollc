@@ -849,6 +849,14 @@ class ControllerSettingSetting extends Controller {
 			$data['config_send_sms_status'] = '';
 		}
                 
+                if (isset($this->request->post['config_express_delivery_status'])) {
+			$data['config_express_delivery_status'] = $this->request->post['config_express_delivery_status'];
+		} elseif ($this->config->has('config_express_delivery_status')) {
+			$data['config_express_delivery_status'] = $this->config->get('config_express_delivery_status');
+		} else {
+			$data['config_express_delivery_status'] = '';
+		}
+                
 		if (isset($this->request->post['config_captcha'])) {
 			$data['config_captcha'] = $this->request->post['config_captcha'];
 		} else {

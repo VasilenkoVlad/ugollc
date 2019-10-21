@@ -71,10 +71,10 @@ class ControllerCheckoutConfirm extends Controller {
 			$this->load->model('extension/extension');
 
 			$sort_order = array();
-
+                    
 			$results = $this->model_extension_extension->getExtensions('total');
 
-			foreach ($results as $key => $value) {
+                        foreach ($results as $key => $value) {
 				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
 			}
 
@@ -422,23 +422,6 @@ class ControllerCheckoutConfirm extends Controller {
 					'href'       => $this->url->link('product/product', 'product_id=' . $product['product_id'])
 				);
 			}
-                        //Speedy Delivery Fee
-			$data['speedy_fee'] = array();
-			if (!empty($this->session->data['speedy_delivery_fee']) && isset($this->session->data['speedy_delivery'])) {
-					$data['speedy_fee'][] = array(
-						'description' => 'Express Delivery Fee',
-						'amount'      => $this->currency->format($this->session->data['speedy_delivery_fee']['text'],$this->session->data['currency'])			
-                                        );
-			}
-                        
-                         //Distance Delivery Fee
-			$data['distance_fee'] = array();
-			if (!empty($this->session->data['distance_delivery_fee'])) {
-					$data['distance_fee'][] = array(
-						'description' => 'Distance Delivery Fee',
-						'amount'      => $this->currency->format($this->session->data['distance_delivery_fee']['text'],$this->session->data['currency'])			
-                                        );
-			}
 
 			// Gift Voucher
 			$data['vouchers'] = array();
@@ -464,28 +447,12 @@ class ControllerCheckoutConfirm extends Controller {
 				}
 			}
             
-			$data['totals'] = array(); 
-                        
+                        $data['totals'] = array();
 			foreach ($order_data['totals'] as $total) {
-                             if ($total['title'] != 'Delivery Fee' && $total['title'] != 'Free Shipping') {
-                                    $data['totals'][] = array(
+				$data['totals'][] = array(
 					'title' => $total['title'],
 					'text'  => $this->currency->format($total['value'], $this->session->data['currency'])
 				);
-                             } else if ($total['title']  == 'Delivery Fee'){
-                        
-                                $data['totals'][] = array(
-                                                'title' => $total['title'],
-                                                'text'  => $this->currency->format($this->session->data['shipping_method']['output_cost'],$this->session->data['currency']),
-                                        );
-                            } 
-                            else if ($total['title']  == 'Free Shipping' && isset($this->session->data['speedy_delivery'])){
-                        
-                                $data['totals'][] = array(
-                                                'title' => $total['title'],
-                                                'text'  => $this->currency->format($this->session->data['shipping_method']['output_cost'],$this->session->data['currency']),
-                                        );
-                            } 
 			}
                         
                         if(($this->session->data['payment_method']== 'BAMA Cash') || ($this->session->data['payment_method']== 'DD')){

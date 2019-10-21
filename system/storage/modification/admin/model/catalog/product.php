@@ -145,6 +145,10 @@ $i++;
 		if (isset($data['image'])) {
 			$this->db->query("UPDATE " . DB_PREFIX . "product SET image = '" . $this->db->escape($data['image']) . "' WHERE product_id = '" . (int)$product_id . "'");
 		}
+                
+                if (isset($data['vend_product_id']) && $data['vend_product_id']!='') {
+			$this->db->query("UPDATE " . DB_PREFIX . "product SET vend_product_id = '" . $this->db->escape($data['vend_product_id']) . "' WHERE product_id = '" . (int)$product_id . "'");
+		}
 
 		$this->db->query("DELETE FROM " . DB_PREFIX . "product_description WHERE product_id = '" . (int)$product_id . "'");
 

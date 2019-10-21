@@ -35,7 +35,7 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
                             $url .= '&page=' . $this->request->get['page'];
                     }
                     
-                    $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cashy', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                    $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cashy', 'token=' . $this->session->data['token'] . $url, true));
 		
                 }
                    
@@ -63,7 +63,7 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
                             $url .= '&page=' . $this->request->get['page'];
                     }
                     
-                    $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                    $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, true));
                 }
 	}
         
@@ -87,7 +87,7 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
                         
-                        $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                        $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, true));
 
                 }
                    
@@ -113,7 +113,7 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
                         
-                        $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                        $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, true));
 
                 }
                    
@@ -129,7 +129,7 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
                 
                 $this->session->data['success'] = "Delivery Fee deleted";
 
-                $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, true));
                 
                 $this->getList();
 	}
@@ -144,7 +144,7 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
                 
                 $this->session->data['success'] = "Delivery Fee deleted";
 
-                $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                $this->response->redirect($this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, true));
                 
                 $this->getList();
 	}
@@ -167,12 +167,12 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], true)
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('bama_cash_heading_title'),
-			'href' => $this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, 'SSL')
+			'href' => $this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, true)
 		);
 
 		$data['payments'] = array();
@@ -197,9 +197,9 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
                                 'cart_amount2' => $result['cart_amount2'],
                                 'fee_type' => $result['fee_type'],
                                 'basic_fee' => $result['basic_fee'],
-                                'edit'      => $this->url->link('custom_settings/delivery_fee/bama_cash/edit', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, 'SSL'),
-				'edit_detail'      => $this->url->link('custom_settings/delivery_fee/bama_cash/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, 'SSL'),
-                                'delete'    => $this->url->link('custom_settings/delivery_fee/bama_cash/delete', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, 'SSL'),
+                                'edit'      => $this->url->link('custom_settings/delivery_fee/bama_cash/edit', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, true),
+				'edit_detail'      => $this->url->link('custom_settings/delivery_fee/bama_cash/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, true),
+                                'delete'    => $this->url->link('custom_settings/delivery_fee/bama_cash/delete', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, true),
 			);
 		}
                  
@@ -213,12 +213,12 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
                                 'fee'     => $range_fee['fee'],
                                 'range_1' => $range_fee['range_1'],
                                 'range_2' => $range_fee['range_2'],
-                                'edit_range'      => $this->url->link('custom_settings/delivery_fee/bama_cash/edit_range_fee', 'token=' . $this->session->data['token'] . '&delivery_range_fee_id=' . $range_fee['delivery_range_fee_id'] . $url, 'SSL'),
-                                'delete_range' => $this->url->link('custom_settings/delivery_fee/bama_cash/delete_range_fee', 'token=' . $this->session->data['token'] . '&delivery_range_fee_id=' . $range_fee['delivery_range_fee_id'] . $url, 'SSL'),
+                                'edit_range'      => $this->url->link('custom_settings/delivery_fee/bama_cash/edit_range_fee', 'token=' . $this->session->data['token'] . '&delivery_range_fee_id=' . $range_fee['delivery_range_fee_id'] . $url, true),
+                                'delete_range' => $this->url->link('custom_settings/delivery_fee/bama_cash/delete_range_fee', 'token=' . $this->session->data['token'] . '&delivery_range_fee_id=' . $range_fee['delivery_range_fee_id'] . $url, true),
                         );
 		}
-                $data['add'] = $this->url->link('custom_settings/delivery_fee/bama_cash/add', 'token=' . $this->session->data['token'] , 'SSL');
-                $data['add_range'] = $this->url->link('custom_settings/delivery_fee/bama_cash/addRangeFee', 'token=' . $this->session->data['token'] , 'SSL');
+                $data['add'] = $this->url->link('custom_settings/delivery_fee/bama_cash/add', 'token=' . $this->session->data['token'] , true);
+                $data['add_range'] = $this->url->link('custom_settings/delivery_fee/bama_cash/addRangeFee', 'token=' . $this->session->data['token'] , true);
                 $data['column_range_1'] =  $this->language->get('column_range_1');
                 $data['column_range_2'] =  $this->language->get('column_range_2');
                 $data['range_type']     =  $this->language->get('column_cart_amount_range_type');      
@@ -275,7 +275,7 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
 		$pagination->total = $count_cod_fee_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('custom_settings/delivery_fee', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
+		$pagination->url = $this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url . '&page={page}', true);
 
 		$data['pagination'] = $pagination->render();
 
@@ -295,17 +295,17 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], true)
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('bama_cash_heading_title'),
-			'href' => $this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, 'SSL')
+			'href' => $this->url->link('custom_settings/delivery_fee/bama_cash', 'token=' . $this->session->data['token'] . $url, true)
 		);
                 
                 $data['breadcrumbs'][] = array(
 			'text' => $this->language->get('bama_cash_detail_heading_title'),
-			'href' => $this->url->link('custom_settings/delivery_fee/bama_cash/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $this->request->get['delivery_fee_id']  . $url, 'SSL')
+			'href' => $this->url->link('custom_settings/delivery_fee/bama_cash/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $this->request->get['delivery_fee_id']  . $url, true)
 		);
 		
                 //Get speed delivey fee from database
@@ -316,7 +316,7 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
 				'delivery_fee_id' => $speed_fee['delivery_fee_id'],
                                 'fee' => $speed_fee['fee'],
                                 'time_slot' => $speed_fee['time_slot'],
-                                'edit'      => $this->url->link('custom_settings/delivery_fee/bama_cash/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id='.$this->request->get['delivery_fee_id']. $url, 'SSL'),
+                                'edit'      => $this->url->link('custom_settings/delivery_fee/bama_cash/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id='.$this->request->get['delivery_fee_id']. $url, true),
 			);
 		}
 		$data['heading_title'] = $this->language->get('bama_cash_detail_heading_title');
@@ -338,7 +338,7 @@ class ControllerCustomSettingsDeliveryFeeBamaCash extends Controller {
 
 	protected function validateForm() {
 		
-                if (!$this->user->hasPermission('modify', 'custom_settings/delivery_fee')) {
+                if (!$this->user->hasPermission('modify', 'custom_settings/delivery_fee/bama_cash')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
                 

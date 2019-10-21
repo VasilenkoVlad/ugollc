@@ -77,7 +77,7 @@ class ModelCustomSettingsDeliveryFee extends Model {
 	}
         
         public function getTotalCodFees() {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "new_delivery_fee where payment_method_id = 1");
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "new_delivery_fee where payment_method_id = 1");        
 
 		return $query->row['total'];
 	}

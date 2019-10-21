@@ -35,7 +35,7 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
                             $url .= '&page=' . $this->request->get['page'];
                     }
                     
-                    $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_paymenty', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                    $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_paymenty', 'token=' . $this->session->data['token'] . $url, true));
 		
                 }
                    
@@ -63,7 +63,7 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
                             $url .= '&page=' . $this->request->get['page'];
                     }
                     
-                    $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                    $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, true));
                 }
 	}
         
@@ -87,7 +87,7 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
                         
-                        $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                        $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, true));
 
                 }
                    
@@ -113,7 +113,7 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
                         
-                        $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                        $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, true));
 
                 }
                    
@@ -129,7 +129,7 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
                 
                 $this->session->data['success'] = "Delivery Fee deleted";
 
-                $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, true));
                 
                 $this->getList();
 	}
@@ -144,7 +144,7 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
                 
                 $this->session->data['success'] = "Delivery Fee deleted";
 
-                $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+                $this->response->redirect($this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, true));
                 
                 $this->getList();
 	}
@@ -167,12 +167,12 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], true)
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('card_payment_heading_title'),
-			'href' => $this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, 'SSL')
+			'href' => $this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, true)
 		);
 
 		$data['payments'] = array();
@@ -199,9 +199,9 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
                                 'basic_fee' => $result['basic_fee'],
                                 //'speedy_delivery_fee' =>$result['speedy_delivery_fee'],
 				//'delivery_fee_type'    => $result['delivery_fee_type'],
-                                'edit'      => $this->url->link('custom_settings/delivery_fee/card_payment/edit', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, 'SSL'),
-				'edit_detail'      => $this->url->link('custom_settings/delivery_fee/card_payment/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, 'SSL'),
-                                'delete'    => $this->url->link('custom_settings/delivery_fee/card_payment/delete', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, 'SSL'),
+                                'edit'      => $this->url->link('custom_settings/delivery_fee/card_payment/edit', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, true),
+				'edit_detail'      => $this->url->link('custom_settings/delivery_fee/card_payment/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, true),
+                                'delete'    => $this->url->link('custom_settings/delivery_fee/card_payment/delete', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $result['delivery_fee_id'] . $url, true),
 			);
 		}
                  
@@ -215,12 +215,12 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
                                 'fee'     => $range_fee['fee'],
                                 'range_1' => $range_fee['range_1'],
                                 'range_2' => $range_fee['range_2'],
-                                'edit_range'      => $this->url->link('custom_settings/delivery_fee/card_payment/edit_range_fee', 'token=' . $this->session->data['token'] . '&delivery_range_fee_id=' . $range_fee['delivery_range_fee_id'] . $url, 'SSL'),
-                                'delete_range' => $this->url->link('custom_settings/delivery_fee/card_payment/delete_range_fee', 'token=' . $this->session->data['token'] . '&delivery_range_fee_id=' . $range_fee['delivery_range_fee_id'] . $url, 'SSL'),
+                                'edit_range'      => $this->url->link('custom_settings/delivery_fee/card_payment/edit_range_fee', 'token=' . $this->session->data['token'] . '&delivery_range_fee_id=' . $range_fee['delivery_range_fee_id'] . $url, true),
+                                'delete_range' => $this->url->link('custom_settings/delivery_fee/card_payment/delete_range_fee', 'token=' . $this->session->data['token'] . '&delivery_range_fee_id=' . $range_fee['delivery_range_fee_id'] . $url, true),
                         );
 		}
-                $data['add'] = $this->url->link('custom_settings/delivery_fee/card_payment/add', 'token=' . $this->session->data['token'] , 'SSL');
-                $data['add_range'] = $this->url->link('custom_settings/delivery_fee/card_payment/addRangeFee', 'token=' . $this->session->data['token'] , 'SSL');
+                $data['add'] = $this->url->link('custom_settings/delivery_fee/card_payment/add', 'token=' . $this->session->data['token'] , true);
+                $data['add_range'] = $this->url->link('custom_settings/delivery_fee/card_payment/addRangeFee', 'token=' . $this->session->data['token'] , true);
                 $data['column_range_1'] =  $this->language->get('column_range_1');
                 $data['column_range_2'] =  $this->language->get('column_range_2');
                 $data['range_type']     =  $this->language->get('column_cart_amount_range_type');      
@@ -277,7 +277,7 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
 		$pagination->total = $count_cod_fee_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('custom_settings/delivery_fee', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
+		$pagination->url = $this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url . '&page={page}', true);
 
 		$data['pagination'] = $pagination->render();
 
@@ -297,17 +297,17 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], true)
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('card_payment_heading_title'),
-			'href' => $this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, 'SSL')
+			'href' => $this->url->link('custom_settings/delivery_fee/card_payment', 'token=' . $this->session->data['token'] . $url, true)
 		);
                 
                 $data['breadcrumbs'][] = array(
 			'text' => $this->language->get('card_payment_detail_heading_title'),
-			'href' => $this->url->link('custom_settings/delivery_fee/card_payment/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $this->request->get['delivery_fee_id']  . $url, 'SSL')
+			'href' => $this->url->link('custom_settings/delivery_fee/card_payment/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id=' . $this->request->get['delivery_fee_id']  . $url, true)
 		);
 		
                 //Get speed delivey fee from database
@@ -318,7 +318,7 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
 				'delivery_fee_id' => $speed_fee['delivery_fee_id'],
                                 'fee' => $speed_fee['fee'],
                                 'time_slot' => $speed_fee['time_slot'],
-                                'edit'      => $this->url->link('custom_settings/delivery_fee/card_payment/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id='.$this->request->get['delivery_fee_id']. $url, 'SSL'),
+                                'edit'      => $this->url->link('custom_settings/delivery_fee/card_payment/edit_detail', 'token=' . $this->session->data['token'] . '&delivery_fee_id='.$this->request->get['delivery_fee_id']. $url, true),
 			);
 		}
 		$data['heading_title'] = $this->language->get('card_payment_detail_heading_title');
@@ -340,7 +340,7 @@ class ControllerCustomSettingsDeliveryFeeCardPayment extends Controller {
 
 	protected function validateForm() {
 		
-                if (!$this->user->hasPermission('modify', 'custom_settings/delivery_fee')) {
+                if (!$this->user->hasPermission('modify', 'custom_settings/delivery_fee/card_payment')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
                 

@@ -986,6 +986,32 @@
                     </label>
                   </div>
                 </div>
+              </fieldset>
+              <fieldset>
+                <legend><?php echo 'Express Delivery Settings'; ?></legend>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-express-delivery"><span data-toggle="tooltip" title="<?php echo 'Show option for Express delivery'; ?>"><?php echo 'Express Delivery'; ?></span></label>
+                  <div class="col-sm-10">
+                    <label class="radio-inline">
+                      <?php if ($config_express_delivery_status) { ?>
+                      <input type="radio" name="config_express_delivery_status" value="1" checked="checked" />
+                      <?php echo $text_yes; ?>
+                      <?php } else { ?>
+                      <input type="radio" name="config_express_delivery_status" value="1" />
+                      <?php echo $text_yes; ?>
+                      <?php } ?>
+                    </label>
+                    <label class="radio-inline">
+                      <?php if (!$config_express_delivery_status) { ?>
+                      <input type="radio" name="config_express_delivery_status" value="0" checked="checked" />
+                      <?php echo $text_no; ?>
+                      <?php } else { ?>
+                      <input type="radio" name="config_express_delivery_status" value="0" />
+                      <?php echo $text_no; ?>
+                      <?php } ?>
+                    </label>
+                  </div>
+                </div>
               </fieldset>  
               <fieldset>
                 <legend><?php echo $text_captcha; ?></legend>

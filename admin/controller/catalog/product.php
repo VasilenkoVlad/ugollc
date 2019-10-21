@@ -568,6 +568,7 @@ class ControllerCatalogProduct extends Controller {
 		$data['entry_keyword'] = $this->language->get('entry_keyword');
 		$data['entry_model'] = $this->language->get('entry_model');
 		$data['entry_sku'] = $this->language->get('entry_sku');
+                $data['entry_vend_product_id'] = $this->language->get('entry_vend_product_id');
 		$data['entry_upc'] = $this->language->get('entry_upc');
 		$data['entry_ean'] = $this->language->get('entry_ean');
 		$data['entry_jan'] = $this->language->get('entry_jan');
@@ -617,6 +618,7 @@ class ControllerCatalogProduct extends Controller {
 
 		$data['help_keyword'] = $this->language->get('help_keyword');
 		$data['help_sku'] = $this->language->get('help_sku');
+                $data['help_vend_product_id'] = $this->language->get('help_vend_product_id');
 		$data['help_upc'] = $this->language->get('help_upc');
 		$data['help_ean'] = $this->language->get('help_ean');
 		$data['help_jan'] = $this->language->get('help_jan');
@@ -772,6 +774,14 @@ class ControllerCatalogProduct extends Controller {
 			$data['sku'] = $product_info['sku'];
 		} else {
 			$data['sku'] = '';
+		}
+                
+                if (isset($this->request->post['vend_product_id'])) {
+			$data['vend_product_id'] = $this->request->post['vend_product_id'];
+		} elseif (!empty($product_info)) {
+			$data['vend_product_id'] = isset($product_info['vend_product_id'])?$product_info['vend_product_id']:'';
+		} else {
+			$data['vend_product_id'] = '';
 		}
 
 		if (isset($this->request->post['upc'])) {
