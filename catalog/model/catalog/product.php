@@ -129,7 +129,7 @@ class ModelCatalogProduct extends Model {
 
 				foreach ($words as $word) {
 					$implode[] = "pd.tag LIKE '%" . $this->db->escape($word) . "%'";
-				}
+			}
 
 				if ($implode) {
 					$sql .= " " . implode(" AND ", $implode) . "";
@@ -274,14 +274,14 @@ class ModelCatalogProduct extends Model {
 
 	public function getPopularProducts($limit) {
 		$product_data = $this->cache->get('product.popular.' . (int)$this->config->get('config_language_id') . '.' . (int)$this->config->get('config_store_id') . '.' . $this->config->get('config_customer_group_id') . '.' . (int)$limit);
-	
+
 		if (!$product_data) {
-			$query = $this->db->query("SELECT p.product_id FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) WHERE p.status = '1' AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' ORDER BY p.viewed DESC, p.date_added DESC LIMIT " . (int)$limit);
-	
-			foreach ($query->rows as $result) {
-				$product_data[$result['product_id']] = $this->getProduct($result['product_id']);
-			}
-			
+		$query = $this->db->query("SELECT p.product_id FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) WHERE p.status = '1' AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "' ORDER BY p.viewed DESC, p.date_added DESC LIMIT " . (int)$limit);
+
+		foreach ($query->rows as $result) {
+			$product_data[$result['product_id']] = $this->getProduct($result['product_id']);
+		}
+
 			$this->cache->set('product.popular.' . (int)$this->config->get('config_language_id') . '.' . (int)$this->config->get('config_store_id') . '.' . $this->config->get('config_customer_group_id') . '.' . (int)$limit, $product_data);
 		}
 		
@@ -486,7 +486,7 @@ class ModelCatalogProduct extends Model {
 
 				foreach ($words as $word) {
 					$implode[] = "pd.tag LIKE '%" . $this->db->escape($word) . "%'";
-				}
+			}
 
 				if ($implode) {
 					$sql .= " " . implode(" AND ", $implode) . "";
@@ -536,4 +536,36 @@ class ModelCatalogProduct extends Model {
 			return 0;
 		}
 	}
+        
+        //Custom Added: Forbidden check
+        public function checkForbidden($product_ids) {
+		$sql = "SELECT p.product_id,p.model,p.price,pd.name FROM " . DB_PREFIX . "product p LEFT JOIN ". DB_PREFIX."product_description pd ON (p.product_id = pd.product_id) WHERE p.product_id in (".implode(",",$product_ids). ") and forbidden_for_dd = 1"; 
+                $query = $this->db->query($sql);
+                $products = array();
+		
+                if ($query->num_rows) {
+                    for($i = 0; $i < $query->num_rows; $i++) {
+                         $products[$i]['product_id'] = $query->rows[$i]['product_id'];
+                         $products[$i]['name'] = $query->rows[$i]['name'];
+                         $products[$i]['price'] = $query->rows[$i]['price'];
+                    }
+                    return $products;
+		} else {
+			return 0;
+		}
+	}
+        
+        //Custom Added: To record forbidden product removal
+        public function add_product_removal_record($forbidden_product) {
+            
+            $customer_id = $this->customer->getId();
+            
+            foreach($forbidden_product as $data) {
+                
+                $this->db->query("INSERT INTO `" . DB_PREFIX . "product_removal_record` SET product_id = '" . (int)$data['product_id'] . "', product_name = '" . $this->db->escape($data['name']) . "', quantity = '".(int)$data['quantity']."', price = '".(float)$data['price']."',customer_id = '" . (int)$customer_id. "', date_added = NOW()");
+            
+            }
+	
+        }
+        
 }

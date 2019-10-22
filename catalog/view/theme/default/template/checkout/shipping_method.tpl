@@ -15,7 +15,7 @@
     <?php } else { ?>
     <input type="radio" name="shipping_method" value="<?php echo $quote['code']; ?>" />
     <?php } ?>
-    <?php echo $quote['title']; ?> - <?php echo $quote['text']; ?></label>
+    <?php echo $quote['title']; ?></label>
 </div>
 <?php } ?>
 <?php } else { ?>
@@ -27,6 +27,19 @@
 <p>
   <textarea name="comment" rows="8" class="form-control"><?php echo $comment; ?></textarea>
 </p>
+<?php if(isset($express_option) && $express_option == 1) { ?>
+<div class="check-box">
+    <label>
+        <?php if($speedy_delivery) { ?>
+        <input type="checkbox" name="speedy_delivery" value="yes" checked= ""/> 
+        <?php } else { ?>
+        <input type="checkbox" name="speedy_delivery" value="yes"/>
+        <?php } ?>
+        <font color = "green"><b>Choose UGO Express Delivery</b></font>
+      <br/><p>Additional delivery charges may apply*</p> 
+    </label>
+</div> 
+<?php } ?>
 <div class="buttons">
   <div class="pull-right">
     <input type="button" value="<?php echo $button_continue; ?>" id="button-shipping-method" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary" />

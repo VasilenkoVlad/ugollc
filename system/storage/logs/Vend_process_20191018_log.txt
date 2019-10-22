@@ -1,0 +1,13 @@
+2019-10-18T15:24:59 - Success to update the customer address in Vend POS for order Id : 75884
+2019-10-18T15:25:23 - Success to update the customer address in Vend POS for order Id : 75884
+2019-10-18T15:25:26 - Sales record created in VendPOS for the order id 75884
+2019-10-18T15:25:26 - Updated status for order id: 75884 in opencart.
+2019-10-18T15:26:57 - Success to update the customer address in Vend POS for order Id : 75885
+2019-10-18T15:26:59 - Sales record created in VendPOS for the order id 75885
+2019-10-18T15:27:00 - Updated status for order id: 75885 in opencart.
+2019-10-18T15:28:13 - Success to update the customer address in Vend POS for order Id : 75886
+2019-10-18T15:30:46 - Success to update the customer address in Vend POS for order Id : 75886
+2019-10-18T15:31:26 - Success to update the customer address in Vend POS for order Id : 75886
+2019-10-18T15:31:53 - Success to update the customer address in Vend POS for order Id : 75886
+2019-10-18T15:31:56 - Sales record created in VendPOS for the order id 75886
+2019-10-18T15:31:56 - Updated status for order id: 75886 in opencart.

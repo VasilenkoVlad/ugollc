@@ -1,0 +1,26 @@
+2019-10-15T12:42:49 - Success to update the customer address in Vend POS for order Id : 75819
+2019-10-15T12:42:52 - Sales record created in VendPOS for the order id 75819
+2019-10-15T12:42:53 - Updated status for order id: 75819 in opencart.
+2019-10-15T12:52:31 - Success to update the customer address in Vend POS for order Id : 75823
+2019-10-15T12:52:34 - Sales record created in VendPOS for the order id 75823
+2019-10-15T12:52:34 - Updated status for order id: 75823 in opencart.
+2019-10-15T13:57:31 - Success to update the customer address in Vend POS for order Id : 75826
+2019-10-15T13:57:34 - Sales record created in VendPOS for the order id 75826
+2019-10-15T13:57:34 - Updated status for order id: 75826 in opencart.
+2019-10-15T14:04:40 - Failed on success page because the order data not found.
+2019-10-15T14:14:28 - Failed on success page because the order data not found.
+2019-10-15T14:44:41 - Success to update the customer address in Vend POS for order Id : 75830
+2019-10-15T14:44:43 - Sales record created in VendPOS for the order id 75830
+2019-10-15T14:44:43 - Updated status for order id: 75830 in opencart.
+2019-10-15T15:13:04 - Success to update the customer address in Vend POS for order Id : 75831
+2019-10-15T15:13:07 - Sales record created in VendPOS for the order id 75831
+2019-10-15T15:13:07 - Updated status for order id: 75831 in opencart.
+2019-10-15T15:30:22 - Success to update the customer address in Vend POS for order Id : 75832
+2019-10-15T15:30:25 - Sales record created in VendPOS for the order id 75832
+2019-10-15T15:30:25 - Updated status for order id: 75832 in opencart.
+2019-10-15T15:32:03 - Success to update the customer address in Vend POS for order Id : 75833
+2019-10-15T15:32:06 - Sales record created in VendPOS for the order id 75833
+2019-10-15T15:32:06 - Updated status for order id: 75833 in opencart.
+2019-10-15T15:38:26 - Success to update the customer address in Vend POS for order Id : 75834
+2019-10-15T15:38:29 - Sales record created in VendPOS for the order id 75834
+2019-10-15T15:38:29 - Updated status for order id: 75834 in opencart.

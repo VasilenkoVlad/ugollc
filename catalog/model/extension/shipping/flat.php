@@ -47,7 +47,7 @@ class ModelExtensionShippingFlat extends Model {
 
         //Custom Added : Get delivery fee based on selected payment type
         function getDeliveryFee($payment_method_code) {  
-            
+
             //Get cart total
             $cartCost = $this->cart->getSubTotal();
             
@@ -68,7 +68,7 @@ class ModelExtensionShippingFlat extends Model {
             //To get delivery by cart amount range
             if($cartCost < floatval($query->rows[0]['cart_amount1'])){
                 $basic_fee = $query->rows[0]['basic_fee'];
-                if(isset($_SESSION['speedy_delivery']) && $_SESSION['speedy_delivery'] == 'yes'){
+                if(isset($this->session->data['speedy_delivery']) && $this->session->data['speedy_delivery'] == 'yes'){
                     $speedy_delivery_fee = $this->getSpeedyDeliveryFee($query->rows[0]['delivery_fee_id']);
                 }
                     $type =   $query->rows[0]['fee_type'];
@@ -76,7 +76,7 @@ class ModelExtensionShippingFlat extends Model {
             }elseif($cartCost > floatval ($query->rows[$total_rows -1]['cart_amount1'])){
               
                 $basic_fee = $query->rows[$total_rows -1]['basic_fee'];
-                if(isset($_SESSION['speedy_delivery']) && $_SESSION['speedy_delivery'] == 'yes'){
+                if(isset($this->session->data['speedy_delivery']) && $this->session->data['speedy_delivery'] == 'yes'){
                     $speedy_delivery_fee = $this->getSpeedyDeliveryFee($query->rows[$total_rows -1]['delivery_fee_id']);
                 }
                 $type =   $query->rows[$total_rows -1]['fee_type'];
@@ -85,8 +85,8 @@ class ModelExtensionShippingFlat extends Model {
                 for($i=1; $i < count($query->rows)- 1; $i++){
                     if($cartCost >= floatval ($query->rows[$i]['cart_amount1']) && $cartCost <= floatval ($query->rows[$i]['cart_amount2']) && $cartCost < floatval ($query->rows[$i+1]['cart_amount1']) ){
                        $basic_fee = $query->rows[$i]['basic_fee'];
-                       if(isset($_SESSION['speedy_delivery']) && $_SESSION['speedy_delivery'] == 'yes'){
-                            $speedy_delivery_fee = $this->getSpeedyDeliveryFee($query->rows[$i]['delivery_fee_id']);
+                       if(isset($this->session->data['speedy_delivery']) && $this->session->data['speedy_delivery'] == 'yes'){
+                           $speedy_delivery_fee = $this->getSpeedyDeliveryFee($query->rows[$i]['delivery_fee_id']);
                         }
                        $type =   $query->rows[$i]['fee_type'];
                     }
@@ -194,9 +194,6 @@ class ModelExtensionShippingFlat extends Model {
             }
             return $range_fee;
         }
-        
-        
-        
         
         function getDeliveryFeeId($payment_method_id){
             

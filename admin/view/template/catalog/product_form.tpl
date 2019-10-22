@@ -111,6 +111,12 @@
                 </div>
               </div>
               <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-vend-product-id"><span data-toggle="tooltip" title="<?php echo $help_vend_product_id; ?>"><?php echo $entry_vend_product_id; ?></span></label>
+                <div class="col-sm-10">
+                  <input type="text" name="vend_product_id" value="<?php echo $vend_product_id; ?>" placeholder="<?php echo $entry_vend_product_id; ?>" id="input-upc" class="form-control" />
+                </div>
+              </div>  
+              <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-upc"><span data-toggle="tooltip" title="<?php echo $help_upc; ?>"><?php echo $entry_upc; ?></span></label>
                 <div class="col-sm-10">
                   <input type="text" name="upc" value="<?php echo $upc; ?>" placeholder="<?php echo $entry_upc; ?>" id="input-upc" class="form-control" />

@@ -8,16 +8,19 @@ class ModelExtensionTotalCoupon extends Model {
 		if ($coupon_query->num_rows) {
 			if ($coupon_query->row['total'] > $this->cart->getSubTotal()) {
 				$status = false;
+				$warning_text = "Warning :Add some more product. You need to buy product of $".round($coupon_query->row['total'],2)." to apply this coupon!";
 			}
 
 			$coupon_history_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "coupon_history` ch WHERE ch.coupon_id = '" . (int)$coupon_query->row['coupon_id'] . "'");
 
 			if ($coupon_query->row['uses_total'] > 0 && ($coupon_history_query->row['total'] >= $coupon_query->row['uses_total'])) {
 				$status = false;
+				$warning_text = 'Warning :Sorry Coupon expired!';
 			}
 
 			if ($coupon_query->row['logged'] && !$this->customer->getId()) {
 				$status = false;
+				$warning_text = 'Warning : Please logged in!';
 			}
 
 			if ($this->customer->getId()) {
@@ -25,6 +28,7 @@ class ModelExtensionTotalCoupon extends Model {
 
 				if ($coupon_query->row['uses_customer'] > 0 && ($coupon_history_query->row['total'] >= $coupon_query->row['uses_customer'])) {
 					$status = false;
+					$warning_text = 'Warning : You already used this coupon allowed number of times!';
 				}
 			}
 
@@ -69,14 +73,17 @@ class ModelExtensionTotalCoupon extends Model {
 
 				if (!$product_data) {
 					$status = false;
+					$warning_text = 'Warning :Not Applicable on these products or categories!';
 				}
 			}
 		} else {
 			$status = false;
+			$warning_text = 'Warning :Invalid coupon!';
 		}
 
-		if ($status) {
-			return array(
+		if ($status == true) {
+			return array(    
+				'coupon_status'        => $status,
 				'coupon_id'     => $coupon_query->row['coupon_id'],
 				'code'          => $coupon_query->row['code'],
 				'name'          => $coupon_query->row['name'],
@@ -92,9 +99,14 @@ class ModelExtensionTotalCoupon extends Model {
 				'status'        => $coupon_query->row['status'],
 				'date_added'    => $coupon_query->row['date_added']
 			);
+		}elseif ($status == false){
+			return array(
+				'coupon_status'  => false,
+				'warning_text' => $warning_text
+			);
 		}
 	}
-
+        
 	public function getTotal($total) {
 		if (isset($this->session->data['coupon'])) {
 			$this->load->language('extension/total/coupon');

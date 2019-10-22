@@ -254,41 +254,35 @@ class ControllerCheckoutPaymentMethod extends Controller {
                         $fee = $this->get_delivery_fee($this->request->post['payment_method']);
                         $delivery_fee = $fee['basic_fee'];
                         $speedy_delivery_fee = $fee['speedy_delivery_fee'];
-                        $delivery_cost = $delivery_fee + $speedy_delivery_fee;
-                        $this->session->data['shipping_method']['output_cost'] = $delivery_fee;
-                        $this->session->data['shipping_method']['text'] = "$".$delivery_fee;
-                        
+                
                          if (isset($this->session->data['speedy_delivery']) && $this->session->data['speedy_delivery'] == "yes") {
-                           $this->session->data['speedy_delivery_fee']['cost'] = $speedy_delivery_fee;
-                           $this->session->data['speedy_delivery_fee']['text'] = $speedy_delivery_fee; 
+                                   $this->session->data['speedy_fee']['cost'] = $speedy_delivery_fee;
+                                   $this->session->data['speedy_fee']['title'] = 'Speedy Delivery Fee'; 
+                                   $this->session->data['speedy_fee']['tax_class_id'] = $this->config->get('flat_tax_class_id');
                          }
+                         $this->session->data['shipping_method']['tax_class_id'] = $this->config->get('flat_tax_class_id');
                          
                     } else if(isset($this->session->data['shipping_method']) && $this->session->data['shipping_method']['code'] == "free.free" && (isset($this->session->data['speedy_delivery']) && $this->session->data['speedy_delivery'] == 'yes')) {
                         $speedy_delivery_fee = $this->get_max_speedy_delivery_fee($this->request->post['payment_method']);
-                        $delivery_fee = $speedy_delivery_fee;
-                        $delivery_cost = $speedy_delivery_fee;
-                        $this->session->data['shipping_method']['output_cost'] = 0.00;
-                        $this->session->data['shipping_method']['text'] = "$.$delivery_fee";
-                        $this->session->data['speedy_delivery_fee']['cost'] = $speedy_delivery_fee;
-                        $this->session->data['speedy_delivery_fee']['text'] = $speedy_delivery_fee;
-                        $this->session->data['shipping_method']['tax_class_id'] = $this->config->get('flat_tax_class_id');
+                        $this->session->data['speedy_fee']['cost'] = $speedy_delivery_fee;
+                        $this->session->data['speedy_fee']['title'] = 'Speedy Delivery Fee'; 
+                        $this->session->data['speedy_fee']['tax_class_id'] = $this->config->get('flat_tax_class_id');
                     }
                     
                      
-                    if(isset($delivery_cost)) {
-                        $this->session->data['shipping_method']['cost'] = $delivery_cost;
+                    if(isset($delivery_fee)) {
+                        $this->session->data['shipping_method']['cost'] = $delivery_fee;
                     } 
                     
                     //Get distance delivery fee
                     if(isset($this->session->data['shipping_method']) && $this->session->data['shipping_method']['code'] != "pickup.pickup" ) {
                         $distance_delivery_fee = $this->get_distance_delivery_fee($this->request->post['payment_method']);
                         if($distance_delivery_fee != null & $distance_delivery_fee > 0) {
-                            $this->session->data['shipping_method']['cost'] += $distance_delivery_fee;
-                            $this->session->data['distance_delivery_fee']['cost'] = $distance_delivery_fee;
-                            $this->session->data['distance_delivery_fee']['text'] = $distance_delivery_fee;
-                            $this->session->data['shipping_method']['tax_class_id'] = $this->config->get('flat_tax_class_id');
+                            $this->session->data['distance_fee']['cost'] = $distance_delivery_fee;
+                            $this->session->data['distance_fee']['title'] = 'Distance Fee';
+                            $this->session->data['distance_fee']['tax_class_id'] = $this->config->get('flat_tax_class_id');
                         }else {
-                            unset($this->session->data['distance_delivery_fee']);
+                            unset($this->session->data['distance_fee']);
                         }
                     }
                    
@@ -328,26 +322,15 @@ class ControllerCheckoutPaymentMethod extends Controller {
                             $warning .= " which are not eligible for Dining Dollar Payment. Please select any other payment method.";        
 
                         }
-                    } elseif($this->request->get['newFlow'] == 1) {
+                    } elseif($this->request->get['newFlow'] == '1') {
                         
                         if ($result_cnt > 0 && $result_cnt < 2 ) {
                             
-                            //$warning = "Your cart includes product " .$result[0]['name']. " is not permitted using payment type: Dining Dollars.  You can purchase this product using other payment types such as:  Gift cards, credit cards, or cash.";
                             $warning = "Your cart includes product which is not permitted using payment type: Dining Dollars.  You can purchase this product using other payment types such as Gift cards, Credit cards, or Cash.";
 
                         } else {
                             $warning ="Your cart includes products ";
-
-                            /*for($i = 0; $i < $result_cnt - 1; $i++) {
-                                $warning .= $result[$i]['name'];
-                                if($i < $result_cnt - 2 ) {
-                                   $warning .=", "; 
-                                } else {
-                                    $warning .=" and "; 
-                                }
-                            }*/
-
-                            //$warning .= " ".$result[$result_cnt-1]['name']." ";
+                            
                             $warning .= "which are not permitted using payment type: Dining Dollars.  You can purchase these products using other payment types such as Gift cards, Credit cards, or Cash.";        
                             
                         }
@@ -370,8 +353,8 @@ class ControllerCheckoutPaymentMethod extends Controller {
                                 }
                             }
                             $json['price'] = array_sum($forbidden_product_prices); 
-                            $this->remove_forbidden_product($forbidden_product_array);
-                    }   
+                    }  
+                        $this->remove_forbidden_product($forbidden_product_array);
                         $json['error']['warning'] = $warning;
                         $this->response->addHeader('Content-Type: application/json');
                         
@@ -404,7 +387,7 @@ class ControllerCheckoutPaymentMethod extends Controller {
                 }
             }
 
-            $payment_method_id = $this->model_extension_shipping_flat->getPaymentCode('BAMA Cash');
+            $payment_method_id = $this->model_extension_shipping_flat->getPaymentCode($payment_method_code);
            
             $result = $this->model_extension_shipping_flat->getDeliveryFee($payment_method_id);
             
@@ -475,7 +458,6 @@ class ControllerCheckoutPaymentMethod extends Controller {
 		$json = array();
 		// Remove forbiddebn product from cart
 		if ($forbidden_product_array) {
-                        //for($i = 0; $i < count($keys); $i++) 
                          foreach($forbidden_product_array as $fp_array) { 
                             $this->cart->remove($fp_array['key']);
                         }
