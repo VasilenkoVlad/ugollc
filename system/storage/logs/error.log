@@ -378,3 +378,5 @@
 2019-10-21 12:20:16 - PHP Notice:  Undefined index: type in /opt/lampp/htdocs/ugollc/catalog/model/extension/total/coupon.php on line 144
 2019-10-21 12:20:16 - PHP Notice:  Undefined index: type in /opt/lampp/htdocs/ugollc/catalog/model/extension/total/coupon.php on line 146
 2019-10-21 12:20:16 - PHP Notice:  Undefined index: shipping in /opt/lampp/htdocs/ugollc/catalog/model/extension/total/coupon.php on line 164
+2019-10-21 13:31:21 - PHP Notice:  Undefined index: coupon_status in /opt/lampp/htdocs/ugollc/catalog/controller/extension/total/coupon.php on line 44
+2019-10-21 13:31:28 - PHP Notice:  Undefined index: coupon_status in /opt/lampp/htdocs/ugollc/catalog/controller/extension/total/coupon.php on line 44
