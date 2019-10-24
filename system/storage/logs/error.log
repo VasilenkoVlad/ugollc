@@ -380,3 +380,4 @@
 2019-10-21 12:20:16 - PHP Notice:  Undefined index: shipping in /opt/lampp/htdocs/ugollc/catalog/model/extension/total/coupon.php on line 164
 2019-10-21 13:31:21 - PHP Notice:  Undefined index: coupon_status in /opt/lampp/htdocs/ugollc/catalog/controller/extension/total/coupon.php on line 44
 2019-10-21 13:31:28 - PHP Notice:  Undefined index: coupon_status in /opt/lampp/htdocs/ugollc/catalog/controller/extension/total/coupon.php on line 44
+2019-10-24 16:53:25 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/admin/view/template/boundry/boundary.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
