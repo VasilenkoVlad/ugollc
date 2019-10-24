@@ -48,8 +48,6 @@ class ControllerCheckoutSuccess extends Controller {
             unset($this->session->data['credits']);
             
 			unset($this->session->data['totals']);
-                        unset($this->session->data['speedy_delivery']);
-                        unset($this->session->data['distance_delivery_fee']);
                     }
 
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -68,7 +66,7 @@ class ControllerCheckoutSuccess extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_checkout'),
-			'href' => $this->url->link('checkout/checkout', '', 'SSL')
+			'href' => $this->url->link('checkout/checkout', '', true)
 		);
 
 		$data['breadcrumbs'][] = array(
@@ -79,7 +77,7 @@ class ControllerCheckoutSuccess extends Controller {
 		$data['heading_title'] = $this->language->get('heading_title');
 
 		if ($this->customer->isLogged()) {
-			$data['text_message'] = sprintf($this->language->get('text_customer'), $this->url->link('account/account', '', 'SSL'), $this->url->link('account/order', '', 'SSL'), $this->url->link('account/download', '', 'SSL'), $this->url->link('information/contact'));
+			$data['text_message'] = sprintf($this->language->get('text_customer'), $this->url->link('account/account', '', true), $this->url->link('account/order', '', true), $this->url->link('account/download', '', true), $this->url->link('information/contact'));
 		} else {
 			$data['text_message'] = sprintf($this->language->get('text_guest'), $this->url->link('information/contact'));
 		}
@@ -95,8 +93,7 @@ class ControllerCheckoutSuccess extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
-		$this->response->setOutput($this->load->view('common/success', $data));
-		
+		$this->response->setOutput($this->load->view('common/success', $data));		
 	}
 
 	public function generate_vend_receipt($order_id=0) 
@@ -123,7 +120,6 @@ class ControllerCheckoutSuccess extends Controller {
 				if($oc_vend_id)
 				{
 					//call to vend POS API
-					//$sale_id 	= $this->vendpos->vend_automation($order_data);	
                                         $vend_data 	= $this->vendpos->vend_automation($order_data);
                                         $sale_id = $vend_data['sale_id'];
                                         $status = $vend_data['vend_order_status'];
@@ -133,7 +129,6 @@ class ControllerCheckoutSuccess extends Controller {
 						'id'			=> $oc_vend_id,
 						'order_id'		=> $order_id,
 						'vend_sale_id'	=> $sale_id,
-						//'status'		=> 'Processed'
 					);
 
 					if($sale_id && $status=='ONACCOUNT')
