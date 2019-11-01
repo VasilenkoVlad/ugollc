@@ -6,43 +6,43 @@ final class Front {
 
 	public function __construct($registry) {
 		$this->registry = $registry;
+                $this->registry->set('vendposwebhook', new Vendposwebhook($this->registry));
+                $this->registry->set('vendsales', new Vendsales($this->registry));
 	}
-	
-	public function addPreAction(Action $pre_action) {
+
+	public function addPreAction($pre_action) {
 		$this->pre_action[] = $pre_action;
 	}
-	
-	public function dispatch(Action $action, Action $error) {
-		$this->error = $error;
 
+	public function dispatch($action, $error) {
+		$this->error = $error;
+               
 		foreach ($this->pre_action as $pre_action) {
 			$result = $this->execute($pre_action);
-
-			if ($result instanceof Action) {
+			if ($result) {
 				$action = $result;
 
 				break;
 			}
 		}
 
-		while ($action instanceof Action) {
+		while ($action) {
 			$action = $this->execute($action);
 		}
 	}
 
-	private function execute(Action $action) {
+	private function execute($action) {
 		$result = $action->execute($this->registry);
-
-		if ($result instanceof Action) {
-			return $result;
-		} 
-		
-		if ($result instanceof Exception) {
+		if (is_object($result)) {
+			$action = $result;
+		} elseif ($result === false) {
 			$action = $this->error;
-			
-			$this->error = null;
-			
-			return $action;
+
+			$this->error = '';
+		} else {
+			$action = false;
 		}
+
+		return $action;
 	}
 }

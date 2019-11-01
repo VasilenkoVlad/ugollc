@@ -5,7 +5,7 @@ if (file_exists('../../config.php')) {
 }
 
 // DIR
-define('DIR_API_APPLICATION', '/var/www/html/ugo/api/v1/catalog/');
-define('DIR_API_SYSTEM', '/var/www/html/ugo/api/v1/system/');
+define('DIR_API_APPLICATION', '/var/www/html/ugollc/api/v1/catalog/');
+define('DIR_API_SYSTEM', '/var/www/html/ugollc/api/v1/system/');
 
 ?>

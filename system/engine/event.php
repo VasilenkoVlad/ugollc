@@ -12,9 +12,10 @@ class Event {
 		$this->registry = $registry;
 	}
 
-	public function register($trigger, Action $action) {
-		$this->data[$trigger][] = $action;
+	public function register($key, $action) {
+		$this->data[$key][] = $action;
 	}
+
 	
 	public function trigger($event, array $args = array()) {
 		foreach ($this->data as $trigger => $actions) {
