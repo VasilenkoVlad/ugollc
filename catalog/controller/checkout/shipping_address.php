@@ -162,7 +162,43 @@ class ControllerCheckoutShippingAddress extends Controller {
 				// Custom field validation
 				$this->load->model('account/custom_field');
 
-				$custom_fields = $this->model_account_custom_field->getCustomFields($this->config->get('config_customer_group_id'));
+				/*start the alteration code*/
+
+                            $custom_fields = $this->model_account_custom_field->getCustomFields($this->config->get('config_customer_group_id'));
+                             include('admin/model/extension/store_boundry.php');
+                             $adminBoundry = new ModelExtensionStoreBoundry( $this->registry );
+                             $boundry_extension = $adminBoundry->getBoundryDetails();
+                             if( isset( $boundry_extension['status'] ) && $boundry_extension['status']=='1' ){
+                               $this->load->library('geocode');
+                               $Geocode = new Geocode();
+
+                                 $Address  = '';
+                                 if( isset( $this->request->post['company'] ) && !empty( $this->request->post['company'])){
+                                   $Address    = $this->request->post['company'];
+                                 }
+
+                               $Address      = $Address.','.$this->request->post['address_1'] .",".$this->request->post['city'].",".$this->request->post['postcode'];    
+                               if( isset( $Address ) && !empty( $Address )) {
+                                 $Address = urlencode($Address);
+                                 $geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?key=AIzaSyDK_ECq9TWXRh2pHykP_nES5fAM3Mv260M&address='.$Address.'&sensor=false');
+                                 $output  = json_decode($geocode);
+                                 $status  = $output->status;
+                                 if ( $status =="OK" ) {
+                                 $lat1  = $output->results[0]->geometry->location->lat;
+                                 $long1 = $output->results[0]->geometry->location->lng;
+                                   $distance         = $Geocode->getStoreHouseDistance( $lat1, $long1,$boundry_extension);
+                                   $intDistanceMiles = $distance  * 0.62137;
+                                   if( $intDistanceMiles > $boundry_extension['store_radius']  ) {
+                                     $json['error']['warning'] =  $this->language->get('We are unable to deliver to this address at this time. Please specify another address.');
+                                   }
+                                 }else{
+                                   $json['error']['warning'] =  $this->language->get('We are unable to deliver to this address at this time. Please specify another address.');
+                                 }
+                               }
+                             }
+                       /*End the code for the creation*/
+              
+                    $custom_fields = $this->model_account_custom_field->getCustomFields($this->config->get('config_customer_group_id'));
 
 				foreach ($custom_fields as $custom_field) {
 					if (($custom_field['location'] == 'address') && $custom_field['required'] && empty($this->request->post['custom_field'][$custom_field['custom_field_id']])) {

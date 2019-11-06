@@ -204,7 +204,33 @@ class ControllerCommonColumnLeft extends Controller {
 					'children' => array()		
 				);
 			}
-					
+                        
+                        // Oauth Api
+			$oauth_api = array();
+			
+			if ($this->user->hasPermission('access', 'api/oauth_client')) {
+				$oauth_api[] = array(
+					'name'     => $this->language->get('text_oauth_client'),
+					'href'     => $this->url->link('api/oauth_client', 'token=' . $this->session->data['token'], true),
+					'children' => array()	
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'api/setting')) {
+				$oauth_api[] = array(
+					'name'	   => $this->language->get('text_setting'),
+					'href'     => $this->url->link('api/setting', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($oauth_api) {
+				$extension[] = array(
+					'name'	   => $this->language->get('text_api'),
+					'href'     => '',
+					'children' => $oauth_api
+				);
+			}		
 			if ($extension) {					
 				$data['menus'][] = array(
 					'id'       => 'menu-extension',

@@ -92,6 +92,7 @@ $_['text_weight_class']              = 'Weight Classes';
 $_['text_length_class']              = 'Length Classes';
 $_['text_zone']                      = 'Zones';
 $_['text_recurring']                 = 'Recurring Profiles';
+$_['text_oauth_client']              = 'Oauth Client';
 $_['text_order_recurring']           = 'Recurring Orders';
 $_['text_openbay_extension']         = 'OpenBay Pro';
 $_['text_openbay_dashboard']         = 'Dashboard';
