@@ -93,4 +93,25 @@ class ControllerAccountReward extends Controller {
 
 		$this->response->setOutput($this->load->view('account/reward', $data));
 	}
+        
+        //Custom function for API to get Store Credit  :
+        public function credit() {
+            $data = array();
+            $customer_id = $this->customer->getId();
+            $this->load->model('checkout/buy_credit');
+            $data['credit'] = $this->model_checkout_buy_credit->getTransactionTotal($customer_id);
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput($data);
+	}
+        
+        //Custom function for API to get Store Credit via post method for older version of app  :
+        public function credit_via_post() {
+            $data = array();
+            $customer_email = $this->request->post['customer_email']; 
+            $customer_info = $this->getCustomer($customer_email);
+            $query = $this->db->query("SELECT SUM(amount) AS total FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_info['customer_id']. "'");
+            $data['credit']= $query->row['total'];
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput($data);
+	}
 }

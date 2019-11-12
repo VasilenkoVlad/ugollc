@@ -70,13 +70,13 @@ class ControllerCartCartBaseAPI extends ApiController {
 	public function get() {
 		$dataold = parent::getInternalRouteData('checkout/cart');
 
-		ApiException::evaluateErrors($dataold, true);
+                ApiException::evaluateErrors($dataold, true);
 
 		$data['type'] = $this->type;
 		$data['name'] = $this->name;
 		
 		$order_total_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "extension WHERE `type` = 'total' AND `code` = '" . $this->db->escape($this->name) . "'");
-		if (!$order_total_query->num_rows) {
+                if (!$order_total_query->num_rows) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "extension SET `type` = 'total', `code` = '" . $this->db->escape($this->name) . "'");
 		}
 		
@@ -86,8 +86,8 @@ class ControllerCartCartBaseAPI extends ApiController {
 		$data['customer_group_id'] = (version_compare(VERSION, '2.0') < 0) ? (int)$this->customer->getCustomerGroupId() : (int)$this->customer->getGroupId();
 		$data['currency'] = $this->session->data['currency'];
 		$data['settings'] = $this->getSettings();
-		
-		$order_totals = $this->db->query("SELECT * FROM " . DB_PREFIX . "extension WHERE `type` = 'total' ORDER BY `code` ASC")->rows;
+
+                $order_totals = $this->db->query("SELECT * FROM " . DB_PREFIX . "extension WHERE `type` = 'total' ORDER BY `code` ASC")->rows;
 		$sort_order = array();
 		foreach ($order_totals as $key => $value) $sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
 		array_multisort($sort_order, SORT_ASC, $order_totals);
@@ -95,21 +95,21 @@ class ControllerCartCartBaseAPI extends ApiController {
 		$total_data = array();
 		$order_total = 0;
 		$taxes = $this->cart->getTaxes();
-		
+
 		foreach ($order_totals as $ot) {
                     if($ot['code'] != 'credit') {
 			if (!$this->config->get($ot['code'] . '_status')) continue;
-			$this->load->model('total/' . $ot['code']);
-			
+			$this->load->model('extension/total/' . $ot['code']);
+
 			if ($ot['code'] != $this->name) {
-				$this->{'model_total_' . $ot['code']}->getTotal($total_data, $order_total, $taxes);
+				$this->{'model_extension_total_' . $ot['code']}->getTotal($total_data, $order_total, $taxes);
 			} else {
-				$this->{'model_total_' . $ot['code']}->getTotal($total_data, $order_total, $taxes, true);
+				$this->{'model_extension_total_' . $ot['code']}->getTotal($total_data, $order_total, $taxes, true);
 				break;
 			}
                     }    
 		}
-		
+
 		$data['grouped_options'] = array();
 		foreach ($total_data as $td) {
 			if ($td['code'] != $this->name) continue;
@@ -122,7 +122,7 @@ class ControllerCartCartBaseAPI extends ApiController {
 
 		}
 
-		$this->response->setOutput($cart);
+                $this->response->setOutput($cart);
 	}
 
 	/**
@@ -181,6 +181,8 @@ protected function processCart($cart) {
 protected function processProducts($products) {
 	foreach ($products as &$product) {
 		$product['thumb_image'] = $product['thumb'];
+                $product['price'] = str_replace("decimal_point",".",$product['price']);
+                $product['total'] = str_replace("decimal_point",".",$product['price']);
 		$product['in_stock'] = $product['stock'];
 		unset($product['stock']);
 		unset($product['thumb']);
@@ -207,8 +209,15 @@ protected function processCredits($credits) {
 }
 
 protected function processTotals($totals) {
-	return $totals;
-}
+    
+        foreach ($totals as &$total) {
+
+                    $total['text'] = str_replace("decimal_point",".",$total['text']);
+
+        }
+        
+        return $totals;
+    }
 
 }
 

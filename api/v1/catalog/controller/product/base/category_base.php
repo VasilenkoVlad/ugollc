@@ -45,7 +45,7 @@ class ControllerProductCategoryBaseAPI extends ApiController {
 
 			$data = parent::getInternalRouteData('product/category');
 
-			if(isset($data['text_error'])) {
+                        if(isset($data['text_error'])) {
 				throw new ApiException(ApiResponse::HTTP_RESPONSE_CODE_NOT_FOUND, ErrorCodes::ERRORCODE_CATEGORY_NOT_FOUND, $data['text_error']);
 			}
 
@@ -145,10 +145,10 @@ class ControllerProductCategoryBaseAPI extends ApiController {
 		$category['products'] = $data['products'];
 
 		$filterGroups = null;
-		if(method_exists($this->model_catalog_category, 'getCategoryFilters')) {
+		//if(method_exists($this->model_catalog_category, 'getCategoryFilters')) {
 			$this->load->model('catalog/category');
 			$filterGroups = $this->model_catalog_category->getCategoryFilters($id);
-		}
+		//}
 		$category['filtergroups'] = $filterGroups;
 
 		return $this->processCategory($category);
@@ -161,7 +161,7 @@ class ControllerProductCategoryBaseAPI extends ApiController {
 
 		if(isset($category['filtergroups'])) {
 			$category['filtergroups'] = $this->processFilterGroups($category['filtergroups']);
-		}
+                }
 
 		return $category;
 	}
@@ -173,7 +173,9 @@ class ControllerProductCategoryBaseAPI extends ApiController {
 		unset($product['href']);
 		if($product['price'] === false) {
 			$product['price'] = null;
-		}
+                }else{
+                    $product['price'] = str_replace("decimal_point",".",$product['price']);
+                }
 		if($product['tax'] === false) {
 			$product['tax'] = null;
 		}

@@ -20,7 +20,7 @@ class ControllerCartStoreCreditBaseAPI extends ApiController {
 
 	public function get() {
 
-		$data = parent::getInternalRouteData('checkout/reward/credit');
+		$data = parent::getInternalRouteData('account/reward/credit');
 		
                 ApiException::evaluateErrors($data,false);
                 
@@ -29,7 +29,7 @@ class ControllerCartStoreCreditBaseAPI extends ApiController {
         
         public function post() {
 
-		$data = parent::getInternalRouteData('checkout/reward/credit_via_post');
+		$data = parent::getInternalRouteData('account/reward/credit_via_post');
 		
                 ApiException::evaluateErrors($data,false);
                 

@@ -131,7 +131,9 @@ print_r(json_encode($product));
 
 		if($product['price'] === false) {
 			$product['price'] = null;
-		}
+		}else{
+                    $product['price'] = str_replace("decimal_point",".",$product['price']);
+                }
 		if($product['tax'] === false) {
 			$product['tax'] = null;
 		}

@@ -149,7 +149,8 @@ class ControllerCheckoutCart extends Controller {
 				}
 
 				$data['products'][] = array(
-					'cart_id'   => $product['cart_id'],
+                                        'cart_id'   => $product['cart_id'],
+					'key'       => $product['key'],
 					'thumb'     => $image,
 					'name'      => $product['name'],
 					'model'     => $product['model'],
@@ -158,7 +159,8 @@ class ControllerCheckoutCart extends Controller {
 					'quantity'  => $product['quantity'],
 					'stock'     => $product['stock'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
 					'reward'    => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
-					'price'     => $price,
+					'points'    => $product['points'],
+                                        'price'     => $price,
 					'total'     => $total,
 					'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
 				);
@@ -258,7 +260,7 @@ class ControllerCheckoutCart extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
-			$this->response->setOutput($this->load->view('checkout/cart', $data));
+                        $this->response->setOutput($this->load->view('checkout/cart', $data));
 		} else {
 			$data['heading_title'] = $this->language->get('heading_title');
 
@@ -497,4 +499,20 @@ class ControllerCheckoutCart extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+        
+        //Unsetting coupon session
+        public function clearcoupon() {
+              unset($this->session->data['coupon']);
+        }
+        
+        public function clear_reward() {
+              unset($this->session->data['reward']);
+        }
+        
+        public function getFreeShipping(){
+            $json = array();
+            $json['min_free_shipping_amnt'] = $this->config->get('free_total');
+            $this->response->addHeader('Content-Type: application/json');
+	    $this->response->setOutput($json);
+        }
 }
