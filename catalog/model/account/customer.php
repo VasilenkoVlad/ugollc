@@ -153,6 +153,12 @@ class ModelAccountCustomer extends Model {
 
 		return $query->row['total'];
 	}
+        
+        public function getTotalCustomersByPhone($phone) {
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE telephone = '" . $this->db->escape($phone) . "'");
+
+		return $query->row['total'];
+	}
 
 	public function getRewardTotal($customer_id) {
 		$query = $this->db->query("SELECT SUM(points) AS total FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "'");
