@@ -349,7 +349,7 @@ class ControllerAccountRegister extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
-		$this->response->setOutput($this->load->view('account/register', $data));
+                $this->response->setOutput($this->load->view('account/register', $data));
 	}
 
 	private function validate() {
@@ -366,7 +366,7 @@ class ControllerAccountRegister extends Controller {
 		}
 
 		if ($this->model_account_customer->getTotalCustomersByEmail($this->request->post['email'])) {
-			$this->error['warning'] = $this->language->get('error_exists');
+                    $this->error['warning'] = $this->language->get('error_exists');
 		}
 
 		if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
@@ -409,9 +409,9 @@ class ControllerAccountRegister extends Controller {
                 
 		$custom_fields = $this->model_account_custom_field->getCustomFields($customer_group_id);
                 /*start the alteration code*/
-                include('admin/model/extension/store_boundry.php');
-                $adminBoundry = new ModelExtensionStoreBoundry( $this->registry );
-                $boundry_extension = $adminBoundry->getBoundryDetails();
+                include('admin/model/extension/module/boundary.php');
+                $adminBoundry = new ModelExtensionModuleBoundary( $this->registry );
+                $boundry_extension = $adminBoundry->getBoundaryDetails();
 
                 if( isset( $boundry_extension['status'] ) && $boundry_extension['status']=='1' ){
                   $this->load->library('geocode');

@@ -120,6 +120,9 @@ require_once(DIR_SYSTEM . 'helper/general.php');
 require_once(DIR_SYSTEM . 'helper/utf8.php');
 require_once(DIR_SYSTEM . 'helper/json.php');
 
+//Custom Library
+require_once((DIR_SYSTEM . 'library/clicksend_lib/clicksend.php'));
+
 function start($application_config) {
 	require_once(DIR_SYSTEM . 'framework.php');	
 }

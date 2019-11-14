@@ -26,3 +26,5 @@ define('DB_PASSWORD', '');
 define('DB_DATABASE', 'newugollc');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
+
+define('COUNTRY_CODE','+91');

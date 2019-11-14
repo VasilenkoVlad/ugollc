@@ -94,9 +94,9 @@ class ModelAccountCustomer extends Model {
                     $query = "SELECT value FROM oc_setting where `key` = 'config_send_sms_status' and `code` = 'config'";
                     $sms = $this->db->query($query);
                     if($sms->row['value'] == 1){
-                        $this->load->library('clicksend_lib/clicksend');
+                        //$this->load->library('clicksend_lib/clicksend');
                         $obj_clicksend = Clicksend::get_instance($this->registry);
-                        $country_code = '+1';
+                        $country_code = COUNTRY_CODE;
                         $result = $obj_clicksend->send_sms($data['telephone'],$country_code,$data['firstname']);	
                     }
                 }

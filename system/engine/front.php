@@ -8,7 +8,8 @@ final class Front {
 		$this->registry = $registry;
                 $this->registry->set('vendposwebhook', new Vendposwebhook($this->registry));
                 $this->registry->set('vendsales', new Vendsales($this->registry));
-	}
+                $this->registry->set('clicksend', new Clicksend($this->registry));    
+        }
 
 	public function addPreAction($pre_action) {
 		$this->pre_action[] = $pre_action;
