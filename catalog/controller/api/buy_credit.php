@@ -101,5 +101,16 @@ class ControllerApiBuyCredit extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+        
+        //Custom added : To get buy store credit extension configuration
+        public function api_credits_validation() {
+
+		$json = array();
+                $json['credit']['min _amount'] =sprintf("%.2f", $this->config->get('buy_credit_min'));
+		$json['credit']['max_amount'] =sprintf("%.2f",$this->config->get('buy_credit_max'));
+                $json['credit']['default_amount'] = sprintf("%.2f",$this->config->get('buy_credit_default'));
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput($json);
+	}
 
 }

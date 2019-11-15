@@ -219,7 +219,7 @@ class ControllerCheckoutPaymentMethod extends Controller {
                 }
                 
                 //Custom added : Forbidden check
-                if($this->request->post['payment_method'] == 'DD' && !isset($_SESSION['credits'])) {
+                if($this->request->post['payment_method'] == 'DD' && !isset( $this->session->data['credits'])) {
                     $warning = $this->forbidden_check();
                     if ($warning) {
                         $json['error']['warning'] = $warning;

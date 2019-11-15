@@ -31,9 +31,7 @@ class ControllerProductSearchBaseAPI extends ApiController {
 		$data = parent::getInternalRouteData('product/search');
 
 		$products = array('products' => $this->getProducts($data));
-print_r(json_encode($products));
-
-		//$this->response->setOutput($products);
+		$this->response->setOutput($products);
 	}
 	
 	/**
@@ -94,6 +92,7 @@ print_r(json_encode($products));
 			$product['special'] = null;
 		}
 		$product['thumb_image'] = $product['thumb'];
+                $product['price'] = str_replace("decimal_point",".",$product['price']);
 		unset($product['thumb']);
 
 		return $product;

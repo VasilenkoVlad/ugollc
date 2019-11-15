@@ -17,7 +17,7 @@ class ControllerCheckoutCart extends Controller {
 			'text' => $this->language->get('heading_title')
 		);
 
-		if ($this->cart->hasProducts() || !empty($this->session->data['vouchers'])) {
+		if ($this->cart->hasProducts() || !empty($this->session->data['vouchers']) || !empty($this->session->data['credits'])) {
 			$data['heading_title'] = $this->language->get('heading_title');
 
 			$data['text_recurring_item'] = $this->language->get('text_recurring_item');
@@ -164,6 +164,28 @@ class ControllerCheckoutCart extends Controller {
 					'total'     => $total,
 					'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
 				);
+			}
+                        
+                        // Store Credit
+			$data['credits'] = array();
+                        
+                        if ($this->config->get('buy_credit_image')) {
+                            $credit_image = $this->model_tool_image->resize($this->config->get('buy_credit_image'), $this->config->get($this->config->get('config_theme') . '_image_cart_width'), $this->config->get($this->config->get('config_theme') . '_image_cart_height'));
+                        } else {
+                            $credit_image = '';
+                        }
+                        $data['credit_image'] = $credit_image;
+            
+			if (!empty($this->session->data['credits'])) {
+				foreach ($this->session->data['credits'] as $key => $credit) {
+					$data['credits'][] = array(
+						'key'         => $key,
+						'description' => $credit['description'],
+						'amount'      => $this->currency->format($credit['amount'], $this->session->data['currency']),
+						'remove'      => $this->url->link('checkout/cart', 'remove=' . $key),
+                                                'thumb'       => $credit_image,
+                                            );
+				}
 			}
 
 			// Gift Voucher

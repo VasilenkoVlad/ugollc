@@ -1,5 +1,5 @@
 <?php
-class ControllerModuleApiReferralCoupon extends Controller {
+class ControllerApiReferralCoupon extends Controller {
     public function index() {
         $data['sending_reward'] =   $this->config->get('referral_coupon_referrer_sending_reward');
         $data['coupon_redeemed_reward'] =   $this->config->get('referral_coupon_referrer_reward_for_coupon_used');
@@ -17,7 +17,7 @@ class ControllerModuleApiReferralCoupon extends Controller {
   
   
     public function sendReferral() {
-        $this->load->language('module/referral_coupon');
+        $this->load->language('extension/module/referral_coupon');
         if (isset($this->request->post['referee_email']) && isset($this->request->post['referee_email'])) {
             $referrer_message = $this->request->post['referrer_message'];
             $referee_name = trim($this->request->post['referee_name']);
@@ -28,7 +28,7 @@ class ControllerModuleApiReferralCoupon extends Controller {
 
             $sending_limit = $this->getSendingLimit();
             $email_existed = $this->db->query("SELECT email FROM " . DB_PREFIX . "customer_referral_coupon WHERE email = '" . $this->db->escape($referee_email) . "' UNION SELECT email FROM " . DB_PREFIX . "customer WHERE email='" . $this->db->escape($referee_email) . "'")->num_rows;
-            $json['referee']['error']['email_existed'] = $email_existed ? $this->language->get('error_email_existed') : '';
+            $json['referee']['error']['email_existed'] = $email_existed ? "Referral already sent on this phone number" : '';
             if ($sending_limit['remain'] > 0 && !$email_existed) {
                 
                 while (empty($code)) {
@@ -74,7 +74,7 @@ class ControllerModuleApiReferralCoupon extends Controller {
                 $sms_query = "SELECT value FROM oc_setting where `key` = 'config_send_sms_status' and `code` = 'config'";
                 $sms = $this->db->query($sms_query);
                 if($sms->row['value'] == 1){
-                     $this->load->library('clicksend_lib/clicksend');
+                     //$this->load->library('clicksend_lib/clicksend');
                      $obj_clicksend = Clicksend::get_instance($this->registry);
                      $country_code = '+1';
                      $result = $obj_clicksend->send_referral_sms($to['email'],$country_code,$body);	
@@ -89,14 +89,14 @@ class ControllerModuleApiReferralCoupon extends Controller {
     } 
   
   
-    public function getSendingLimit($customer_id) {
-        $this->load->language('module/referral_coupon');
+    public function getSendingLimit() {
+        $this->load->language('extension/module/referral_coupon');
 
         $data['text'] = '';
         $data['remain'] = 1;
 
         if ($this->config->get('referral_coupon_limit') && $this->config->get('referral_coupon_period')) {
-            $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_referral_coupon WHERE referrer_id = '" . (int)$customer_id . "' AND date_added > DATE_SUB(NOW(), INTERVAL " . (int)$this->config->get('referral_coupon_period') . " HOUR) ORDER BY date_added ASC");
+            $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_referral_coupon WHERE referrer_id = '" . (int)$this->customer->getId() . "' AND date_added > DATE_SUB(NOW(), INTERVAL " . (int)$this->config->get('referral_coupon_period') . " HOUR) ORDER BY date_added ASC");
 
             $data['remain'] = $this->config->get('referral_coupon_limit') - $query->num_rows;
             if ($data['remain'] <= 0) {
@@ -125,7 +125,7 @@ class ControllerModuleApiReferralCoupon extends Controller {
     public function addReward($customer_id = 0, $order_id = 0, $reward = 0, $description = '') {
         if (!$customer_id || !$reward) return;
 
-        $this->load->language('module/referral_coupon');
+        $this->load->language('extension/module/referral_coupon');
 
         if ($this->config->get('referral_coupon_reward_type') == "point") {
           $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "' AND order_id = '" . (int)$order_id . "' AND order_id != '0'");
@@ -211,7 +211,7 @@ class ControllerModuleApiReferralCoupon extends Controller {
   
   
     public function getEmailHTML($coupon_code = '{coupon_code}', $referee_name = '{referee_name}', $referrer_message = '{referrer_message}',$firstname, $lastname) {
-        $this->load->language('module/referral_coupon');
+        $this->load->language('extension/module/referral_coupon');
         $reward_type = $this->config->get('referral_coupon_reward_type') == 'credit' ? $this->language->get('text_store_credit') : $this->language->get('text_reward_point');
         $expire_date = ($this->config->get('referral_coupon_expire')) ? date($this->language->get('date_format_short'), strtotime('today') + ($this->config->get('referral_coupon_expire') * 86400)) : '';
         $order_total = $this->currency->format($this->config->get('referral_coupon_total'), $this->session->data['currency']);

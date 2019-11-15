@@ -279,7 +279,7 @@ class ControllerAccountRegister extends Controller {
                 
 		$data['custom_fields'] = $this->model_account_custom_field->getCustomFields();
 
-		if (isset($this->request->post['custom_field'])) {
+                if (isset($this->request->post['custom_field'])) {
 			if (isset($this->request->post['custom_field']['account'])) {
 				$account_custom_field = $this->request->post['custom_field']['account'];
 			} else {
@@ -413,9 +413,9 @@ class ControllerAccountRegister extends Controller {
                 
 		$custom_fields = $this->model_account_custom_field->getCustomFields($customer_group_id);
                 /*start the alteration code*/
-                include('admin/model/extension/module/boundary.php');
-                $adminBoundry = new ModelExtensionModuleBoundary( $this->registry );
-                $boundry_extension = $adminBoundry->getBoundaryDetails();
+                //include('admin/model/extension/module/boundary.php');
+                $this->load->model('extension/module/boundary');
+                $boundry_extension = $this->model_extension_module_boundary->getBoundaryDetails();
 
                 if( isset( $boundry_extension['status'] ) && $boundry_extension['status']=='1' ){
                   $this->load->library('geocode');

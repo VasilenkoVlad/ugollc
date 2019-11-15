@@ -50,8 +50,7 @@ class ControllerProductProductBaseAPI extends ApiController {
 
 		$product = array('product' => $this->getProduct($id, $data));
 		
-print_r(json_encode($product));
-//		$this->response->setOutput($product);
+		$this->response->setOutput($product);
 	}
 
 	public function postReview($id = NULL) {
@@ -111,7 +110,7 @@ print_r(json_encode($product));
 		$product['reward_points_needed_to_buy'] = (int)$data['points'];
 		$product['attribute_groups'] = $data['attribute_groups'];
 		$product['minimum_quantity'] = (int)$data['minimum'];
-		$product['stock_status'] = $data['stock'];
+		$product['stock_status'] = $data['quantity'];
 		$product['related_products'] = $data['products'];
 		$product['rating'] = $data['rating'];
 		$product['reviews'] = $data['reviews'];

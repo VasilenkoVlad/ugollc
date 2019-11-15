@@ -85,8 +85,10 @@ class ControllerAccountOrderBaseAPI extends ApiController {
 	protected function processOrders($orders) {
 		foreach($orders as &$order) {
 			$order['order_id'] = (int)$order['order_id'];
-
+                        $order['total'] = str_replace("decimal_point",".",$order['total']);
+                        $order['date_added'] = date('d/m/Y', strtotime($order['date_added']));
 			unset($order['href']);
+                        unset($order['view']);
 		}
 
 		return $orders;
@@ -140,8 +142,9 @@ class ControllerAccountOrderBaseAPI extends ApiController {
 		$order['products'] = $this->processProducts($order['products']);
 		$order['vouchers'] = $this->processVouchers($order['vouchers']);
 		$order['totals'] = $this->processTotals($order['totals']);
-
-		return $order;
+		$order['histories'] = $this->processHistories($order['histories']);
+                $order['date_added'] = date('d/m/Y', strtotime($order['date_added']));
+                return $order;
 	}
 
 	protected function processProducts($products) {
@@ -150,8 +153,9 @@ class ControllerAccountOrderBaseAPI extends ApiController {
 
 			$params = ApiUrl::getUrlParams($product['reorder']);
 			$product['order_product_id'] = isset($params['order_product_id']) ? (int)$params['order_product_id'] : null;
-
-			unset($product['reorder']);
+                        $product['price'] = str_replace("decimal_point",".",$product['price']);
+			$product['total'] = str_replace("decimal_point",".",$product['total']);
+                        unset($product['reorder']);
 			unset($product['return']);
 		}
 
@@ -163,7 +167,17 @@ class ControllerAccountOrderBaseAPI extends ApiController {
 	}
 
 	protected function processTotals($totals) {
+            foreach($totals as &$total) {
+               $total['text'] = str_replace("decimal_point",".",$total['text']); 
+            }
 		return $totals;
+	}
+        
+        protected function processHistories($histories) {
+            foreach($histories as &$history) {
+               $history['date_added'] = date('d/m/Y', strtotime($history['date_added']));
+            }
+	       return $histories;
 	}
  
 }

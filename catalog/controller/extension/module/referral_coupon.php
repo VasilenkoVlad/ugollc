@@ -154,7 +154,7 @@ class ControllerExtensionModuleReferralCoupon extends Controller {
             $sms_query = "SELECT value FROM oc_setting where `key` = 'config_send_sms_status' and `code` = 'config'";
             $sms = $this->db->query($sms_query);
             if($sms->row['value'] == 1){
-                 $this->load->library('clicksend_lib/clicksend');
+                 //$this->load->library('clicksend_lib/clicksend');
                  $obj_clicksend = Clicksend::get_instance($this->registry);
                  $country_code = '+1';
                  $result = $obj_clicksend->send_referral_sms($to['email'],$country_code,$body);	

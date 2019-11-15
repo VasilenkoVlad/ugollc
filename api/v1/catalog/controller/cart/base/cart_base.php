@@ -202,6 +202,8 @@ protected function processVouchers($vouchers) {
 
 protected function processCredits($credits) {
 	foreach($credits as &$credit) {
+                $credit['description'] = str_replace("decimal_point",".", $credit['description']);
+                $credit['amount'] =   str_replace("decimal_point",".", $credit['description']);      
                 unset($credit['remove']);
 	}
 
