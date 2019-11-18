@@ -96,16 +96,16 @@ class ModelUserApi extends Model {
 	}
 
 	public function getApiSessions($api_id) {
-		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "api_session` WHERE api_id = '" . (int)$api_id . "'");
+		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "admin_api_session` WHERE api_id = '" . (int)$api_id . "'");
 
 		return $query->rows;
 	}
 
 	public function addApiSession($api_id, $data) {
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "api_session` SET api_id = '" . (int)$api_id . "', token = '" . $this->db->escape($data['token']) . "', date_added = NOW(), date_modified = NOW()");
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "admin_api_session` SET api_id = '" . (int)$api_id . "', token = '" . $this->db->escape($data['token']) . "', date_added = NOW(), date_modified = NOW()");
 	}
 
 	public function deleteApiSession($api_session_id) {
-		$this->db->query("DELETE FROM `" . DB_PREFIX . "api_session` WHERE api_session_id = '" . (int)$api_session_id . "'");
+		$this->db->query("DELETE FROM `" . DB_PREFIX . "admin_api_session` WHERE api_session_id = '" . (int)$api_session_id . "'");
 	}
 }

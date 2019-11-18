@@ -182,7 +182,7 @@ protected function processProducts($products) {
 	foreach ($products as &$product) {
 		$product['thumb_image'] = $product['thumb'];
                 $product['price'] = str_replace("decimal_point",".",$product['price']);
-                $product['total'] = str_replace("decimal_point",".",$product['price']);
+                $product['total'] = str_replace("decimal_point",".",$product['total']);
 		$product['in_stock'] = $product['stock'];
 		unset($product['stock']);
 		unset($product['thumb']);

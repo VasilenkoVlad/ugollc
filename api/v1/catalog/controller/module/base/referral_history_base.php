@@ -11,9 +11,18 @@
         }
 
         public function post() {
-            $data = parent::getInternalRouteData('module/api_referral_coupon/getReferralsHistory');
+            $data = parent::getInternalRouteData('api/referral_coupon/getReferralsHistory');
             ApiException::evaluateErrors($data,false);
+            $data['referrals'] = $this->processHistories($data['referrals']);
+            
             $this->response->setOutput($data);
         }
+        
+        public function processHistories($histories) {
+            foreach($histories as &$history) {
+               $history['date_added'] = date('d/m/Y', strtotime($history['date_added']));
+            }
+	       return $histories;
+	}
     }
 ?>

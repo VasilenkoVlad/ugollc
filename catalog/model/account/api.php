@@ -9,7 +9,7 @@ class ModelAccountApi extends Model {
 	public function addApiSession($api_id, $session_id, $ip) {
 		$token = token(32);
 
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "api_session` SET api_id = '" . (int)$api_id . "', token = '" . $this->db->escape($token) . "', session_id = '" . $this->db->escape($session_id) . "', ip = '" . $this->db->escape($ip) . "', date_added = NOW(), date_modified = NOW()");
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "admin_api_session` SET api_id = '" . (int)$api_id . "', token = '" . $this->db->escape($token) . "', session_id = '" . $this->db->escape($session_id) . "', ip = '" . $this->db->escape($ip) . "', date_added = NOW(), date_modified = NOW()");
 
 		return $token;
 	}
