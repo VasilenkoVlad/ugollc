@@ -373,7 +373,7 @@ class ControllerCheckoutPaymentMethod extends Controller {
 	}
         
         //Custom Added : Get delivery fee based on selected payment type
-        public function get_delivery_fee($payment_method_code) {
+        public function get_delivery_fee($payment_method_code = "") {
             $this->load->model('extension/shipping/flat');
             if(isset($this->request->post['api_call']) && isset($this->request->post['payment_method'])){
                 $payment_method_code = $this->request->post['payment_method'];
@@ -412,9 +412,9 @@ class ControllerCheckoutPaymentMethod extends Controller {
         }
         
         //Custom Added : Get speed delivery fee based on selected payment type
-        public function get_distance_delivery_fee($payment_method_code) {
+        public function get_distance_delivery_fee($payment_method_code = "") {
             $this->load->model('extension/shipping/flat');
-            
+
             if(isset($this->request->get['payment_method']) && $this->request->get['payment_method'] != "") {
                 $payment_method_code = $this->request->get['payment_method'];
             }

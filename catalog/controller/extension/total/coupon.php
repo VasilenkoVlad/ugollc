@@ -37,18 +37,25 @@ class ControllerExtensionTotalCoupon extends Controller {
 
 		$coupon_info = $this->model_extension_total_coupon->getCoupon($coupon);
 		
-                if (empty($this->request->post['coupon'])) {
-			$json['error'] = $this->language->get('error_empty');
-
-			unset($this->session->data['coupon']);
-		} elseif ($coupon_info['coupon_status'] == true) {
+                if (empty($this->request->post['coupon'])) {			
+			$json['error'] = strtoupper($this->language->get('error_empty'));
+                        unset($this->session->data['coupon']);
+			$json['status'] = "invalid";			
+		} elseif ($coupon_info['status'] == true) {			
 			$this->session->data['coupon'] = $this->request->post['coupon'];
-
-			$this->session->data['success'] = $this->language->get('text_success');
-
+			$this->session->data['success'] = strtoupper($this->language->get('text_success'));
 			$json['redirect'] = $this->url->link('checkout/cart');
-		} elseif ($coupon_info['warning_text'])  {
-                        $json['error'] = $coupon_info['warning_text'];
+			$json['status'] = "valid";
+			$json['discount'] = $coupon_info['discount'];	
+			$json['type']	= $coupon_info['type'];	
+			$json['success'] = strtoupper($this->language->get('text_success'));
+		} elseif ($coupon_info['status'] == false) {			
+			$json['error'] = strtoupper($coupon_info['warning_text']);
+			$json['status'] = "invalid";	
+		}	
+
+		if (isset($this->request->post['call_type'])) {
+		   echo json_encode($json); die();
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

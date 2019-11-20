@@ -381,3 +381,6 @@
 2019-10-21 13:31:21 - PHP Notice:  Undefined index: coupon_status in /opt/lampp/htdocs/ugollc/catalog/controller/extension/total/coupon.php on line 44
 2019-10-21 13:31:28 - PHP Notice:  Undefined index: coupon_status in /opt/lampp/htdocs/ugollc/catalog/controller/extension/total/coupon.php on line 44
 2019-10-24 16:53:25 - PHP Notice:  Error: Could not load template /opt/lampp/htdocs/ugollc/admin/view/template/boundry/boundary.tpl! in /opt/lampp/htdocs/ugollc/system/storage/modification/system/library/template/php.php on line 23
+2019-11-18 16:43:04 - PHP Warning:  fopen(/opt/lampp/htdocs/ugollc/system/storage/logs/ocmod.log): failed to open stream: Permission denied in /opt/lampp/htdocs/ugollc/system/library/log.php on line 6
+2019-11-18 16:43:04 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/log.php on line 10
+2019-11-18 16:43:05 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /opt/lampp/htdocs/ugollc/system/library/log.php on line 14

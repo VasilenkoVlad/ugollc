@@ -21,22 +21,22 @@ class APIPaymentBase {
 			),
 		"bank_transfer" => array(
 			self::IS_DIRECT_PAYMENT => false,
-			self::CONFIRMATION_ROUTE => "payment/bank_transfer/confirm",
+			self::CONFIRMATION_ROUTE => "extension/payment/bank_transfer/confirm",
 			self::AUTO_CLICK_BUTTON => false
 			),
 		"cheque" => array(
 			self::IS_DIRECT_PAYMENT => false,
-			self::CONFIRMATION_ROUTE => "payment/cheque/confirm",
+			self::CONFIRMATION_ROUTE => "extension/payment/cheque/confirm",
 			self::AUTO_CLICK_BUTTON => false
 			),
 		"cod" => array(
 			self::IS_DIRECT_PAYMENT => false,
-			self::CONFIRMATION_ROUTE => "payment/cod/confirm",
+			self::CONFIRMATION_ROUTE => "extension/payment/cod/confirm",
 			self::AUTO_CLICK_BUTTON => false
 			),
 		"free_checkout" => array(
 			self::IS_DIRECT_PAYMENT => false,
-			self::CONFIRMATION_ROUTE => "payment/free_checkout/confirm",
+			self::CONFIRMATION_ROUTE => "extension/payment/free_checkout/confirm",
 			self::AUTO_CLICK_BUTTON => false
 			),
 		"klarna_account" => array(

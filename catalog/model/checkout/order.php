@@ -239,7 +239,7 @@ class ModelCheckoutOrder extends Model {
 	}
 
 	public function addOrderHistory($order_id, $order_status_id, $comment = '', $notify = false, $override = false) {
-		$order_info = $this->getOrder($order_id);
+            $order_info = $this->getOrder($order_id);
 		
 		if ($order_info) {
 			// Fraud Detection
@@ -355,10 +355,22 @@ class ModelCheckoutOrder extends Model {
 			}
 
 			$this->cache->delete('product');
+                        
+                        //Send SMS
+                        if($order_id != NULL) {
+                            $query = "SELECT value FROM oc_setting where `key` = 'config_send_sms_status' and `code` = 'config'";
+                            $sms = $this->db->query($query);
+                            if($sms->row['value'] == 1){
+                                // $this->load->library('clicksend_lib/clicksend');
+                                 $obj_clicksend = Clicksend::get_instance($this->registry);
+                                 $country_code = '+1';
+                                 $result = $obj_clicksend->send_sms($order_info['telephone'],$country_code,$order_info['firstname'],$order_id,$order_info,$order_status_id);	
+                             }
+                        }
 			
 			// If order status is 0 then becomes greater than 0 send main html email
 			if (!$order_info['order_status_id'] && $order_status_id) {
-				// Check for any downloadable products
+                                // Check for any downloadable products
 				$download_status = false;
 	
 				$order_product_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
@@ -419,7 +431,7 @@ class ModelCheckoutOrder extends Model {
 				$data['store_url'] = $order_info['store_url'];
 				$data['customer_id'] = $order_info['customer_id'];
 				$data['link'] = $order_info['store_url'] . 'index.php?route=account/order/info&order_id=' . $order_id;
-	
+
 				if ($download_status) {
 					$data['download'] = $order_info['store_url'] . 'index.php?route=account/download';
 				} else {
@@ -639,8 +651,8 @@ class ModelCheckoutOrder extends Model {
 				}
 	
 				$text .= $language->get('text_new_footer') . "\n\n";
-	
-				$mail = new Mail();
+
+				/*$mail = new Mail();
 				$mail->protocol = $this->config->get('config_mail_protocol');
 				$mail->parameter = $this->config->get('config_mail_parameter');
 				$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
@@ -655,7 +667,7 @@ class ModelCheckoutOrder extends Model {
 				$mail->setSubject(html_entity_decode($subject, ENT_QUOTES, 'UTF-8'));
 				$mail->setHtml($this->load->view('mail/order', $data));
 				$mail->setText($text);
-				$mail->send();
+				$mail->send();*/
 	
 				// Admin Alert Mail
 				if (in_array('order', (array)$this->config->get('config_mail_alert'))) {
@@ -728,7 +740,7 @@ class ModelCheckoutOrder extends Model {
 						$text .= $order_info['comment'] . "\n\n";
 					}
 	
-					$mail = new Mail();
+					/*$mail = new Mail();
 					$mail->protocol = $this->config->get('config_mail_protocol');
 					$mail->parameter = $this->config->get('config_mail_parameter');
 					$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
@@ -743,7 +755,7 @@ class ModelCheckoutOrder extends Model {
 					$mail->setSubject(html_entity_decode($subject, ENT_QUOTES, 'UTF-8'));
 					$mail->setHtml($this->load->view('mail/order', $data));
 					$mail->setText($text);
-					$mail->send();
+					$mail->send();*/
 	
 					// Send to additional alert emails
 					$emails = explode(',', $this->config->get('config_alert_email'));

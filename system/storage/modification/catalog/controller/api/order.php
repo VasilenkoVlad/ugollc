@@ -830,9 +830,8 @@ class ControllerApiOrder extends Controller {
 		$this->load->language('api/order');
 
 		$json = array();
-echo $this->session->data['api_id']; die("shjdha");
-                if (!isset($this->session->data['api_id'])) {
-                    
+
+		if (!isset($this->session->data['api_id'])) {
 			$json['error'] = $this->language->get('error_permission');
 		} else {
 			// Add keys for missing post vars
@@ -858,7 +857,7 @@ echo $this->session->data['api_id']; die("shjdha");
 			}
 
 			$order_info = $this->model_checkout_order->getOrder($order_id);
-        
+
 			if ($order_info) {
 				$this->model_checkout_order->addOrderHistory($order_id, $this->request->post['order_status_id'], $this->request->post['comment'], $this->request->post['notify'], $this->request->post['override']);
 

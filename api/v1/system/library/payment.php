@@ -13,7 +13,7 @@ class APIPayment extends APIPaymentBase {
 	private static $customPaymentMethods = array(
 		"stripe" => array(
 			self::IS_DIRECT_PAYMENT => false,
-			self::CONFIRMATION_ROUTE => "payment/stripe/confirm",
+			self::CONFIRMATION_ROUTE => "extension/payment/stripe/confirm",
 			self::AUTO_CLICK_BUTTON => true
 			),	
 

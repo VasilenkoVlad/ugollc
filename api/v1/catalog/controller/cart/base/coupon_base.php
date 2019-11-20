@@ -17,7 +17,7 @@ class ControllerCartCouponBaseAPI extends ApiController {
 	 */
 
 	public function post() {
-		$data = parent::getInternalRouteData('checkout/coupon/coupon', true);
+		$data = parent::getInternalRouteData('extension/total/coupon/coupon', true);
 		ApiException::evaluateErrors($data);
 	}
  

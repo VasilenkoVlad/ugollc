@@ -12,7 +12,7 @@ class ControllerCommonStoreBoundaryRadiusBaseAPI extends ApiController {
 
 	
 	public function get() {
-		$store_boundary = parent::getInternalRouteData('boundry/store_base');
+		$store_boundary = parent::getInternalRouteData('api/boundary');
                 
                 $data = $store_boundary['boundry_details'];
                 

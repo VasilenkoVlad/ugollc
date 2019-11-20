@@ -98,12 +98,12 @@ class ControllerCheckoutConfirmBaseAPI extends ApiController {
 		// Add additional information for some payment methods
 		switch($paymentMethodCode) {
 			case 'cheque':
-				$action = new Action('payment/cheque');
+				$action = new Action('extension/payment/cheque');
 				$data = $action->execute($this->registry);
 				$additionInfo = $data['text_instruction'].'\n'.$data['text_payable'].'\n'.$data['payable'].'\n'.$data['text_address'].'\n'.$data['address'].'\n'.$data['text_payment'];
 				break;
 			case 'bank_transfer':
-				$action = new Action('payment/bank_transfer');
+				$action = new Action('extension/payment/bank_transfer');
 				$data = $action->execute($this->registry);
 				$additionInfo = $data['text_instruction'].'\n'.$data['text_description'].'\n'.$data['bank'].'\n'.$data['text_payment'];
 				break;
