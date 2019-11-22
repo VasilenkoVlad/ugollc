@@ -26,6 +26,11 @@ class ModelCheckoutOrder extends Model {
         	}
             
 
+        	foreach ($data['credits'] as $credit) {
+        		$this->db->query("INSERT INTO " . DB_PREFIX . "order_credit SET order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($credit['description']) . "', customer_id = '" . $this->db->escape($data['customer_id']) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', amount = '" . (float)$credit['amount'] . "', date_added = NOW()");
+        	}
+            
+
 		// Vouchers
 		if (isset($data['vouchers'])) {
 			foreach ($data['vouchers'] as $voucher) {
@@ -79,6 +84,11 @@ class ModelCheckoutOrder extends Model {
         	}
             
 
+        	foreach ($data['credits'] as $credit) {
+        		$this->db->query("INSERT INTO " . DB_PREFIX . "order_credit SET order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($credit['description']) . "', customer_id = '" . $this->db->escape($data['customer_id']) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', amount = '" . (float)$credit['amount'] . "', date_added = NOW()");
+        	}
+            
+
 		$this->model_extension_total_voucher->disableVoucher($order_id);
 
 		// Vouchers
@@ -109,6 +119,16 @@ class ModelCheckoutOrder extends Model {
         	}
             
 
+            // Credit
+    		$this->db->query("DELETE FROM " . DB_PREFIX . "order_credit WHERE order_id = '" . (int)$order_id . "'");            
+
+        	if (isset($data['credits'])) {
+                foreach ($data['credits'] as $credit) {
+            		$this->db->query("INSERT INTO " . DB_PREFIX . "order_credit SET order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($credit['description']) . "', customer_id = '" . $this->db->escape($data['customer_id']) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', amount = '" . (float)$credit['amount'] . "', date_added = NOW()");
+            	}
+        	}
+            
+
 		if (isset($data['totals'])) {
 			foreach ($data['totals'] as $total) {
 				$this->db->query("INSERT INTO " . DB_PREFIX . "order_total SET order_id = '" . (int)$order_id . "', code = '" . $this->db->escape($total['code']) . "', title = '" . $this->db->escape($total['title']) . "', `value` = '" . (float)$total['value'] . "', sort_order = '" . (int)$total['sort_order'] . "'");
@@ -127,6 +147,10 @@ class ModelCheckoutOrder extends Model {
 			$this->db->query("DELETE FROM `" . DB_PREFIX . "order_credit` WHERE order_id = '" . (int)$order_id . "'");
             $this->db->query("DELETE FROM `" . DB_PREFIX . "customer_transaction` WHERE order_id = '" . (int)$order_id . "'");
             
+
+			$this->db->query("DELETE FROM `" . DB_PREFIX . "order_credit` WHERE order_id = '" . (int)$order_id . "'");
+            $this->db->query("DELETE FROM `" . DB_PREFIX . "customer_transaction` WHERE order_id = '" . (int)$order_id . "'");
+            
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "order_total` WHERE order_id = '" . (int)$order_id . "'");
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "order_history` WHERE order_id = '" . (int)$order_id . "'");
@@ -135,6 +159,11 @@ class ModelCheckoutOrder extends Model {
 
 		// Gift Voucher
 		$this->load->model('extension/total/voucher');
+
+        	foreach ($data['credits'] as $credit) {
+        		$this->db->query("INSERT INTO " . DB_PREFIX . "order_credit SET order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($credit['description']) . "', customer_id = '" . $this->db->escape($data['customer_id']) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', amount = '" . (float)$credit['amount'] . "', date_added = NOW()");
+        	}
+            
 
         	foreach ($data['credits'] as $credit) {
         		$this->db->query("INSERT INTO " . DB_PREFIX . "order_credit SET order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($credit['description']) . "', customer_id = '" . $this->db->escape($data['customer_id']) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', amount = '" . (float)$credit['amount'] . "', date_added = NOW()");
@@ -268,7 +297,7 @@ class ModelCheckoutOrder extends Model {
 	}
 
 	public function addOrderHistory($order_id, $order_status_id, $comment = '', $notify = false, $override = false) {
-		$order_info = $this->getOrder($order_id);
+            $order_info = $this->getOrder($order_id);
 		
 		if ($order_info) {
 			// Fraud Detection
@@ -301,7 +330,7 @@ class ModelCheckoutOrder extends Model {
 					}
 				}
 			}
-
+                        
 			// If current order status is not processing or complete but new status is processing or complete then commence completing the order
 			if (!in_array($order_info['order_status_id'], array_merge($this->config->get('config_processing_status'), $this->config->get('config_complete_status'))) && in_array($order_status_id, array_merge($this->config->get('config_processing_status'), $this->config->get('config_complete_status')))) {
 				// Redeem coupon, vouchers and reward points
@@ -384,10 +413,22 @@ class ModelCheckoutOrder extends Model {
 			}
 
 			$this->cache->delete('product');
+                        
+                        //Send SMS
+                        if($order_id != NULL) {
+                            $query = "SELECT value FROM oc_setting where `key` = 'config_send_sms_status' and `code` = 'config'";
+                            $sms = $this->db->query($query);
+                            if($sms->row['value'] == 1){
+                                // $this->load->library('clicksend_lib/clicksend');
+                                 $obj_clicksend = Clicksend::get_instance($this->registry);
+                                 $country_code = '+1';
+                                 $result = $obj_clicksend->send_sms($order_info['telephone'],$country_code,$order_info['firstname'],$order_id,$order_info,$order_status_id);	
+                             }
+                        }
 			
 			// If order status is 0 then becomes greater than 0 send main html email
 			if (!$order_info['order_status_id'] && $order_status_id) {
-				// Check for any downloadable products
+                                // Check for any downloadable products
 				$download_status = false;
 	
 				$order_product_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
@@ -448,7 +489,7 @@ class ModelCheckoutOrder extends Model {
 				$data['store_url'] = $order_info['store_url'];
 				$data['customer_id'] = $order_info['customer_id'];
 				$data['link'] = $order_info['store_url'] . 'index.php?route=account/order/info&order_id=' . $order_id;
-	
+
 				if ($download_status) {
 					$data['download'] = $order_info['store_url'] . 'index.php?route=account/download';
 				} else {
@@ -579,19 +620,35 @@ class ModelCheckoutOrder extends Model {
 	
 				// Vouchers
 
+                                $data['credits'] = array();
+
+
 			$data['credits'] = array();
             
-				$data['vouchers'] = array();
-	
-				$order_voucher_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_voucher WHERE order_id = '" . (int)$order_id . "'");
-	
-				foreach ($order_voucher_query->rows as $voucher) {
-					$data['vouchers'][] = array(
-						'description' => $voucher['description'],
-						'amount'      => $this->currency->format($voucher['amount'], $order_info['currency_code'], $order_info['currency_value']),
-					);
-				}
-	
+                                        $data['vouchers'] = array();
+
+                                        $order_voucher_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_voucher WHERE order_id = '" . (int)$order_id . "'");
+
+                                        foreach ($order_voucher_query->rows as $voucher) {
+                                                $data['vouchers'][] = array(
+                                                        'description' => $voucher['description'],
+                                                        'amount'      => $this->currency->format($voucher['amount'], $order_info['currency_code'], $order_info['currency_value']),
+                                                );
+                                        }
+
+
+                                // Credits
+                                $data['credits'] = array();
+
+                                $order_credit_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_credit WHERE order_id = '" . (int)$order_id . "'");
+
+                                foreach ($order_credit_query->rows as $credit) {
+                                        $data['credits'][] = array(
+                                                'description' => $credit['description'],
+                                                'amount'      => $this->currency->format($credit['amount'], $order_info['currency_code'], $order_info['currency_value']),
+                                        );
+                                }
+            
 
 			// Credits
 			$data['credits'] = array();
@@ -684,8 +741,8 @@ class ModelCheckoutOrder extends Model {
 				}
 	
 				$text .= $language->get('text_new_footer') . "\n\n";
-	
-				$mail = new Mail();
+
+				/*$mail = new Mail();
 				$mail->protocol = $this->config->get('config_mail_protocol');
 				$mail->parameter = $this->config->get('config_mail_parameter');
 				$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
@@ -700,7 +757,7 @@ class ModelCheckoutOrder extends Model {
 				$mail->setSubject(html_entity_decode($subject, ENT_QUOTES, 'UTF-8'));
 				$mail->setHtml($this->load->view('mail/order', $data));
 				$mail->setText($text);
-				$mail->send();
+				$mail->send();*/
 	
 				// Admin Alert Mail
 				if (in_array('order', (array)$this->config->get('config_mail_alert'))) {
@@ -773,7 +830,7 @@ class ModelCheckoutOrder extends Model {
 						$text .= $order_info['comment'] . "\n\n";
 					}
 	
-					$mail = new Mail();
+					/*$mail = new Mail();
 					$mail->protocol = $this->config->get('config_mail_protocol');
 					$mail->parameter = $this->config->get('config_mail_parameter');
 					$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
@@ -788,7 +845,7 @@ class ModelCheckoutOrder extends Model {
 					$mail->setSubject(html_entity_decode($subject, ENT_QUOTES, 'UTF-8'));
 					$mail->setHtml($this->load->view('mail/order', $data));
 					$mail->setText($text);
-					$mail->send();
+					$mail->send();*/
 	
 					// Send to additional alert emails
 					$emails = explode(',', $this->config->get('config_alert_email'));
@@ -801,7 +858,44 @@ class ModelCheckoutOrder extends Model {
 					}
 				}
 			}
+                        
+                        // Purchase Store Credit
+                        $this->load->model('checkout/buy_credit');
+
+                        $order_credit_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_credit WHERE order_id = '" . (int)$order_id . "' AND credit_id = 0");
+
+                            if ($order_status_id == $this->config->get('buy_credit_order_status_id')) {
+
+                                foreach ($order_credit_query->rows as $order_credit) {
+                                    $credit_id = $this->model_checkout_buy_credit->Confirm($order_id, $order_credit, $order_status_id);
+
+                                    if ($this->config->get('buy_credit_send_email')) {
+                                        $this->model_checkout_buy_credit->ConfirmMail($order_id, $order_credit);    
+                                    }
+
+                                    $this->db->query("UPDATE " . DB_PREFIX . "order_credit SET credit_id = '" . (int)$credit_id . "', date_credit = NOW() WHERE order_credit_id = '" . (int)$order_credit['order_credit_id'] . "'");
+                                }
+                            }
 	
+
+            // Store Credit
+            $this->load->model('checkout/buy_credit');
+            
+            $order_credit_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_credit WHERE order_id = '" . (int)$order_id . "' AND credit_id = 0");
+
+    		if ($order_status_id == $this->config->get('buy_credit_order_status_id')) {
+    		  
+    		    foreach ($order_credit_query->rows as $order_credit) {
+                    $credit_id = $this->model_checkout_buy_credit->Confirm($order_id, $order_credit, $order_status_id);
+
+                    if ($this->config->get('buy_credit_send_email')) {
+                        $this->model_checkout_buy_credit->ConfirmMail($order_id, $order_credit);    
+                    }
+
+                    $this->db->query("UPDATE " . DB_PREFIX . "order_credit SET credit_id = '" . (int)$credit_id . "', date_credit = NOW() WHERE order_credit_id = '" . (int)$order_credit['order_credit_id'] . "'");
+                }
+    		}
+            
 
             // Store Credit
             $this->load->model('checkout/buy_credit');
@@ -869,4 +963,32 @@ class ModelCheckoutOrder extends Model {
 			}
 		}
 	}
+        
+        //Custom Added : To return UGO credit
+        public function add_Transaction($order_id,$amount) {
+            $customer_query = $this->db->query("SELECT customer_id,telephone,firstname from `".DB_PREFIX."order` where order_id ='".$order_id."'");
+            if($customer_query->row['customer_id'] != null) {
+                $customer_id = $customer_query->row['customer_id'];
+                $add_transaction_query = $this->db->query("INSERT INTO " . DB_PREFIX . "customer_transaction SET customer_id = '" . (int)$customer_id . "', order_id = '" . (int)$order_id . "', description = 'Credit', amount = '" . (float)$amount . "', date_added = NOW()");
+                if($add_transaction_query) {
+                    //Send SMS
+                    $query = "SELECT value FROM oc_setting where `key` = 'config_send_sms_status' and `code` = 'config'";
+                    $sms = $this->db->query($query);
+                    if($sms->row['value'] == 1){
+                         $this->load->library('clicksend_lib/clicksend');
+                         $obj_clicksend = Clicksend::get_instance($this->registry);
+                         $country_code = '+1';
+                         $result = $obj_clicksend->send_add_transaction_sms($customer_query->row['telephone'],$country_code,$customer_query->row['firstname'],$order_id,$amount);	
+                     }
+                }
+                
+            }
+			
+	}
+        
+        //Custom Added : To check if store credit used as payment method
+        public function check_store_credit_order($order_id){
+            $order_store_credit = $this->db->query("SELECT * from `" . DB_PREFIX . "order_total` where code = 'credit' and order_id = '".$order_id."'");
+            return $order_store_credit;
+        }
 }
