@@ -11,17 +11,22 @@ class ModelExtensionTotalDistanceFee extends Model {
 
 			if ($this->session->data['distance_fee']['tax_class_id']) {
 				$tax_rates = $this->tax->getRates($this->session->data['distance_fee']['cost'], $this->session->data['distance_fee']['tax_class_id']);
-
-				foreach ($tax_rates as $tax_rate) {
-					if (!isset($total['taxes'][$tax_rate['tax_rate_id']])) {
-						$total['taxes'][$tax_rate['tax_rate_id']] = $tax_rate['amount'];
-					} else {
-						$total['taxes'][$tax_rate['tax_rate_id']] += $tax_rate['amount'];
-					}
-				}
+                                
+                                if(!isset($this->request->get['api_call']) || $this->request->get['api_call'] != 1) {
+                                    foreach ($tax_rates as $tax_rate) {
+                                            if (!isset($total['taxes'][$tax_rate['tax_rate_id']])) {
+                                                    $total['taxes'][$tax_rate['tax_rate_id']] = $tax_rate['amount'];
+                                            } else {
+                                                    $total['taxes'][$tax_rate['tax_rate_id']] += $tax_rate['amount'];
+                                            }
+                                    }
+                                }    
 			}
-
-			$total['total'] += $this->session->data['distance_fee']['cost'];
-		}
+                        
+                         if(!isset($this->request->get['api_call']) || $this->request->get['api_call'] != 1) {
+                            $total['total'] += $this->session->data['distance_fee']['cost'];
+                         }
+                           
+                }
 	}
 }

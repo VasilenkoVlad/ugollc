@@ -11,7 +11,7 @@
         }
 
         public function post() {
-            $data = parent::getInternalRouteData('checkout/apicouponconfirm', true);
+            $data = parent::getInternalRouteData('api/coupon/confirm', true);
             $json['id'] = $data['order_total_id'];
             echo json_encode($json);
         }

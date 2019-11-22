@@ -67,10 +67,12 @@ class ControllerCheckoutPaymentAddress extends Controller {
 
 		$json = array();
 
+		//Commented user logged in check in order to perform payment address save from mobile app
 		// Validate if customer is logged in.
-		if (!$this->customer->isLogged()) {
-			$json['redirect'] = $this->url->link('checkout/checkout', '', true);
-		}
+		//if (!$this->customer->isLogged()) {
+		//	$json['redirect'] = $this->url->link('checkout/checkout', '', 'SSL');
+		//}
+
 
 		// Validate cart has products and has stock.
 		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
@@ -154,9 +156,9 @@ class ControllerCheckoutPaymentAddress extends Controller {
 				$custom_fields = $this->model_account_custom_field->getCustomFields($this->config->get('config_customer_group_id'));
                                 
                                 /*start the alteration code*/
-                                  include('admin/model/extension/store_boundry.php');
-                                  $adminBoundry = new ModelExtensionStoreBoundry( $this->registry );
-                                  $boundry_extension = $adminBoundry->getBoundryDetails();
+                                //include('admin/model/extension/module/boundary.php');
+                                 $this->load->model('extension/module/boundary');
+                                 $boundry_extension = $this->model_extension_module_boundary->getBoundaryDetails();
 
                                   if( isset( $boundry_extension['status'] ) && $boundry_extension['status']=='1' ){
                                     $this->load->library('geocode');

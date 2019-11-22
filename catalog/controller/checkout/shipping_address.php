@@ -84,9 +84,10 @@ class ControllerCheckoutShippingAddress extends Controller {
 		}
 
 		// Validate cart has products and has stock.
-		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])&& empty($this->session->data['credits'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
 			$json['redirect'] = $this->url->link('checkout/cart');
 		}
+                
 
 		// Validate minimum quantity requirements.
 		$products = $this->cart->getProducts();
@@ -162,12 +163,13 @@ class ControllerCheckoutShippingAddress extends Controller {
 				// Custom field validation
 				$this->load->model('account/custom_field');
 
-				/*start the alteration code*/
+				
 
                             $custom_fields = $this->model_account_custom_field->getCustomFields($this->config->get('config_customer_group_id'));
-                             include('admin/model/extension/store_boundry.php');
-                             $adminBoundry = new ModelExtensionStoreBoundry( $this->registry );
-                             $boundry_extension = $adminBoundry->getBoundryDetails();
+                            /*start the alteration code*/ 
+                            //include('admin/model/extension/module/boundary.php');
+                             $this->load->model('extension/module/boundary');
+                             $boundry_extension = $this->model_extension_module_boundary->getBoundaryDetails();
                              if( isset( $boundry_extension['status'] ) && $boundry_extension['status']=='1' ){
                                $this->load->library('geocode');
                                $Geocode = new Geocode();

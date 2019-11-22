@@ -40,4 +40,21 @@ class ControllerApiCoupon extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+        
+        public function confirm() {
+        $coupon_code = $this->request->post['coupon_code'];
+        $order_id = $this->request->post['order_id'];
+	$json = array();
+        $this->load->model('checkout/api_coupon_confirm');
+        $customer = $this->model_checkout_api_coupon_confirm->getCustomerId($order_id);
+        $customer_id = $customer['customer_id']; 
+        $coupon_info = $this->model_checkout_api_coupon_confirm->getCoupon($coupon_code);
+        if($coupon_info){
+            $order_total_id = $this->model_checkout_api_coupon_confirm->addApiOrderTotal($coupon_info,$order_id);
+            $json['order_total_id'] = $order_total_id ;
+            
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($json));         
+        }
+    }
 }
