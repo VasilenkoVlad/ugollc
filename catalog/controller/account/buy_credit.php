@@ -18,27 +18,20 @@ class ControllerAccountBuyCredit extends Controller {
             $this->session->data['error'] = $this->language->get('error_logged');
 
             $this->response->redirect($this->url->link('account/login', '', 'SSL'));
-    	} else if ($this->cart->hasProducts()) {
-
-            $this->session->data['redirect'] = $this->url->link('account/buy_credit', '', 'SSL');
-
-            $this->session->data['error'] = $this->language->get('error_cart');
-
-            $this->response->redirect($this->url->link('checkout/cart', '', 'SSL'));
     	} 
 
 		if (!isset($this->session->data['credits'])) {
 			$this->session->data['credits'] = array();
 		}
 
-        if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
             $this->session->data['credits'][mt_rand()] = array(
-				'description'     => sprintf($this->language->get('text_desc'), $this->currency->format($this->currency->convert($this->request->post['amount'], $this->session->data['currency'], $this->config->get('config_currency')), $this->session->data['currency'])),
-                                'customer_id'     => $this->customer->getId(),
-				'firstname'       => $this->customer->getFirstname(),
-				'lastname'        => $this->customer->getLastname(),
-				'email'           => $this->customer->getEmail(),
-				'amount'          => $this->currency->convert($this->request->post['amount'], $this->session->data['currency'], $this->config->get('config_currency'))
+				'description'      => sprintf($this->language->get('text_desc'), $this->currency->format($this->currency->convert($this->request->post['amount'], $this->session->data['currency'], $this->config->get('config_currency')), $this->session->data['currency'])),
+                'customer_id'      => $this->customer->getId(),
+				'firstname'        => $this->customer->getFirstname(),
+				'lastname'         => $this->customer->getLastname(),
+				'email'            => $this->customer->getEmail(),
+				'amount'           => $this->currency->convert($this->request->post['amount'], $this->session->data['currency'], $this->config->get('config_currency'))
 			);
 
             $this->response->redirect($this->url->link('account/buy_credit/success'));
@@ -135,10 +128,8 @@ class ControllerAccountBuyCredit extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
-
-		$this->response->setOutput($this->load->view('account/buy_credit', $data));
 		
-
+		$this->response->setOutput($this->load->view('account/buy_credit', $data));
 	}
 
 	public function success() {
@@ -174,8 +165,6 @@ class ControllerAccountBuyCredit extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 
 		$this->response->setOutput($this->load->view('common/success', $data));
-		
-
 	}
 
 	protected function validate() {

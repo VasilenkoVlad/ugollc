@@ -10,6 +10,15 @@ class ModelExtensionTotalSubTotal extends Model {
 				$sub_total += $voucher['amount'];
 			}
 		}
+                
+                if (!empty($this->session->data['credits'])) { 
+                    
+                    foreach ($this->session->data['credits'] as $credit) { 
+                        
+                        $sub_total += $credit['amount']; 
+                        
+                    } 
+                } 
 
 		$total['totals'][] = array(
 			'code'       => 'sub_total',

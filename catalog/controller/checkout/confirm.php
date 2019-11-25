@@ -267,21 +267,21 @@ class ControllerCheckoutConfirm extends Controller {
 				}
 			}
 
-			// Store Credit
-			$order_data['credits'] = array();
-
-			if (!empty($this->session->data['credits'])) {
-				foreach ($this->session->data['credits'] as $credit) {
-					$order_data['credits'][] = array(
-    					'description'      => $credit['description'],
-    					'customer_id'      => $credit['customer_id'],
-    					'firstname'       => $credit['firstname'],
-    					'lastname'        => $credit['lastname'],
-    					'email'            => $credit['email'],
-    					'amount'           => $credit['amount']
-					);
-				}
-			}
+			// Store Credit 
+                        $order_data['credits'] = array(); 
+                        if (!empty($this->session->data['credits'])) { 
+                            foreach ($this->session->data['credits'] as $credit) { 
+                                $order_data['credits'][] = array( 
+                                        'description' => $credit['description'], 
+                                        'customer_id' => $credit['customer_id'], 
+                                        'firstname' => $credit['firstname'], 
+                                        'lastname' => $credit['lastname'], 
+                                        'email' => $credit['email'], 
+                                        'amount' => $credit['amount'] 
+                                    ); 
+                            } 
+                        } 
+                            
             
 			$order_data['comment'] = $this->session->data['comment'];
 			$order_data['total'] = $total_data['total'];
@@ -435,17 +435,16 @@ class ControllerCheckoutConfirm extends Controller {
 				}
 			}
 
-			// Store Credit
-			$data['credits'] = array();
-
-			if (!empty($this->session->data['credits'])) {
-				foreach ($this->session->data['credits'] as $credit) {
-					$data['credits'][] = array(
-						'description' => $credit['description'],
-						'amount'      => $this->currency->format($credit['amount'],$this->session->data['currency'])
-					);
-				}
-			}
+			// Store Credit 
+                        $data['credits'] = array(); 
+                        if (!empty($this->session->data['credits'])) { 
+                            foreach ($this->session->data['credits'] as $credit) { 
+                                $data['credits'][] = array( 
+                                    'description' => $credit['description'], 
+                                    'amount' => $this->currency->format($credit['amount'], $this->session->data['currency']) 
+                                    ); 
+                            } 
+                        } 
             
                         $data['totals'] = array();
 			foreach ($order_data['totals'] as $total) {

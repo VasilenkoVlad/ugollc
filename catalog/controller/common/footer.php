@@ -18,6 +18,7 @@ class ControllerCommonFooter extends Controller {
 		$data['text_account'] = $this->language->get('text_account');
 		$data['text_order'] = $this->language->get('text_order');
 		$data['text_wishlist'] = $this->language->get('text_wishlist');
+                $data['text_buy_credit'] = $this->language->get('text_buy_credit');
 		$data['text_newsletter'] = $this->language->get('text_newsletter');
 
 		$data['footer_top'] = $this->load->controller('common/footer_top');
@@ -48,6 +49,7 @@ class ControllerCommonFooter extends Controller {
 		$data['account'] = $this->url->link('account/account', '', true);
 		$data['order'] = $this->url->link('account/order', '', true);
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
+                $data['buy_credit'] = $this->url->link('account/buy_credit', '', 'SSL'); $data['buy_credit_status'] = $this->config->get('buy_credit_status'); 
 		$data['newsletter'] = $this->url->link('account/newsletter', '', true);
 
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));

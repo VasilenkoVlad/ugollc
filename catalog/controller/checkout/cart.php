@@ -150,7 +150,7 @@ class ControllerCheckoutCart extends Controller {
 
 				$data['products'][] = array(
                                         'cart_id'   => $product['cart_id'],
-					'key'       => $product['key'],
+					'key'       => $product['cart_id'],
 					'thumb'     => $image,
 					'name'      => $product['name'],
 					'model'     => $product['model'],
@@ -166,28 +166,24 @@ class ControllerCheckoutCart extends Controller {
 				);
 			}
                         
-                        // Store Credit
-			$data['credits'] = array();
+                        // Store Credit 
+                        $data['credits'] = array(); 
+                        if (!empty($this->session->data['credits'])) { 
+                            foreach ($this->session->data['credits'] as $key => $credit) { 
+                                $data['credits'][] = array( 'key' => $key, 'description' => $credit['description'], 'amount' => $this->currency->format($credit['amount'], $this->session->data['currency']), 'remove' => $this->url->link('checkout/cart', 'remove=' . $key) ); 
+                                
+                            } 
+                        } 
+                        if ($this->config->get('buy_credit_image')){ 
+                            $credit_image = $this->model_tool_image->resize($this->config->get('buy_credit_image'), $this->config->get($this->config->get('config_theme') . '_image_cart_width'), $this->config->get($this->config->get('config_theme') . '_image_cart_height')); 
+                            
+                        } else { 
+                            $credit_image = ''; 
+                            
+                        } 
                         
-                        if ($this->config->get('buy_credit_image')) {
-                            $credit_image = $this->model_tool_image->resize($this->config->get('buy_credit_image'), $this->config->get($this->config->get('config_theme') . '_image_cart_width'), $this->config->get($this->config->get('config_theme') . '_image_cart_height'));
-                        } else {
-                            $credit_image = '';
-                        }
-                        $data['credit_image'] = $credit_image;
-            
-			if (!empty($this->session->data['credits'])) {
-				foreach ($this->session->data['credits'] as $key => $credit) {
-					$data['credits'][] = array(
-						'key'         => $key,
-						'description' => $credit['description'],
-						'amount'      => $this->currency->format($credit['amount'], $this->session->data['currency']),
-						'remove'      => $this->url->link('checkout/cart', 'remove=' . $key),
-                                                'thumb'       => $credit_image,
-                                            );
-				}
-			}
-
+                        $data['credit_image'] = $credit_image; 
+                        
 			// Gift Voucher
 			$data['vouchers'] = array();
 
@@ -309,6 +305,11 @@ class ControllerCheckoutCart extends Controller {
 		$this->load->language('checkout/cart');
 
 		$json = array();
+                
+                //Custom Added : For solely purchase of credits, remove other products from cart
+                if (!empty($this->session->data['credits'])) {
+                    unset($this->session->data['credits']);
+		} 
 
 		if (isset($this->request->post['product_id'])) {
 			$product_id = (int)$this->request->post['product_id'];
@@ -416,8 +417,7 @@ class ControllerCheckoutCart extends Controller {
 					array_multisort($sort_order, SORT_ASC, $totals);
 				}
 
-				$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
-			} else {
+$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0) + (isset($this->session->data['credits']) ? count($this->session->data['credits']) : 0), $this->currency->format($total, $this->session->data['currency'])); 			} else {
 				$json['redirect'] = str_replace('&amp;', '&', $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']));
 			}
 		}
@@ -462,6 +462,7 @@ class ControllerCheckoutCart extends Controller {
 			$this->cart->remove($this->request->post['key']);
 
 			unset($this->session->data['vouchers'][$this->request->post['key']]);
+                        unset($this->session->data['credits'][$this->request->post['key']]);
 
 			$json['success'] = $this->language->get('text_remove');
 

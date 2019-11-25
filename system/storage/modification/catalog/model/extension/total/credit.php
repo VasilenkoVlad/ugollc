@@ -50,7 +50,7 @@ class ModelExtensionTotalCredit extends Model {
 					'sort_order' => $this->config->get('credit_sort_order')
 				);
                                 if(!isset($this->request->get['api_call']) || $this->request->get['api_call'] != 1) {
-                                            $total -= $credit;
+                                            $total['total'] -= $credit;
                                 }
 			}
 		}

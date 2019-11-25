@@ -2,11 +2,54 @@
 class ModelExtensionTotalCredit extends Model {
 	public function getTotal($total) {
 		$this->load->language('extension/total/credit');
+                
+                $status = true; 
+                
+                $total_credit =0; 
+                
+                if (isset($this->session->data['credits'])) { 
+                    
+                    foreach ($this->session->data['credits'] as $credit) { 
+                        
+                        $total_credit += $credit['amount']; 
+                        
+                    } 
+                    
+                } 
+                
+                if (!empty($this->session->data['credits'])) { 
+                    
+                    if ($this->config->get('buy_credit_use') == 'never') { 
+                        
+                        $status = false; 
+                        
+                    } elseif ($this->config->get('buy_credit_use') == 'cart'){ 
+                        
+                        $status = true; 
+                        
+                    }
+                    
+                } else { 
+                    
+                    $status = true; 
+                    
+                } 
 
 		$balance = $this->customer->getBalance();
 
-		if ((float)$balance) {
-			$credit = min($balance, $total);
+		if ((float)$balance && $status) { 
+			if (isset($this->session->data['credits']) && $this->config->get('buy_credit_use') == 'never') { 
+                            $credit = 0; 
+                            
+                        } elseif (isset($this->session->data['credits']) && $this->config->get('buy_credit_use') == 'cart'){ 
+                            
+                            $credit = min($balance, (float)($total['total'] - $total_credit)); 
+                            
+                        } else { 
+                            
+                            $credit = min($balance, $total['total']); 
+                            
+                        } 
 
 			if ($credit > 0) {
 				$total['totals'][] = array(
@@ -16,7 +59,7 @@ class ModelExtensionTotalCredit extends Model {
 					'sort_order' => $this->config->get('credit_sort_order')
 				);
                                 if(!isset($this->request->get['api_call']) || $this->request->get['api_call'] != 1) {
-                                            $total -= $credit;
+                                            $total['total'] -= $credit;
                                 }
 			}
 		}

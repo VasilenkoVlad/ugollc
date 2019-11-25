@@ -70,7 +70,7 @@ class ControllerApiOrder extends Controller {
 			}
 
 			// Cart
-			if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+			if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers']) && empty($this->session->data['credits'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
 				$json['error'] = $this->language->get('error_stock');
 			}
 
@@ -237,6 +237,15 @@ class ControllerApiOrder extends Controller {
 						);
 					}
 				}
+                                
+                                // Store Credit 
+                                $order_data['credits'] = array(); 
+                                if (!empty($this->session->data['credits'])) {
+                                    foreach ($this->session->data['credits'] as $credit) { 
+                                        $order_data['credits'][] = array( 'description' => $credit['description'], 'customer_id' => $credit['customer_id'], 'firstname' => $credit['firstname'], 'lastname' => $credit['lastname'], 'email' => $credit['email'], 'amount' => $credit['amount'] ); 
+                                    } 
+                                } 
+                                    
 
 				// Order Totals
 				$this->load->model('extension/extension');

@@ -28,6 +28,14 @@
         <td class="text-right"><?php echo $product['total']; ?></td>
       </tr>
       <?php } ?>
+      <?php foreach ($credits as $credit) { ?> 
+      <tr> 
+          <td class="text-left"><?php echo $credit['description']; ?></td> 
+          <td class="text-left"></td> <td class="text-right">1</td> 
+          <td class="text-right"><?php echo $credit['amount']; ?></td> 
+          <td class="text-right"><?php echo $credit['amount']; ?></td> 
+      </tr> 
+      <?php } ?> 
       <?php foreach ($vouchers as $voucher) { ?>
       <tr>
         <td class="text-left"><?php echo $voucher['description']; ?></td>

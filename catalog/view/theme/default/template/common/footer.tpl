@@ -38,6 +38,7 @@
         <h5><?php echo $text_extra; ?></h5>
         <ul class="list-unstyled">
           <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
+          <?php if ($buy_credit_status) { ?> <li><a href="<?php echo $buy_credit; ?>"><?php echo $text_buy_credit; ?></a></li> <?php } ?>
           <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
           <li><a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
 		  <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>

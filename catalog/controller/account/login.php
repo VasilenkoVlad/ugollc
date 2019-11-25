@@ -22,6 +22,7 @@ class ControllerAccountLogin extends Controller {
 			unset($this->session->data['reward']);
 			unset($this->session->data['voucher']);
 			unset($this->session->data['vouchers']);
+                        unset($this->session->data['credits']);  
 
 			$customer_info = $this->model_account_customer->getCustomerByToken($this->request->get['token']);
 

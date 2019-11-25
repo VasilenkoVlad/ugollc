@@ -82,6 +82,27 @@
                 <td class="text-right chkprice"><?php echo $product['total']; ?></td>
               </tr>
               <?php } ?>
+             <?php foreach ($credits as $credit) { ?> 
+             <tr> 
+                 <td class="text-center">
+                     <?php if ($credit_image) { ?> 
+                        <img src="<?php echo $credit_image; ?>" alt="<?php echo $credit['description']; ?>" title="<?php echo $credit['description']; ?>" class="img-thumbnail" /> 
+                        <?php } ?>
+                 </td> 
+                 <td class="text-left">
+                     <?php echo $credit['description']; ?>
+                 </td> <td class="text-left"></td> 
+                 <td class="text-left">
+                     <div class="input-group btn-block" style="max-width: 200px;"> 
+                         <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" /> <span class="input-group-btn"> 
+                             <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger" onclick="credit.remove('<?php echo $credit['key']; ?>');"><i class="fa fa-times-circle"></i>
+                             </button> </span></div></td> <td class="text-right"><?php echo $credit['amount']; ?>
+                 </td> 
+                 <td class="text-right">
+                     <?php echo $credit['amount']; ?>
+                 </td> 
+             </tr> 
+             <?php } ?> 
               <?php foreach ($vouchers as $voucher) { ?>
               <tr>
                 <td></td>
@@ -130,4 +151,5 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<script type="text/javascript"> <!-- var credit = { 'add': function() { }, 'remove': function(key) { $.ajax({ url: 'index.php?route=checkout/cart/remove', type: 'post', data: 'key=' + key, dataType: 'json', beforeSend: function() { $('#cart > button').button('loading'); }, complete: function() { $('#cart > button').button('reset'); }, success: function(json) { // Need to set timeout otherwise it wont update the total setTimeout(function () { $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>'); }, 100); if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') { location = 'index.php?route=checkout/cart'; } else { $('#cart > ul').load('index.php?route=common/cart/info ul li'); } }, error: function(xhr, ajaxOptions, thrownError) { alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText); } }); } } --> </script> 
 <?php echo $footer; ?> 

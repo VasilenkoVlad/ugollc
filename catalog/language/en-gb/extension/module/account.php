@@ -3,6 +3,7 @@
 $_['heading_title']    = 'Account';
 
 // Text
+$_['text_buy_credit'] = 'Buy Store Credit'; 
 $_['text_register']    = 'Register';
 $_['text_login']       = 'Login';
 $_['text_logout']      = 'Logout';

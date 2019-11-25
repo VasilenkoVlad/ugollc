@@ -5,7 +5,7 @@
   <span id="cart-total"><?php echo $text_items; ?></span>
   </button>
   <ul class="dropdown-menu pull-right header-cart-toggle">
-    <?php if ($products || $vouchers) { ?>
+    <?php if ($products || $vouchers || $credits) { ?>
     <li>
       <table class="table table-striped">
         <?php foreach ($products as $product) { ?>
@@ -30,6 +30,25 @@
           <td class="text-center"><button type="button" onclick="cart.remove('<?php echo $product['cart_id']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
         </tr>
         <?php } ?>
+        <?php foreach ($credits as $credit) { ?> 
+        <tr> 
+            <td class="text-center">
+                <?php if ($credit_image) { ?> 
+                <img src="<?php echo $credit_image; ?>" alt="<?php echo $credit['description']; ?>" title="<?php echo $credit['description']; ?>" class="img-thumbnail" /> 
+                <?php } ?>
+            </td> 
+            <td class="text-left">
+                <?php echo $credit['description']; ?>
+            </td> 
+            <td class="text-right">
+                x&nbsp;1
+            </td> 
+            <td class="text-right">
+                <?php echo $credit['amount']; ?>
+            </td> <td class="text-center text-danger">
+                <button type="button" onclick="credit.remove('<?php echo $credit['key']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td> 
+        </tr> 
+        <?php } ?> 
         <?php foreach ($vouchers as $voucher) { ?>
         <tr>
           <td class="text-center"></td>

@@ -99,14 +99,16 @@ class ModelCheckoutOrder extends Model {
 		// Totals
 		$this->db->query("DELETE FROM " . DB_PREFIX . "order_total WHERE order_id = '" . (int)$order_id . "'");
 
-            // Credit
-    		$this->db->query("DELETE FROM " . DB_PREFIX . "order_credit WHERE order_id = '" . (int)$order_id . "'");            
-
-        	if (isset($data['credits'])) {
-                foreach ($data['credits'] as $credit) {
-            		$this->db->query("INSERT INTO " . DB_PREFIX . "order_credit SET order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($credit['description']) . "', customer_id = '" . $this->db->escape($data['customer_id']) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', amount = '" . (float)$credit['amount'] . "', date_added = NOW()");
-            	}
-        	}
+                // Credit 
+                
+                $this->db->query("DELETE FROM " . DB_PREFIX . "order_credit WHERE order_id = '" . (int)$order_id . "'"); 
+                
+                if (isset($data['credits'])) { 
+                    
+                    foreach ($data['credits'] as $credit) { 
+                        $this->db->query("INSERT INTO " . DB_PREFIX . "order_credit SET order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($credit['description']) . "', customer_id = '" . $this->db->escape($data['customer_id']) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', amount = '" . (float)$credit['amount'] . "', date_added = NOW()"); 
+                    } 
+                } 
             
 
 		if (isset($data['totals'])) {
@@ -123,10 +125,8 @@ class ModelCheckoutOrder extends Model {
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "order` WHERE order_id = '" . (int)$order_id . "'");
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "order_product` WHERE order_id = '" . (int)$order_id . "'");
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "order_option` WHERE order_id = '" . (int)$order_id . "'");
-
-			$this->db->query("DELETE FROM `" . DB_PREFIX . "order_credit` WHERE order_id = '" . (int)$order_id . "'");
-            $this->db->query("DELETE FROM `" . DB_PREFIX . "customer_transaction` WHERE order_id = '" . (int)$order_id . "'");
-            
+                $this->db->query("DELETE FROM `" . DB_PREFIX . "order_credit` WHERE order_id = '" . (int)$order_id . "'"); $this->db->query("DELETE FROM `" . DB_PREFIX . "customer_transaction` WHERE order_id = '" . (int)$order_id . "'"); 
+                $this->db->query("DELETE FROM `" . DB_PREFIX . "customer_transaction` WHERE order_id = '" . (int)$order_id . "'");
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "order_total` WHERE order_id = '" . (int)$order_id . "'");
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "order_history` WHERE order_id = '" . (int)$order_id . "'");
@@ -136,9 +136,11 @@ class ModelCheckoutOrder extends Model {
 		// Gift Voucher
 		$this->load->model('extension/total/voucher');
 
-        	foreach ($data['credits'] as $credit) {
-        		$this->db->query("INSERT INTO " . DB_PREFIX . "order_credit SET order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($credit['description']) . "', customer_id = '" . $this->db->escape($data['customer_id']) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', amount = '" . (float)$credit['amount'] . "', date_added = NOW()");
-        	}
+        	foreach ($data['credits'] as $credit) { 
+                    
+                    $this->db->query("INSERT INTO " . DB_PREFIX . "order_credit SET order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($credit['description']) . "', customer_id = '" . $this->db->escape($data['customer_id']) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', amount = '" . (float)$credit['amount'] . "', date_added = NOW()"); 
+                    
+                } 
             
 
 		$this->model_extension_total_voucher->disableVoucher($order_id);
@@ -605,17 +607,18 @@ class ModelCheckoutOrder extends Model {
                                         }
 
 
-                                // Credits
-                                $data['credits'] = array();
-
-                                $order_credit_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_credit WHERE order_id = '" . (int)$order_id . "'");
-
-                                foreach ($order_credit_query->rows as $credit) {
-                                        $data['credits'][] = array(
-                                                'description' => $credit['description'],
-                                                'amount'      => $this->currency->format($credit['amount'], $order_info['currency_code'], $order_info['currency_value']),
-                                        );
-                                }
+                                // Credits 
+                                $data['credits'] = array(); 
+                                
+                                $order_credit_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_credit WHERE order_id = '" . (int)$order_id . "'"); 
+                                
+                                foreach ($order_credit_query->rows as $credit) { 
+                                    
+                                    $data['credits'][] = array( 
+                                        'description' => $credit['description'], 
+                                        'amount' => $this->currency->format($credit['amount'], $order_info['currency_code'], $order_info['currency_value']), 
+                                    ); 
+                                } 
             
 				// Order Totals
 				$data['totals'] = array();
@@ -834,22 +837,27 @@ class ModelCheckoutOrder extends Model {
 	
 
             // Store Credit
-            $this->load->model('checkout/buy_credit');
+            $this->load->model('checkout/buy_credit'); 
             
-            $order_credit_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_credit WHERE order_id = '" . (int)$order_id . "' AND credit_id = 0");
-
-    		if ($order_status_id == $this->config->get('buy_credit_order_status_id')) {
-    		  
-    		    foreach ($order_credit_query->rows as $order_credit) {
-                    $credit_id = $this->model_checkout_buy_credit->Confirm($order_id, $order_credit, $order_status_id);
-
-                    if ($this->config->get('buy_credit_send_email')) {
-                        $this->model_checkout_buy_credit->ConfirmMail($order_id, $order_credit);    
-                    }
-
-                    $this->db->query("UPDATE " . DB_PREFIX . "order_credit SET credit_id = '" . (int)$credit_id . "', date_credit = NOW() WHERE order_credit_id = '" . (int)$order_credit['order_credit_id'] . "'");
-                }
-    		}
+            $order_credit_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_credit WHERE order_id = '" . (int)$order_id . "' AND credit_id = 0"); 
+            
+            if ($order_status_id == $this->config->get('buy_credit_order_status_id')) { 
+                
+                    foreach ($order_credit_query->rows as $order_credit) { 
+                        
+                        $credit_id = $this->model_checkout_buy_credit->Confirm($order_id, $order_credit, $order_status_id); 
+                        
+                        if ($this->config->get('buy_credit_send_email')) { 
+                            
+                            $this->model_checkout_buy_credit->ConfirmMail($order_id, $order_credit); 
+                            
+                        } 
+                        
+                        $this->db->query("UPDATE " . DB_PREFIX . "order_credit SET credit_id = '" . (int)$credit_id . "', date_credit = NOW() WHERE order_credit_id = '" . (int)$order_credit['order_credit_id'] . "'"); 
+                        
+                    } 
+                        
+            } 
             
 			// If order status is not 0 then send update text email
 			if ($order_info['order_status_id'] && $order_status_id && $notify) {

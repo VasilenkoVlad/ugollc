@@ -10,7 +10,7 @@ class ControllerExtensionModuleKlarnaCheckoutModule extends Controller {
 		}
 
 		// Validate cart has products and has stock.
-		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers']) && empty($this->session->data['credits'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) { 
 			$this->model_extension_payment_klarna_checkout->log('Not shown due to empty cart');
 			return false;
 		}

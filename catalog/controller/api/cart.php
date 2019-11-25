@@ -121,7 +121,8 @@ class ControllerApiCart extends Controller {
 			// Remove
 			if (isset($this->request->post['key'])) {
 				$this->cart->remove($this->request->post['key']);
-
+                                
+                                unset($this->session->data['credits'][$this->request->post['key']]); 
 				unset($this->session->data['vouchers'][$this->request->post['key']]);
 
 				$json['success'] = $this->language->get('text_success');
@@ -222,6 +223,15 @@ class ControllerApiCart extends Controller {
 					);
 				}
 			}
+                        
+                        // Credit 
+                        $json['credits'] = array(); 
+                        if (!empty($this->session->data['credits'])) { 
+                            foreach ($this->session->data['credits'] as $key => $credit) { 
+                                $json['credits'][] = array( 'code' => $credit['code'], 'description' => $credit['description'], 'customer_id' => $credit['customer_id'], 'firstname' => $credit['firstname'], 'lastname' => $credit['lastname'], 'email' => $credit['email'], 'price' => $this->currency->format($credit['amount'], $this->session->data['currency']), 'amount' => $credit['amount'] ); 
+                                
+                            } 
+                        } 
 
 			// Totals
 			$this->load->model('extension/extension');

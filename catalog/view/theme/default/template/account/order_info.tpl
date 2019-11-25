@@ -97,6 +97,16 @@
                 <a href="<?php echo $product['return']; ?>" data-toggle="tooltip" title="<?php echo $button_return; ?>" class="btn btn-danger"><i class="fa fa-reply"></i></a></td>
             </tr>
             <?php } ?>
+            <?php foreach ($credits as $credit) { ?> 
+            <tr> 
+                <td class="text-left"><?php echo $credit['description']; ?></td> 
+                <td class="text-left"></td> <td class="text-right">1</td> 
+                <td class="text-right"><?php echo $credit['amount']; ?></td> 
+                <td class="text-right"><?php echo $credit['amount']; ?></td> 
+                <?php if ($products) { ?> 
+                    <td></td> <?php } ?> 
+            </tr> 
+            <?php } ?> 
             <?php foreach ($vouchers as $voucher) { ?>
             <tr>
               <td class="text-left"><?php echo $voucher['description']; ?></td>
