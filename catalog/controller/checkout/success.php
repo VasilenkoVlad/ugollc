@@ -45,6 +45,8 @@ class ControllerCheckoutSuccess extends Controller {
 			unset($this->session->data['vouchers']);
                         unset($this->session->data['credits']);
 			unset($this->session->data['totals']);
+                        unset($this->session->data['speedy_fee']);
+                        unset($this->session->data['distance_fee']);
                     }
 
 		$this->document->setTitle($this->language->get('heading_title'));

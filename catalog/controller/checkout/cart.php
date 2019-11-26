@@ -75,7 +75,7 @@ class ControllerCheckoutCart extends Controller {
 
 			$products = $this->cart->getProducts();
 
-			foreach ($products as $product) {
+                        foreach ($products as $product) {
 				$product_total = 0;
 
 				foreach ($products as $product_2) {
@@ -150,7 +150,7 @@ class ControllerCheckoutCart extends Controller {
 
 				$data['products'][] = array(
                                         'cart_id'   => $product['cart_id'],
-					'key'       => $product['cart_id'],
+                                        'key'       => isset($product['key'])? $product['key'] : '',
 					'thumb'     => $image,
 					'name'      => $product['name'],
 					'model'     => $product['model'],
@@ -168,14 +168,8 @@ class ControllerCheckoutCart extends Controller {
                         
                         // Store Credit 
                         $data['credits'] = array(); 
-                        if (!empty($this->session->data['credits'])) { 
-                            foreach ($this->session->data['credits'] as $key => $credit) { 
-                                $data['credits'][] = array( 'key' => $key, 'description' => $credit['description'], 'amount' => $this->currency->format($credit['amount'], $this->session->data['currency']), 'remove' => $this->url->link('checkout/cart', 'remove=' . $key) ); 
-                                
-                            } 
-                        } 
                         if ($this->config->get('buy_credit_image')){ 
-                            $credit_image = $this->model_tool_image->resize($this->config->get('buy_credit_image'), $this->config->get($this->config->get('config_theme') . '_image_cart_width'), $this->config->get($this->config->get('config_theme') . '_image_cart_height')); 
+                            $credit_image = $this->model_tool_image->resize($this->config->get('buy_credit_image'), $this->config->get($this->config->get('config_theme') . '_image_cart_width'), $this->config->get($this->config->get('config_theme') . '_image_cart_height'));
                             
                         } else { 
                             $credit_image = ''; 
@@ -183,6 +177,20 @@ class ControllerCheckoutCart extends Controller {
                         } 
                         
                         $data['credit_image'] = $credit_image; 
+                        if (!empty($this->session->data['credits'])) { 
+                            foreach ($this->session->data['credits'] as $key => $credit) { 
+                                $data['credits'][] = array( 
+                                    'key' => $key,
+                                    'thumb'     => $data['credit_image'],
+                                    'description' => $credit['description'], 
+                                    'amount' => $this->currency->format($credit['amount'], $this->session->data['currency']), 
+                                    'remove' => $this->url->link('checkout/cart', 'remove=' . $key
+                                            ) 
+                                    ); 
+                                
+                            } 
+                        } 
+                        
                         
 			// Gift Voucher
 			$data['vouchers'] = array();

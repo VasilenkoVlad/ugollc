@@ -39,8 +39,8 @@
                 $this->db->query("INSERT INTO " . DB_PREFIX . "order_total SET order_id = '" . (int)$order_id . "', code = '" . $this->db->escape($code) . "', title = '" . $this->db->escape($title) . "', `value` = '" . (float)$coupon_discount . "', sort_order = '".(int)$sort_order."'");       
             }
             $customer_id = $this->customer->getId();
-            $history_id = $this->addApiCouponHistory($coupon_info, $order_id,$customer_id);           
-            return $history_id;
+            //$history_id = $this->addApiCouponHistory($coupon_info, $order_id,$customer_id);           
+            return $order_id;
             
         }
     }
