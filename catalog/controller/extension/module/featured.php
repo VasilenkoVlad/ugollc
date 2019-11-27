@@ -72,6 +72,7 @@ class ControllerExtensionModuleFeatured extends Controller {
 						'thumb'       => $image,
 						'thumb_swap'  => $thumb_swap,
 						'name'        => $product_info['name'],
+                                                'quantity'    => $product_info['quantity'],
 						'description' => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 						'price'       => $price,
 						'special'     => $special,

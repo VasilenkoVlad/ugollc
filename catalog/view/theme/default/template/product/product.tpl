@@ -269,8 +269,11 @@ $(".additional-images-container .customNavigation").addClass('owl-navigation');
               <label class="control-label" for="input-quantity"><?php echo $entry_qty; ?></label>
               <input type="text" name="quantity" value="<?php echo $minimum; ?>" size="2" id="input-quantity" class="form-control" />
               <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
-
+              <?php if($quantity > 0) {?>
               <button class="btn btn-primary btn-lg product-btn-cart" type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>"><?php echo $button_cart; ?></button>
+              <?php } else { ?> 
+              <button class="btn btn-primary btn-lg product-btn-cart" type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" style="background:red"  disabled= "true"><?php echo "Out of Stock"; ?></button>
+              <?php } ?>
             </div>
             <?php if ($minimum > 1) { ?>
             <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?></div>
@@ -442,7 +445,11 @@ $(".additional-images-container .customNavigation").addClass('owl-navigation');
         </div>
         <?php } ?>
       <div class="button-group">
+        <?php if ($product['quantity'] > 0 ) { ?>
         <button class="btn-cart" type="button" title="<?php echo $button_cart; ?>" onclick="cart.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
+        <?php } else { ?>
+         <button class="btn-cart" type="button" title="Out of Stock" disable="true" style="background:red"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md" ><?php echo $button_cart; ?></span></button>
+        <?php } ?>
         <button class="btn-wishlist" type="button" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
         <button class="btn-compare" type="button" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
       </div>

@@ -1903,3 +1903,2908 @@ LINE: 297
 ----------------------------------------------------------------
 MOD: Opencart API
 ----------------------------------------------------------------
+2019-11-26 15:14:22 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Easy Sort Order with Drag'n Drop
+
+FILE: admin/controller/common/header.php
+CODE: function index() {
+LINE: 15
+
+FILE: admin/view/template/common/header.tpl
+CODE: <script type="text/javascript" src="view/javascript/bootstrap/js/bootstrap.min.js"></script>
+LINE: 21
+
+FILE: admin/controller/common/footer.php
+CODE: function index() {
+LINE: 13
+
+FILE: admin/view/template/common/footer.tpl
+CODE: </body>
+LINE: 26
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/total.php
+CODE: if ($files) {
+LINE: 117
+
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/filter_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/option_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/manufacturer_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/information_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <tbody>
+LINE: 126
+
+FILE: admin/view/template/extension/extension/payment.tpl
+CODE: <tbody>
+LINE: 23
+
+FILE: admin/view/template/extension/extension/shipping.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/extension/extension/total.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/customer/customer_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/localisation/language_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/filter_form.tpl
+CODE: <tbody>
+LINE: 54
+CODE: $('#filter tbody').append(html);
+LINE: 103
+
+FILE: admin/view/template/design/banner_form.tpl
+CODE: <tbody>
+LINE: 70
+CODE: $('#images' + language_id + ' tbody').append(html);
+LINE: 117
+
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <tbody>
+LINE: 46
+LINE: 100
+LINE: 168
+LINE: 234
+LINE: 302
+LINE: 379
+LINE: 447
+LINE: 513
+LINE: 581
+LINE: 658
+LINE: 726
+LINE: 792
+LINE: 860
+CODE: $('#route tbody').append(html);
+LINE: 947
+CODE: $('#module-' + type + ' tbody').append(html);
+LINE: 977
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <tbody>
+LINE: 430
+LINE: 567
+LINE: 821
+LINE: 837
+CODE: html += '  	 <tbody>';
+LINE: 1218
+CODE: $('#attribute tbody').append(html);
+LINE: 1094
+CODE: $('#tab-option .tab-content').append(html);
+LINE: 1245
+CODE: $('#option-value' + option_row + ' tbody').append(html);
+LINE: 1307
+CODE: $('#images tbody').append(html);
+LINE: 1379
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data) {
+LINE: 9
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 396
+CODE: foreach ($data['product_attribute'] as $product_attribute) {
+LINE: 29
+LINE: 163
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_attribute SET
+LINE: 41
+LINE: 177
+CODE: $product_attribute_query = $this->db->query("SELECT attribute_id FROM " . DB_PREFIX . "product_attribute WHERE product_id = '" . (int)$product_id . "' GROUP BY attribute_id");
+LINE: 490
+CODE: foreach ($data['product_option'] as $product_option) {
+LINE: 49
+LINE: 189
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 57
+LINE: 198
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_option_value SET
+LINE: 58
+LINE: 199
+CODE: pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 522
+
+FILE: admin/model/catalog/category.php
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 219
+
+FILE: admin/model/catalog/filter.php
+CODE: $filter_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "filter WHERE filter_group_id = '" . (int)$filter_group_id . "'");
+LINE: 159
+
+FILE: admin/controller/catalog/category.php
+CODE: function getList() {
+LINE: 145
+CODE: 'sort_order'  => $result['sort_order'],
+LINE: 211
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProductAttributes($product_id) {
+LINE: 313
+CODE: ORDER BY a.sort_order, ad.name
+LINE: 321
+CODE: public function getProductOptions($product_id) {
+LINE: 346
+CODE: ORDER BY ov.sort_order
+LINE: 354
+----------------------------------------------------------------
+MOD: Buy Store Credit
+
+FILE: admin/controller/sale/order.php
+CODE: $data['text_voucher'] = $this->language->get('text_voucher');
+LINE: 399
+CODE: $data['button_voucher_add'] = $this->language->get('button_voucher_add');
+LINE: 455
+CODE: $data['tab_voucher'] = $this->language->get('tab_voucher');
+LINE: 469
+CODE: $data['order_vouchers'] = $this->model_sale_order->getOrderVouchers($this->request->get['order_id']);
+LINE: 598
+CODE: $data['order_vouchers'] = array();
+LINE: 670
+CODE: $data['totals'] = array();
+LINE: 1093
+CODE: $total_data = array();
+LINE: 1801
+CODE: 'total'            => $total_data,
+LINE: 1833
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['text_voucher']               = 'Add Voucher(s)';
+LINE: 54
+
+FILE: admin/language/en-gb/en-gb.php
+CODE: $_['tab_voucher']                   = 'Vouchers';
+LINE: 135
+
+FILE: admin/model/sale/order.php
+CODE: public function getOrderTotals($order_id) {
+LINE: 285
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
+LINE: 10
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <?php if ($order_products || $order_vouchers) { ?>
+LINE: 252
+CODE: <?php $voucher_row = 0; ?>
+LINE: 304
+CODE: <li><a href="#tab-voucher" data-toggle="tab"><?php echo $tab_voucher; ?></a></li>
+LINE: 339
+CODE: <div class="tab-pane" id="tab-voucher">
+LINE: 380
+CODE: if (!json['products'].length && !json['vouchers'].length) {
+LINE: 1197
+CODE: if (!shipping) {
+LINE: 1186
+CODE: if (json['totals'].length) {
+LINE: 1286
+CODE: if (!json['totals'].length && !json['products'].length && !json['vouchers'].length) {
+LINE: 1297
+CODE: var request_2 = request_1.then(function() {
+LINE: 1519
+CODE: $('#button-voucher-add').on('click', function() {
+LINE: 1854
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 185
+
+FILE: admin/view/template/sale/order_invoice.tpl
+CODE: <?php foreach ($order['voucher'] as $voucher) { ?>
+LINE: 100
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($report_customer) {
+LINE: 872
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/extension/payment/amazon_login_pay.php
+CODE: if (!empty($this->session->data['vouchers']) || !$this->cart->hasProducts() || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 139
+CODE: $order_data['vouchers'] = array();
+LINE: 387
+CODE: $data['vouchers'] = array();
+LINE: 497
+
+FILE: catalog/controller/extension/payment/klarna_checkout.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 30
+LINE: 861
+CODE: $totals = array();
+LINE: 365
+LINE: 491
+LINE: 1868
+CODE: $total = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+LINE: 531
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/extension/payment/pilibaba.php
+CODE: $order_data['comment'] = '';
+LINE: 252
+
+FILE: catalog/controller/extension/payment/pp_express.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 18
+LINE: 785
+LINE: 1270
+CODE: $data['vouchers'] = array();
+LINE: 543
+CODE: $data['products'] = $product_data;
+LINE: 1031
+CODE: $data['vouchers'] = $voucher_data;
+LINE: 1035
+
+FILE: catalog/model/extension/payment/pp_express.php
+CODE: // Totals
+LINE: 155
+
+FILE: catalog/view/theme/default/template/extension/payment/klarna_checkout_sidebar.tpl
+CODE: <?php if ($products || $vouchers) { ?>
+LINE: 48
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 81
+
+FILE: catalog/controller/extension/openbay/amazon.php
+CODE: 'vouchers' => array(),
+LINE: 238
+
+FILE: catalog/controller/extension/openbay/amazonus.php
+CODE: 'vouchers' => array(),
+LINE: 240
+----------------------------------------------------------------
+MOD: CSV Product Export
+CODE: , 'tool/log')
+LINE: 714
+----------------------------------------------------------------
+MOD: Installation without FTP settings
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['button_continue'] =
+LINE: 37
+CODE: 'extension/installer/ftp'
+LINE: 136
+CODE: function ftp(
+LINE: 301
+CODE: if (!$this->config->get('config_ftp_status')
+LINE: 319
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: $_['text_clear']
+LINE: 17
+
+FILE: admin/view/template/extension/installer.tpl
+CODE: <form class="form
+LINE: 34
+CODE: timer = setInterval(
+LINE: 87
+CODE: n next()
+LINE: 156
+CODE: 'path=' + data.path
+LINE: 167
+----------------------------------------------------------------
+MOD: Ka Extensions platform
+CODE: 'extension/modification')
+LINE: 191
+
+FILE: admin/controller/extension/modification.php
+CODE: n refresh(
+LINE: 56
+CODE: empty($data['redirect'])
+LINE: 433
+CODE: $this->getList(
+LINE: 459
+
+FILE: admin/model/extension/modification.php
+CODE: n deleteModification(
+LINE: 11
+CODE: n deleteModification(
+LINE: 35
+CODE: n disableModification(
+LINE: 53
+
+FILE: system/engine/event.php
+CODE: $this->registry = $registry
+LINE: 16
+CODE: include_once(
+LINE: 51
+CODE: $proxy = new Proxy(
+LINE: 56
+CODE: $proxy);
+LINE: 67
+CODE: function language(
+LINE: 151
+
+FILE: system/library/db.php
+CODE: public function getLastId(
+LINE: 45
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 297
+----------------------------------------------------------------
+MOD: Opencart API
+----------------------------------------------------------------
+2019-11-26 15:14:25 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Easy Sort Order with Drag'n Drop
+
+FILE: admin/controller/common/header.php
+CODE: function index() {
+LINE: 15
+
+FILE: admin/view/template/common/header.tpl
+CODE: <script type="text/javascript" src="view/javascript/bootstrap/js/bootstrap.min.js"></script>
+LINE: 21
+
+FILE: admin/controller/common/footer.php
+CODE: function index() {
+LINE: 13
+
+FILE: admin/view/template/common/footer.tpl
+CODE: </body>
+LINE: 26
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/total.php
+CODE: if ($files) {
+LINE: 117
+
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/filter_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/option_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/manufacturer_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/information_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <tbody>
+LINE: 126
+
+FILE: admin/view/template/extension/extension/payment.tpl
+CODE: <tbody>
+LINE: 23
+
+FILE: admin/view/template/extension/extension/shipping.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/extension/extension/total.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/customer/customer_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/localisation/language_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/filter_form.tpl
+CODE: <tbody>
+LINE: 54
+CODE: $('#filter tbody').append(html);
+LINE: 103
+
+FILE: admin/view/template/design/banner_form.tpl
+CODE: <tbody>
+LINE: 70
+CODE: $('#images' + language_id + ' tbody').append(html);
+LINE: 117
+
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <tbody>
+LINE: 46
+LINE: 100
+LINE: 168
+LINE: 234
+LINE: 302
+LINE: 379
+LINE: 447
+LINE: 513
+LINE: 581
+LINE: 658
+LINE: 726
+LINE: 792
+LINE: 860
+CODE: $('#route tbody').append(html);
+LINE: 947
+CODE: $('#module-' + type + ' tbody').append(html);
+LINE: 977
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <tbody>
+LINE: 430
+LINE: 567
+LINE: 821
+LINE: 837
+CODE: html += '  	 <tbody>';
+LINE: 1218
+CODE: $('#attribute tbody').append(html);
+LINE: 1094
+CODE: $('#tab-option .tab-content').append(html);
+LINE: 1245
+CODE: $('#option-value' + option_row + ' tbody').append(html);
+LINE: 1307
+CODE: $('#images tbody').append(html);
+LINE: 1379
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data) {
+LINE: 9
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 396
+CODE: foreach ($data['product_attribute'] as $product_attribute) {
+LINE: 29
+LINE: 163
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_attribute SET
+LINE: 41
+LINE: 177
+CODE: $product_attribute_query = $this->db->query("SELECT attribute_id FROM " . DB_PREFIX . "product_attribute WHERE product_id = '" . (int)$product_id . "' GROUP BY attribute_id");
+LINE: 490
+CODE: foreach ($data['product_option'] as $product_option) {
+LINE: 49
+LINE: 189
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 57
+LINE: 198
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_option_value SET
+LINE: 58
+LINE: 199
+CODE: pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 522
+
+FILE: admin/model/catalog/category.php
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 219
+
+FILE: admin/model/catalog/filter.php
+CODE: $filter_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "filter WHERE filter_group_id = '" . (int)$filter_group_id . "'");
+LINE: 159
+
+FILE: admin/controller/catalog/category.php
+CODE: function getList() {
+LINE: 145
+CODE: 'sort_order'  => $result['sort_order'],
+LINE: 211
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProductAttributes($product_id) {
+LINE: 313
+CODE: ORDER BY a.sort_order, ad.name
+LINE: 321
+CODE: public function getProductOptions($product_id) {
+LINE: 346
+CODE: ORDER BY ov.sort_order
+LINE: 354
+----------------------------------------------------------------
+MOD: Buy Store Credit
+
+FILE: admin/controller/sale/order.php
+CODE: $data['text_voucher'] = $this->language->get('text_voucher');
+LINE: 399
+CODE: $data['button_voucher_add'] = $this->language->get('button_voucher_add');
+LINE: 455
+CODE: $data['tab_voucher'] = $this->language->get('tab_voucher');
+LINE: 469
+CODE: $data['order_vouchers'] = $this->model_sale_order->getOrderVouchers($this->request->get['order_id']);
+LINE: 598
+CODE: $data['order_vouchers'] = array();
+LINE: 670
+CODE: $data['totals'] = array();
+LINE: 1093
+CODE: $total_data = array();
+LINE: 1801
+CODE: 'total'            => $total_data,
+LINE: 1833
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['text_voucher']               = 'Add Voucher(s)';
+LINE: 54
+
+FILE: admin/language/en-gb/en-gb.php
+CODE: $_['tab_voucher']                   = 'Vouchers';
+LINE: 135
+
+FILE: admin/model/sale/order.php
+CODE: public function getOrderTotals($order_id) {
+LINE: 285
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
+LINE: 10
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <?php if ($order_products || $order_vouchers) { ?>
+LINE: 252
+CODE: <?php $voucher_row = 0; ?>
+LINE: 304
+CODE: <li><a href="#tab-voucher" data-toggle="tab"><?php echo $tab_voucher; ?></a></li>
+LINE: 339
+CODE: <div class="tab-pane" id="tab-voucher">
+LINE: 380
+CODE: if (!json['products'].length && !json['vouchers'].length) {
+LINE: 1197
+CODE: if (!shipping) {
+LINE: 1186
+CODE: if (json['totals'].length) {
+LINE: 1286
+CODE: if (!json['totals'].length && !json['products'].length && !json['vouchers'].length) {
+LINE: 1297
+CODE: var request_2 = request_1.then(function() {
+LINE: 1519
+CODE: $('#button-voucher-add').on('click', function() {
+LINE: 1854
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 185
+
+FILE: admin/view/template/sale/order_invoice.tpl
+CODE: <?php foreach ($order['voucher'] as $voucher) { ?>
+LINE: 100
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($report_customer) {
+LINE: 872
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/extension/payment/amazon_login_pay.php
+CODE: if (!empty($this->session->data['vouchers']) || !$this->cart->hasProducts() || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 139
+CODE: $order_data['vouchers'] = array();
+LINE: 387
+CODE: $data['vouchers'] = array();
+LINE: 497
+
+FILE: catalog/controller/extension/payment/klarna_checkout.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 30
+LINE: 861
+CODE: $totals = array();
+LINE: 365
+LINE: 491
+LINE: 1868
+CODE: $total = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+LINE: 531
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/extension/payment/pilibaba.php
+CODE: $order_data['comment'] = '';
+LINE: 252
+
+FILE: catalog/controller/extension/payment/pp_express.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 18
+LINE: 785
+LINE: 1270
+CODE: $data['vouchers'] = array();
+LINE: 543
+CODE: $data['products'] = $product_data;
+LINE: 1031
+CODE: $data['vouchers'] = $voucher_data;
+LINE: 1035
+
+FILE: catalog/model/extension/payment/pp_express.php
+CODE: // Totals
+LINE: 155
+
+FILE: catalog/view/theme/default/template/extension/payment/klarna_checkout_sidebar.tpl
+CODE: <?php if ($products || $vouchers) { ?>
+LINE: 48
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 81
+
+FILE: catalog/controller/extension/openbay/amazon.php
+CODE: 'vouchers' => array(),
+LINE: 238
+
+FILE: catalog/controller/extension/openbay/amazonus.php
+CODE: 'vouchers' => array(),
+LINE: 240
+----------------------------------------------------------------
+MOD: CSV Product Export
+CODE: , 'tool/log')
+LINE: 714
+----------------------------------------------------------------
+MOD: Installation without FTP settings
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['button_continue'] =
+LINE: 37
+CODE: 'extension/installer/ftp'
+LINE: 136
+CODE: function ftp(
+LINE: 301
+CODE: if (!$this->config->get('config_ftp_status')
+LINE: 319
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: $_['text_clear']
+LINE: 17
+
+FILE: admin/view/template/extension/installer.tpl
+CODE: <form class="form
+LINE: 34
+CODE: timer = setInterval(
+LINE: 87
+CODE: n next()
+LINE: 156
+CODE: 'path=' + data.path
+LINE: 167
+----------------------------------------------------------------
+MOD: Ka Extensions platform
+CODE: 'extension/modification')
+LINE: 191
+
+FILE: admin/controller/extension/modification.php
+CODE: n refresh(
+LINE: 56
+CODE: empty($data['redirect'])
+LINE: 433
+CODE: $this->getList(
+LINE: 459
+
+FILE: admin/model/extension/modification.php
+CODE: n deleteModification(
+LINE: 11
+CODE: n deleteModification(
+LINE: 35
+CODE: n disableModification(
+LINE: 53
+
+FILE: system/engine/event.php
+CODE: $this->registry = $registry
+LINE: 16
+CODE: include_once(
+LINE: 51
+CODE: $proxy = new Proxy(
+LINE: 56
+CODE: $proxy);
+LINE: 67
+CODE: function language(
+LINE: 151
+
+FILE: system/library/db.php
+CODE: public function getLastId(
+LINE: 45
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 297
+----------------------------------------------------------------
+MOD: Opencart API
+----------------------------------------------------------------
+2019-11-26 15:16:26 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Easy Sort Order with Drag'n Drop
+
+FILE: admin/controller/common/header.php
+CODE: function index() {
+LINE: 15
+
+FILE: admin/view/template/common/header.tpl
+CODE: <script type="text/javascript" src="view/javascript/bootstrap/js/bootstrap.min.js"></script>
+LINE: 21
+
+FILE: admin/controller/common/footer.php
+CODE: function index() {
+LINE: 13
+
+FILE: admin/view/template/common/footer.tpl
+CODE: </body>
+LINE: 26
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/total.php
+CODE: if ($files) {
+LINE: 117
+
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/filter_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/option_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/manufacturer_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/information_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <tbody>
+LINE: 126
+
+FILE: admin/view/template/extension/extension/payment.tpl
+CODE: <tbody>
+LINE: 23
+
+FILE: admin/view/template/extension/extension/shipping.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/extension/extension/total.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/customer/customer_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/localisation/language_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/filter_form.tpl
+CODE: <tbody>
+LINE: 54
+CODE: $('#filter tbody').append(html);
+LINE: 103
+
+FILE: admin/view/template/design/banner_form.tpl
+CODE: <tbody>
+LINE: 70
+CODE: $('#images' + language_id + ' tbody').append(html);
+LINE: 117
+
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <tbody>
+LINE: 46
+LINE: 100
+LINE: 168
+LINE: 234
+LINE: 302
+LINE: 379
+LINE: 447
+LINE: 513
+LINE: 581
+LINE: 658
+LINE: 726
+LINE: 792
+LINE: 860
+CODE: $('#route tbody').append(html);
+LINE: 947
+CODE: $('#module-' + type + ' tbody').append(html);
+LINE: 977
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <tbody>
+LINE: 430
+LINE: 567
+LINE: 821
+LINE: 837
+CODE: html += '  	 <tbody>';
+LINE: 1218
+CODE: $('#attribute tbody').append(html);
+LINE: 1094
+CODE: $('#tab-option .tab-content').append(html);
+LINE: 1245
+CODE: $('#option-value' + option_row + ' tbody').append(html);
+LINE: 1307
+CODE: $('#images tbody').append(html);
+LINE: 1379
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data) {
+LINE: 9
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 396
+CODE: foreach ($data['product_attribute'] as $product_attribute) {
+LINE: 29
+LINE: 163
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_attribute SET
+LINE: 41
+LINE: 177
+CODE: $product_attribute_query = $this->db->query("SELECT attribute_id FROM " . DB_PREFIX . "product_attribute WHERE product_id = '" . (int)$product_id . "' GROUP BY attribute_id");
+LINE: 490
+CODE: foreach ($data['product_option'] as $product_option) {
+LINE: 49
+LINE: 189
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 57
+LINE: 198
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_option_value SET
+LINE: 58
+LINE: 199
+CODE: pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 522
+
+FILE: admin/model/catalog/category.php
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 219
+
+FILE: admin/model/catalog/filter.php
+CODE: $filter_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "filter WHERE filter_group_id = '" . (int)$filter_group_id . "'");
+LINE: 159
+
+FILE: admin/controller/catalog/category.php
+CODE: function getList() {
+LINE: 145
+CODE: 'sort_order'  => $result['sort_order'],
+LINE: 211
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProductAttributes($product_id) {
+LINE: 313
+CODE: ORDER BY a.sort_order, ad.name
+LINE: 321
+CODE: public function getProductOptions($product_id) {
+LINE: 346
+CODE: ORDER BY ov.sort_order
+LINE: 354
+----------------------------------------------------------------
+MOD: Buy Store Credit
+
+FILE: admin/controller/sale/order.php
+CODE: $data['text_voucher'] = $this->language->get('text_voucher');
+LINE: 399
+CODE: $data['button_voucher_add'] = $this->language->get('button_voucher_add');
+LINE: 455
+CODE: $data['tab_voucher'] = $this->language->get('tab_voucher');
+LINE: 469
+CODE: $data['order_vouchers'] = $this->model_sale_order->getOrderVouchers($this->request->get['order_id']);
+LINE: 598
+CODE: $data['order_vouchers'] = array();
+LINE: 670
+CODE: $data['totals'] = array();
+LINE: 1093
+CODE: $total_data = array();
+LINE: 1801
+CODE: 'total'            => $total_data,
+LINE: 1833
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['text_voucher']               = 'Add Voucher(s)';
+LINE: 54
+
+FILE: admin/language/en-gb/en-gb.php
+CODE: $_['tab_voucher']                   = 'Vouchers';
+LINE: 135
+
+FILE: admin/model/sale/order.php
+CODE: public function getOrderTotals($order_id) {
+LINE: 285
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
+LINE: 10
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <?php if ($order_products || $order_vouchers) { ?>
+LINE: 252
+CODE: <?php $voucher_row = 0; ?>
+LINE: 304
+CODE: <li><a href="#tab-voucher" data-toggle="tab"><?php echo $tab_voucher; ?></a></li>
+LINE: 339
+CODE: <div class="tab-pane" id="tab-voucher">
+LINE: 380
+CODE: if (!json['products'].length && !json['vouchers'].length) {
+LINE: 1197
+CODE: if (!shipping) {
+LINE: 1186
+CODE: if (json['totals'].length) {
+LINE: 1286
+CODE: if (!json['totals'].length && !json['products'].length && !json['vouchers'].length) {
+LINE: 1297
+CODE: var request_2 = request_1.then(function() {
+LINE: 1519
+CODE: $('#button-voucher-add').on('click', function() {
+LINE: 1854
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 185
+
+FILE: admin/view/template/sale/order_invoice.tpl
+CODE: <?php foreach ($order['voucher'] as $voucher) { ?>
+LINE: 100
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($report_customer) {
+LINE: 872
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/extension/payment/amazon_login_pay.php
+CODE: if (!empty($this->session->data['vouchers']) || !$this->cart->hasProducts() || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 139
+CODE: $order_data['vouchers'] = array();
+LINE: 387
+CODE: $data['vouchers'] = array();
+LINE: 497
+
+FILE: catalog/controller/extension/payment/klarna_checkout.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 30
+LINE: 861
+CODE: $totals = array();
+LINE: 365
+LINE: 491
+LINE: 1868
+CODE: $total = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+LINE: 531
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/extension/payment/pilibaba.php
+CODE: $order_data['comment'] = '';
+LINE: 252
+
+FILE: catalog/controller/extension/payment/pp_express.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 18
+LINE: 785
+LINE: 1270
+CODE: $data['vouchers'] = array();
+LINE: 543
+CODE: $data['products'] = $product_data;
+LINE: 1031
+CODE: $data['vouchers'] = $voucher_data;
+LINE: 1035
+
+FILE: catalog/model/extension/payment/pp_express.php
+CODE: // Totals
+LINE: 155
+
+FILE: catalog/view/theme/default/template/extension/payment/klarna_checkout_sidebar.tpl
+CODE: <?php if ($products || $vouchers) { ?>
+LINE: 48
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 81
+
+FILE: catalog/controller/extension/openbay/amazon.php
+CODE: 'vouchers' => array(),
+LINE: 238
+
+FILE: catalog/controller/extension/openbay/amazonus.php
+CODE: 'vouchers' => array(),
+LINE: 240
+----------------------------------------------------------------
+MOD: CSV Product Export
+CODE: , 'tool/log')
+LINE: 714
+----------------------------------------------------------------
+MOD: Installation without FTP settings
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['button_continue'] =
+LINE: 37
+CODE: 'extension/installer/ftp'
+LINE: 136
+CODE: function ftp(
+LINE: 301
+CODE: if (!$this->config->get('config_ftp_status')
+LINE: 319
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: $_['text_clear']
+LINE: 17
+
+FILE: admin/view/template/extension/installer.tpl
+CODE: <form class="form
+LINE: 34
+CODE: timer = setInterval(
+LINE: 87
+CODE: n next()
+LINE: 156
+CODE: 'path=' + data.path
+LINE: 167
+----------------------------------------------------------------
+MOD: Ka Extensions platform
+CODE: 'extension/modification')
+LINE: 191
+
+FILE: admin/controller/extension/modification.php
+CODE: n refresh(
+LINE: 56
+CODE: empty($data['redirect'])
+LINE: 433
+CODE: $this->getList(
+LINE: 459
+
+FILE: admin/model/extension/modification.php
+CODE: n deleteModification(
+LINE: 11
+CODE: n deleteModification(
+LINE: 35
+CODE: n disableModification(
+LINE: 53
+
+FILE: system/engine/event.php
+CODE: $this->registry = $registry
+LINE: 16
+CODE: include_once(
+LINE: 51
+CODE: $proxy = new Proxy(
+LINE: 56
+CODE: $proxy);
+LINE: 67
+CODE: function language(
+LINE: 151
+
+FILE: system/library/db.php
+CODE: public function getLastId(
+LINE: 45
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 297
+----------------------------------------------------------------
+MOD: Opencart API
+----------------------------------------------------------------
+2019-11-26 15:18:40 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Easy Sort Order with Drag'n Drop
+
+FILE: admin/controller/common/header.php
+CODE: function index() {
+LINE: 15
+
+FILE: admin/view/template/common/header.tpl
+CODE: <script type="text/javascript" src="view/javascript/bootstrap/js/bootstrap.min.js"></script>
+LINE: 21
+
+FILE: admin/controller/common/footer.php
+CODE: function index() {
+LINE: 13
+
+FILE: admin/view/template/common/footer.tpl
+CODE: </body>
+LINE: 26
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/total.php
+CODE: if ($files) {
+LINE: 117
+
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/filter_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/option_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/manufacturer_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/information_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <tbody>
+LINE: 126
+
+FILE: admin/view/template/extension/extension/payment.tpl
+CODE: <tbody>
+LINE: 23
+
+FILE: admin/view/template/extension/extension/shipping.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/extension/extension/total.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/customer/customer_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/localisation/language_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/filter_form.tpl
+CODE: <tbody>
+LINE: 54
+CODE: $('#filter tbody').append(html);
+LINE: 103
+
+FILE: admin/view/template/design/banner_form.tpl
+CODE: <tbody>
+LINE: 70
+CODE: $('#images' + language_id + ' tbody').append(html);
+LINE: 117
+
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <tbody>
+LINE: 46
+LINE: 100
+LINE: 168
+LINE: 234
+LINE: 302
+LINE: 379
+LINE: 447
+LINE: 513
+LINE: 581
+LINE: 658
+LINE: 726
+LINE: 792
+LINE: 860
+CODE: $('#route tbody').append(html);
+LINE: 947
+CODE: $('#module-' + type + ' tbody').append(html);
+LINE: 977
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <tbody>
+LINE: 430
+LINE: 567
+LINE: 821
+LINE: 837
+CODE: html += '  	 <tbody>';
+LINE: 1218
+CODE: $('#attribute tbody').append(html);
+LINE: 1094
+CODE: $('#tab-option .tab-content').append(html);
+LINE: 1245
+CODE: $('#option-value' + option_row + ' tbody').append(html);
+LINE: 1307
+CODE: $('#images tbody').append(html);
+LINE: 1379
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data) {
+LINE: 9
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 396
+CODE: foreach ($data['product_attribute'] as $product_attribute) {
+LINE: 29
+LINE: 163
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_attribute SET
+LINE: 41
+LINE: 177
+CODE: $product_attribute_query = $this->db->query("SELECT attribute_id FROM " . DB_PREFIX . "product_attribute WHERE product_id = '" . (int)$product_id . "' GROUP BY attribute_id");
+LINE: 490
+CODE: foreach ($data['product_option'] as $product_option) {
+LINE: 49
+LINE: 189
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 57
+LINE: 198
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_option_value SET
+LINE: 58
+LINE: 199
+CODE: pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 522
+
+FILE: admin/model/catalog/category.php
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 219
+
+FILE: admin/model/catalog/filter.php
+CODE: $filter_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "filter WHERE filter_group_id = '" . (int)$filter_group_id . "'");
+LINE: 159
+
+FILE: admin/controller/catalog/category.php
+CODE: function getList() {
+LINE: 145
+CODE: 'sort_order'  => $result['sort_order'],
+LINE: 211
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProductAttributes($product_id) {
+LINE: 313
+CODE: ORDER BY a.sort_order, ad.name
+LINE: 321
+CODE: public function getProductOptions($product_id) {
+LINE: 346
+CODE: ORDER BY ov.sort_order
+LINE: 354
+----------------------------------------------------------------
+MOD: Buy Store Credit
+
+FILE: admin/controller/sale/order.php
+CODE: $data['text_voucher'] = $this->language->get('text_voucher');
+LINE: 399
+CODE: $data['button_voucher_add'] = $this->language->get('button_voucher_add');
+LINE: 455
+CODE: $data['tab_voucher'] = $this->language->get('tab_voucher');
+LINE: 469
+CODE: $data['order_vouchers'] = $this->model_sale_order->getOrderVouchers($this->request->get['order_id']);
+LINE: 598
+CODE: $data['order_vouchers'] = array();
+LINE: 670
+CODE: $data['totals'] = array();
+LINE: 1093
+CODE: $total_data = array();
+LINE: 1801
+CODE: 'total'            => $total_data,
+LINE: 1833
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['text_voucher']               = 'Add Voucher(s)';
+LINE: 54
+
+FILE: admin/language/en-gb/en-gb.php
+CODE: $_['tab_voucher']                   = 'Vouchers';
+LINE: 135
+
+FILE: admin/model/sale/order.php
+CODE: public function getOrderTotals($order_id) {
+LINE: 285
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
+LINE: 10
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <?php if ($order_products || $order_vouchers) { ?>
+LINE: 252
+CODE: <?php $voucher_row = 0; ?>
+LINE: 304
+CODE: <li><a href="#tab-voucher" data-toggle="tab"><?php echo $tab_voucher; ?></a></li>
+LINE: 339
+CODE: <div class="tab-pane" id="tab-voucher">
+LINE: 380
+CODE: if (!json['products'].length && !json['vouchers'].length) {
+LINE: 1197
+CODE: if (!shipping) {
+LINE: 1186
+CODE: if (json['totals'].length) {
+LINE: 1286
+CODE: if (!json['totals'].length && !json['products'].length && !json['vouchers'].length) {
+LINE: 1297
+CODE: var request_2 = request_1.then(function() {
+LINE: 1519
+CODE: $('#button-voucher-add').on('click', function() {
+LINE: 1854
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 185
+
+FILE: admin/view/template/sale/order_invoice.tpl
+CODE: <?php foreach ($order['voucher'] as $voucher) { ?>
+LINE: 100
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($report_customer) {
+LINE: 872
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/extension/payment/amazon_login_pay.php
+CODE: if (!empty($this->session->data['vouchers']) || !$this->cart->hasProducts() || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 139
+CODE: $order_data['vouchers'] = array();
+LINE: 387
+CODE: $data['vouchers'] = array();
+LINE: 497
+
+FILE: catalog/controller/extension/payment/klarna_checkout.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 30
+LINE: 861
+CODE: $totals = array();
+LINE: 365
+LINE: 491
+LINE: 1868
+CODE: $total = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+LINE: 531
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/extension/payment/pilibaba.php
+CODE: $order_data['comment'] = '';
+LINE: 252
+
+FILE: catalog/controller/extension/payment/pp_express.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 18
+LINE: 785
+LINE: 1270
+CODE: $data['vouchers'] = array();
+LINE: 543
+CODE: $data['products'] = $product_data;
+LINE: 1031
+CODE: $data['vouchers'] = $voucher_data;
+LINE: 1035
+
+FILE: catalog/model/extension/payment/pp_express.php
+CODE: // Totals
+LINE: 155
+
+FILE: catalog/view/theme/default/template/extension/payment/klarna_checkout_sidebar.tpl
+CODE: <?php if ($products || $vouchers) { ?>
+LINE: 48
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 81
+
+FILE: catalog/controller/extension/openbay/amazon.php
+CODE: 'vouchers' => array(),
+LINE: 238
+
+FILE: catalog/controller/extension/openbay/amazonus.php
+CODE: 'vouchers' => array(),
+LINE: 240
+----------------------------------------------------------------
+MOD: CSV Product Export
+CODE: , 'tool/log')
+LINE: 714
+----------------------------------------------------------------
+MOD: Installation without FTP settings
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['button_continue'] =
+LINE: 37
+CODE: 'extension/installer/ftp'
+LINE: 136
+CODE: function ftp(
+LINE: 301
+CODE: if (!$this->config->get('config_ftp_status')
+LINE: 319
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: $_['text_clear']
+LINE: 17
+
+FILE: admin/view/template/extension/installer.tpl
+CODE: <form class="form
+LINE: 34
+CODE: timer = setInterval(
+LINE: 87
+CODE: n next()
+LINE: 156
+CODE: 'path=' + data.path
+LINE: 167
+----------------------------------------------------------------
+MOD: Ka Extensions platform
+CODE: 'extension/modification')
+LINE: 191
+
+FILE: admin/controller/extension/modification.php
+CODE: n refresh(
+LINE: 56
+CODE: empty($data['redirect'])
+LINE: 433
+CODE: $this->getList(
+LINE: 459
+
+FILE: admin/model/extension/modification.php
+CODE: n deleteModification(
+LINE: 11
+CODE: n deleteModification(
+LINE: 35
+CODE: n disableModification(
+LINE: 53
+
+FILE: system/engine/event.php
+CODE: $this->registry = $registry
+LINE: 16
+CODE: include_once(
+LINE: 51
+CODE: $proxy = new Proxy(
+LINE: 56
+CODE: $proxy);
+LINE: 67
+CODE: function language(
+LINE: 151
+
+FILE: system/library/db.php
+CODE: public function getLastId(
+LINE: 45
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 297
+----------------------------------------------------------------
+MOD: Opencart API
+----------------------------------------------------------------
+2019-11-26 15:20:32 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Easy Sort Order with Drag'n Drop
+
+FILE: admin/controller/common/header.php
+CODE: function index() {
+LINE: 15
+
+FILE: admin/view/template/common/header.tpl
+CODE: <script type="text/javascript" src="view/javascript/bootstrap/js/bootstrap.min.js"></script>
+LINE: 21
+
+FILE: admin/controller/common/footer.php
+CODE: function index() {
+LINE: 13
+
+FILE: admin/view/template/common/footer.tpl
+CODE: </body>
+LINE: 26
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/total.php
+CODE: if ($files) {
+LINE: 117
+
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/filter_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/option_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/manufacturer_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/information_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <tbody>
+LINE: 126
+
+FILE: admin/view/template/extension/extension/payment.tpl
+CODE: <tbody>
+LINE: 23
+
+FILE: admin/view/template/extension/extension/shipping.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/extension/extension/total.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/customer/customer_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/localisation/language_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/filter_form.tpl
+CODE: <tbody>
+LINE: 54
+CODE: $('#filter tbody').append(html);
+LINE: 103
+
+FILE: admin/view/template/design/banner_form.tpl
+CODE: <tbody>
+LINE: 70
+CODE: $('#images' + language_id + ' tbody').append(html);
+LINE: 117
+
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <tbody>
+LINE: 46
+LINE: 100
+LINE: 168
+LINE: 234
+LINE: 302
+LINE: 379
+LINE: 447
+LINE: 513
+LINE: 581
+LINE: 658
+LINE: 726
+LINE: 792
+LINE: 860
+CODE: $('#route tbody').append(html);
+LINE: 947
+CODE: $('#module-' + type + ' tbody').append(html);
+LINE: 977
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <tbody>
+LINE: 430
+LINE: 567
+LINE: 821
+LINE: 837
+CODE: html += '  	 <tbody>';
+LINE: 1218
+CODE: $('#attribute tbody').append(html);
+LINE: 1094
+CODE: $('#tab-option .tab-content').append(html);
+LINE: 1245
+CODE: $('#option-value' + option_row + ' tbody').append(html);
+LINE: 1307
+CODE: $('#images tbody').append(html);
+LINE: 1379
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data) {
+LINE: 9
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 396
+CODE: foreach ($data['product_attribute'] as $product_attribute) {
+LINE: 29
+LINE: 163
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_attribute SET
+LINE: 41
+LINE: 177
+CODE: $product_attribute_query = $this->db->query("SELECT attribute_id FROM " . DB_PREFIX . "product_attribute WHERE product_id = '" . (int)$product_id . "' GROUP BY attribute_id");
+LINE: 490
+CODE: foreach ($data['product_option'] as $product_option) {
+LINE: 49
+LINE: 189
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 57
+LINE: 198
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_option_value SET
+LINE: 58
+LINE: 199
+CODE: pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 522
+
+FILE: admin/model/catalog/category.php
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 219
+
+FILE: admin/model/catalog/filter.php
+CODE: $filter_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "filter WHERE filter_group_id = '" . (int)$filter_group_id . "'");
+LINE: 159
+
+FILE: admin/controller/catalog/category.php
+CODE: function getList() {
+LINE: 145
+CODE: 'sort_order'  => $result['sort_order'],
+LINE: 211
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProductAttributes($product_id) {
+LINE: 313
+CODE: ORDER BY a.sort_order, ad.name
+LINE: 321
+CODE: public function getProductOptions($product_id) {
+LINE: 346
+CODE: ORDER BY ov.sort_order
+LINE: 354
+----------------------------------------------------------------
+MOD: Buy Store Credit
+
+FILE: admin/controller/sale/order.php
+CODE: $data['text_voucher'] = $this->language->get('text_voucher');
+LINE: 399
+CODE: $data['button_voucher_add'] = $this->language->get('button_voucher_add');
+LINE: 455
+CODE: $data['tab_voucher'] = $this->language->get('tab_voucher');
+LINE: 469
+CODE: $data['order_vouchers'] = $this->model_sale_order->getOrderVouchers($this->request->get['order_id']);
+LINE: 598
+CODE: $data['order_vouchers'] = array();
+LINE: 670
+CODE: $data['totals'] = array();
+LINE: 1093
+CODE: $total_data = array();
+LINE: 1801
+CODE: 'total'            => $total_data,
+LINE: 1833
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['text_voucher']               = 'Add Voucher(s)';
+LINE: 54
+
+FILE: admin/language/en-gb/en-gb.php
+CODE: $_['tab_voucher']                   = 'Vouchers';
+LINE: 135
+
+FILE: admin/model/sale/order.php
+CODE: public function getOrderTotals($order_id) {
+LINE: 285
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
+LINE: 10
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <?php if ($order_products || $order_vouchers) { ?>
+LINE: 252
+CODE: <?php $voucher_row = 0; ?>
+LINE: 304
+CODE: <li><a href="#tab-voucher" data-toggle="tab"><?php echo $tab_voucher; ?></a></li>
+LINE: 339
+CODE: <div class="tab-pane" id="tab-voucher">
+LINE: 380
+CODE: if (!json['products'].length && !json['vouchers'].length) {
+LINE: 1197
+CODE: if (!shipping) {
+LINE: 1186
+CODE: if (json['totals'].length) {
+LINE: 1286
+CODE: if (!json['totals'].length && !json['products'].length && !json['vouchers'].length) {
+LINE: 1297
+CODE: var request_2 = request_1.then(function() {
+LINE: 1519
+CODE: $('#button-voucher-add').on('click', function() {
+LINE: 1854
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 185
+
+FILE: admin/view/template/sale/order_invoice.tpl
+CODE: <?php foreach ($order['voucher'] as $voucher) { ?>
+LINE: 100
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($report_customer) {
+LINE: 872
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/extension/payment/amazon_login_pay.php
+CODE: if (!empty($this->session->data['vouchers']) || !$this->cart->hasProducts() || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 139
+CODE: $order_data['vouchers'] = array();
+LINE: 387
+CODE: $data['vouchers'] = array();
+LINE: 497
+
+FILE: catalog/controller/extension/payment/klarna_checkout.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 30
+LINE: 861
+CODE: $totals = array();
+LINE: 365
+LINE: 491
+LINE: 1868
+CODE: $total = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+LINE: 531
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/extension/payment/pilibaba.php
+CODE: $order_data['comment'] = '';
+LINE: 252
+
+FILE: catalog/controller/extension/payment/pp_express.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 18
+LINE: 785
+LINE: 1270
+CODE: $data['vouchers'] = array();
+LINE: 543
+CODE: $data['products'] = $product_data;
+LINE: 1031
+CODE: $data['vouchers'] = $voucher_data;
+LINE: 1035
+
+FILE: catalog/model/extension/payment/pp_express.php
+CODE: // Totals
+LINE: 155
+
+FILE: catalog/view/theme/default/template/extension/payment/klarna_checkout_sidebar.tpl
+CODE: <?php if ($products || $vouchers) { ?>
+LINE: 48
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 81
+
+FILE: catalog/controller/extension/openbay/amazon.php
+CODE: 'vouchers' => array(),
+LINE: 238
+
+FILE: catalog/controller/extension/openbay/amazonus.php
+CODE: 'vouchers' => array(),
+LINE: 240
+----------------------------------------------------------------
+MOD: CSV Product Export
+CODE: , 'tool/log')
+LINE: 714
+----------------------------------------------------------------
+MOD: Installation without FTP settings
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['button_continue'] =
+LINE: 37
+CODE: 'extension/installer/ftp'
+LINE: 136
+CODE: function ftp(
+LINE: 301
+CODE: if (!$this->config->get('config_ftp_status')
+LINE: 319
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: $_['text_clear']
+LINE: 17
+
+FILE: admin/view/template/extension/installer.tpl
+CODE: <form class="form
+LINE: 34
+CODE: timer = setInterval(
+LINE: 87
+CODE: n next()
+LINE: 156
+CODE: 'path=' + data.path
+LINE: 167
+----------------------------------------------------------------
+MOD: Ka Extensions platform
+CODE: 'extension/modification')
+LINE: 191
+
+FILE: admin/controller/extension/modification.php
+CODE: n refresh(
+LINE: 56
+CODE: empty($data['redirect'])
+LINE: 433
+CODE: $this->getList(
+LINE: 459
+
+FILE: admin/model/extension/modification.php
+CODE: n deleteModification(
+LINE: 11
+CODE: n deleteModification(
+LINE: 35
+CODE: n disableModification(
+LINE: 53
+
+FILE: system/engine/event.php
+CODE: $this->registry = $registry
+LINE: 16
+CODE: include_once(
+LINE: 51
+CODE: $proxy = new Proxy(
+LINE: 56
+CODE: $proxy);
+LINE: 67
+CODE: function language(
+LINE: 151
+
+FILE: system/library/db.php
+CODE: public function getLastId(
+LINE: 45
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 297
+----------------------------------------------------------------
+MOD: Opencart API
+----------------------------------------------------------------
+2019-11-26 15:30:58 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Easy Sort Order with Drag'n Drop
+
+FILE: admin/controller/common/header.php
+CODE: function index() {
+LINE: 15
+
+FILE: admin/view/template/common/header.tpl
+CODE: <script type="text/javascript" src="view/javascript/bootstrap/js/bootstrap.min.js"></script>
+LINE: 21
+
+FILE: admin/controller/common/footer.php
+CODE: function index() {
+LINE: 13
+
+FILE: admin/view/template/common/footer.tpl
+CODE: </body>
+LINE: 26
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/total.php
+CODE: if ($files) {
+LINE: 117
+
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/filter_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/option_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/manufacturer_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/information_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <tbody>
+LINE: 126
+
+FILE: admin/view/template/extension/extension/payment.tpl
+CODE: <tbody>
+LINE: 23
+
+FILE: admin/view/template/extension/extension/shipping.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/extension/extension/total.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/customer/customer_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/localisation/language_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/filter_form.tpl
+CODE: <tbody>
+LINE: 54
+CODE: $('#filter tbody').append(html);
+LINE: 103
+
+FILE: admin/view/template/design/banner_form.tpl
+CODE: <tbody>
+LINE: 70
+CODE: $('#images' + language_id + ' tbody').append(html);
+LINE: 117
+
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <tbody>
+LINE: 46
+LINE: 100
+LINE: 168
+LINE: 234
+LINE: 302
+LINE: 379
+LINE: 447
+LINE: 513
+LINE: 581
+LINE: 658
+LINE: 726
+LINE: 792
+LINE: 860
+CODE: $('#route tbody').append(html);
+LINE: 947
+CODE: $('#module-' + type + ' tbody').append(html);
+LINE: 977
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <tbody>
+LINE: 430
+LINE: 567
+LINE: 821
+LINE: 837
+CODE: html += '  	 <tbody>';
+LINE: 1218
+CODE: $('#attribute tbody').append(html);
+LINE: 1094
+CODE: $('#tab-option .tab-content').append(html);
+LINE: 1245
+CODE: $('#option-value' + option_row + ' tbody').append(html);
+LINE: 1307
+CODE: $('#images tbody').append(html);
+LINE: 1379
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data) {
+LINE: 9
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 396
+CODE: foreach ($data['product_attribute'] as $product_attribute) {
+LINE: 29
+LINE: 163
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_attribute SET
+LINE: 41
+LINE: 177
+CODE: $product_attribute_query = $this->db->query("SELECT attribute_id FROM " . DB_PREFIX . "product_attribute WHERE product_id = '" . (int)$product_id . "' GROUP BY attribute_id");
+LINE: 490
+CODE: foreach ($data['product_option'] as $product_option) {
+LINE: 49
+LINE: 189
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 57
+LINE: 198
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_option_value SET
+LINE: 58
+LINE: 199
+CODE: pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 522
+
+FILE: admin/model/catalog/category.php
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 219
+
+FILE: admin/model/catalog/filter.php
+CODE: $filter_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "filter WHERE filter_group_id = '" . (int)$filter_group_id . "'");
+LINE: 159
+
+FILE: admin/controller/catalog/category.php
+CODE: function getList() {
+LINE: 145
+CODE: 'sort_order'  => $result['sort_order'],
+LINE: 211
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProductAttributes($product_id) {
+LINE: 313
+CODE: ORDER BY a.sort_order, ad.name
+LINE: 321
+CODE: public function getProductOptions($product_id) {
+LINE: 346
+CODE: ORDER BY ov.sort_order
+LINE: 354
+----------------------------------------------------------------
+MOD: Buy Store Credit
+
+FILE: admin/controller/sale/order.php
+CODE: $data['text_voucher'] = $this->language->get('text_voucher');
+LINE: 399
+CODE: $data['button_voucher_add'] = $this->language->get('button_voucher_add');
+LINE: 455
+CODE: $data['tab_voucher'] = $this->language->get('tab_voucher');
+LINE: 469
+CODE: $data['order_vouchers'] = $this->model_sale_order->getOrderVouchers($this->request->get['order_id']);
+LINE: 598
+CODE: $data['order_vouchers'] = array();
+LINE: 670
+CODE: $data['totals'] = array();
+LINE: 1093
+CODE: $total_data = array();
+LINE: 1801
+CODE: 'total'            => $total_data,
+LINE: 1833
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['text_voucher']               = 'Add Voucher(s)';
+LINE: 54
+
+FILE: admin/language/en-gb/en-gb.php
+CODE: $_['tab_voucher']                   = 'Vouchers';
+LINE: 135
+
+FILE: admin/model/sale/order.php
+CODE: public function getOrderTotals($order_id) {
+LINE: 285
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
+LINE: 10
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <?php if ($order_products || $order_vouchers) { ?>
+LINE: 252
+CODE: <?php $voucher_row = 0; ?>
+LINE: 304
+CODE: <li><a href="#tab-voucher" data-toggle="tab"><?php echo $tab_voucher; ?></a></li>
+LINE: 339
+CODE: <div class="tab-pane" id="tab-voucher">
+LINE: 380
+CODE: if (!json['products'].length && !json['vouchers'].length) {
+LINE: 1197
+CODE: if (!shipping) {
+LINE: 1186
+CODE: if (json['totals'].length) {
+LINE: 1286
+CODE: if (!json['totals'].length && !json['products'].length && !json['vouchers'].length) {
+LINE: 1297
+CODE: var request_2 = request_1.then(function() {
+LINE: 1519
+CODE: $('#button-voucher-add').on('click', function() {
+LINE: 1854
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 185
+
+FILE: admin/view/template/sale/order_invoice.tpl
+CODE: <?php foreach ($order['voucher'] as $voucher) { ?>
+LINE: 100
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($report_customer) {
+LINE: 872
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/extension/payment/amazon_login_pay.php
+CODE: if (!empty($this->session->data['vouchers']) || !$this->cart->hasProducts() || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 139
+CODE: $order_data['vouchers'] = array();
+LINE: 387
+CODE: $data['vouchers'] = array();
+LINE: 497
+
+FILE: catalog/controller/extension/payment/klarna_checkout.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 30
+LINE: 861
+CODE: $totals = array();
+LINE: 365
+LINE: 491
+LINE: 1868
+CODE: $total = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+LINE: 531
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/extension/payment/pilibaba.php
+CODE: $order_data['comment'] = '';
+LINE: 252
+
+FILE: catalog/controller/extension/payment/pp_express.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 18
+LINE: 785
+LINE: 1270
+CODE: $data['vouchers'] = array();
+LINE: 543
+CODE: $data['products'] = $product_data;
+LINE: 1031
+CODE: $data['vouchers'] = $voucher_data;
+LINE: 1035
+
+FILE: catalog/model/extension/payment/pp_express.php
+CODE: // Totals
+LINE: 155
+
+FILE: catalog/view/theme/default/template/extension/payment/klarna_checkout_sidebar.tpl
+CODE: <?php if ($products || $vouchers) { ?>
+LINE: 48
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 81
+
+FILE: catalog/controller/extension/openbay/amazon.php
+CODE: 'vouchers' => array(),
+LINE: 238
+
+FILE: catalog/controller/extension/openbay/amazonus.php
+CODE: 'vouchers' => array(),
+LINE: 240
+----------------------------------------------------------------
+MOD: CSV Product Export
+CODE: , 'tool/log')
+LINE: 714
+----------------------------------------------------------------
+MOD: Installation without FTP settings
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['button_continue'] =
+LINE: 37
+CODE: 'extension/installer/ftp'
+LINE: 136
+CODE: function ftp(
+LINE: 301
+CODE: if (!$this->config->get('config_ftp_status')
+LINE: 319
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: $_['text_clear']
+LINE: 17
+
+FILE: admin/view/template/extension/installer.tpl
+CODE: <form class="form
+LINE: 34
+CODE: timer = setInterval(
+LINE: 87
+CODE: n next()
+LINE: 156
+CODE: 'path=' + data.path
+LINE: 167
+----------------------------------------------------------------
+MOD: Ka Extensions platform
+CODE: 'extension/modification')
+LINE: 191
+
+FILE: admin/controller/extension/modification.php
+CODE: n refresh(
+LINE: 56
+CODE: empty($data['redirect'])
+LINE: 433
+CODE: $this->getList(
+LINE: 459
+
+FILE: admin/model/extension/modification.php
+CODE: n deleteModification(
+LINE: 11
+CODE: n deleteModification(
+LINE: 35
+CODE: n disableModification(
+LINE: 53
+
+FILE: system/engine/event.php
+CODE: $this->registry = $registry
+LINE: 16
+CODE: include_once(
+LINE: 51
+CODE: $proxy = new Proxy(
+LINE: 56
+CODE: $proxy);
+LINE: 67
+CODE: function language(
+LINE: 151
+
+FILE: system/library/db.php
+CODE: public function getLastId(
+LINE: 45
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 297
+----------------------------------------------------------------
+MOD: Opencart API
+----------------------------------------------------------------
+2019-11-26 15:31:40 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Easy Sort Order with Drag'n Drop
+
+FILE: admin/controller/common/header.php
+CODE: function index() {
+LINE: 15
+
+FILE: admin/view/template/common/header.tpl
+CODE: <script type="text/javascript" src="view/javascript/bootstrap/js/bootstrap.min.js"></script>
+LINE: 21
+
+FILE: admin/controller/common/footer.php
+CODE: function index() {
+LINE: 13
+
+FILE: admin/view/template/common/footer.tpl
+CODE: </body>
+LINE: 26
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: if ($files) {
+LINE: 119
+
+FILE: admin/controller/extension/extension/total.php
+CODE: if ($files) {
+LINE: 117
+
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/filter_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/attribute_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/option_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/manufacturer_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/information_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/catalog/product_list.tpl
+CODE: <tbody>
+LINE: 126
+
+FILE: admin/view/template/extension/extension/payment.tpl
+CODE: <tbody>
+LINE: 23
+
+FILE: admin/view/template/extension/extension/shipping.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/extension/extension/total.tpl
+CODE: <tbody>
+LINE: 22
+
+FILE: admin/view/template/customer/customer_group_list.tpl
+CODE: <tbody>
+LINE: 50
+
+FILE: admin/view/template/localisation/language_list.tpl
+CODE: <tbody>
+LINE: 55
+
+FILE: admin/view/template/catalog/filter_form.tpl
+CODE: <tbody>
+LINE: 54
+CODE: $('#filter tbody').append(html);
+LINE: 103
+
+FILE: admin/view/template/design/banner_form.tpl
+CODE: <tbody>
+LINE: 70
+CODE: $('#images' + language_id + ' tbody').append(html);
+LINE: 117
+
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <tbody>
+LINE: 46
+LINE: 100
+LINE: 168
+LINE: 234
+LINE: 302
+LINE: 379
+LINE: 447
+LINE: 513
+LINE: 581
+LINE: 658
+LINE: 726
+LINE: 792
+LINE: 860
+CODE: $('#route tbody').append(html);
+LINE: 947
+CODE: $('#module-' + type + ' tbody').append(html);
+LINE: 977
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <tbody>
+LINE: 430
+LINE: 567
+LINE: 821
+LINE: 837
+CODE: html += '  	 <tbody>';
+LINE: 1218
+CODE: $('#attribute tbody').append(html);
+LINE: 1094
+CODE: $('#tab-option .tab-content').append(html);
+LINE: 1245
+CODE: $('#option-value' + option_row + ' tbody').append(html);
+LINE: 1307
+CODE: $('#images tbody').append(html);
+LINE: 1379
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data) {
+LINE: 9
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 396
+CODE: foreach ($data['product_attribute'] as $product_attribute) {
+LINE: 29
+LINE: 163
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_attribute SET
+LINE: 41
+LINE: 177
+CODE: $product_attribute_query = $this->db->query("SELECT attribute_id FROM " . DB_PREFIX . "product_attribute WHERE product_id = '" . (int)$product_id . "' GROUP BY attribute_id");
+LINE: 490
+CODE: foreach ($data['product_option'] as $product_option) {
+LINE: 49
+LINE: 189
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 57
+LINE: 198
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "product_option_value SET
+LINE: 58
+LINE: 199
+CODE: pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 522
+
+FILE: admin/model/catalog/category.php
+CODE: $sql .= " ORDER BY " . $data['sort'];
+LINE: 219
+
+FILE: admin/model/catalog/filter.php
+CODE: $filter_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "filter WHERE filter_group_id = '" . (int)$filter_group_id . "'");
+LINE: 159
+
+FILE: admin/controller/catalog/category.php
+CODE: function getList() {
+LINE: 145
+CODE: 'sort_order'  => $result['sort_order'],
+LINE: 211
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProductAttributes($product_id) {
+LINE: 313
+CODE: ORDER BY a.sort_order, ad.name
+LINE: 321
+CODE: public function getProductOptions($product_id) {
+LINE: 346
+CODE: ORDER BY ov.sort_order
+LINE: 354
+----------------------------------------------------------------
+MOD: Buy Store Credit
+
+FILE: admin/controller/sale/order.php
+CODE: $data['text_voucher'] = $this->language->get('text_voucher');
+LINE: 399
+CODE: $data['button_voucher_add'] = $this->language->get('button_voucher_add');
+LINE: 455
+CODE: $data['tab_voucher'] = $this->language->get('tab_voucher');
+LINE: 469
+CODE: $data['order_vouchers'] = $this->model_sale_order->getOrderVouchers($this->request->get['order_id']);
+LINE: 598
+CODE: $data['order_vouchers'] = array();
+LINE: 670
+CODE: $data['totals'] = array();
+LINE: 1093
+CODE: $total_data = array();
+LINE: 1801
+CODE: 'total'            => $total_data,
+LINE: 1833
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['text_voucher']               = 'Add Voucher(s)';
+LINE: 54
+
+FILE: admin/language/en-gb/en-gb.php
+CODE: $_['tab_voucher']                   = 'Vouchers';
+LINE: 135
+
+FILE: admin/model/sale/order.php
+CODE: public function getOrderTotals($order_id) {
+LINE: 285
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
+LINE: 10
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <?php if ($order_products || $order_vouchers) { ?>
+LINE: 252
+CODE: <?php $voucher_row = 0; ?>
+LINE: 304
+CODE: <li><a href="#tab-voucher" data-toggle="tab"><?php echo $tab_voucher; ?></a></li>
+LINE: 339
+CODE: <div class="tab-pane" id="tab-voucher">
+LINE: 380
+CODE: if (!json['products'].length && !json['vouchers'].length) {
+LINE: 1197
+CODE: if (!shipping) {
+LINE: 1186
+CODE: if (json['totals'].length) {
+LINE: 1286
+CODE: if (!json['totals'].length && !json['products'].length && !json['vouchers'].length) {
+LINE: 1297
+CODE: var request_2 = request_1.then(function() {
+LINE: 1519
+CODE: $('#button-voucher-add').on('click', function() {
+LINE: 1854
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 185
+
+FILE: admin/view/template/sale/order_invoice.tpl
+CODE: <?php foreach ($order['voucher'] as $voucher) { ?>
+LINE: 100
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($report_customer) {
+LINE: 872
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/extension/payment/amazon_login_pay.php
+CODE: if (!empty($this->session->data['vouchers']) || !$this->cart->hasProducts() || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 139
+CODE: $order_data['vouchers'] = array();
+LINE: 387
+CODE: $data['vouchers'] = array();
+LINE: 497
+
+FILE: catalog/controller/extension/payment/klarna_checkout.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 30
+LINE: 861
+CODE: $totals = array();
+LINE: 365
+LINE: 491
+LINE: 1868
+CODE: $total = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+LINE: 531
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/extension/payment/pilibaba.php
+CODE: $order_data['comment'] = '';
+LINE: 252
+
+FILE: catalog/controller/extension/payment/pp_express.php
+CODE: if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+LINE: 18
+LINE: 785
+LINE: 1270
+CODE: $data['vouchers'] = array();
+LINE: 543
+CODE: $data['products'] = $product_data;
+LINE: 1031
+CODE: $data['vouchers'] = $voucher_data;
+LINE: 1035
+
+FILE: catalog/model/extension/payment/pp_express.php
+CODE: // Totals
+LINE: 155
+
+FILE: catalog/view/theme/default/template/extension/payment/klarna_checkout_sidebar.tpl
+CODE: <?php if ($products || $vouchers) { ?>
+LINE: 48
+CODE: <?php foreach ($vouchers as $voucher) { ?>
+LINE: 81
+
+FILE: catalog/controller/extension/openbay/amazon.php
+CODE: 'vouchers' => array(),
+LINE: 238
+
+FILE: catalog/controller/extension/openbay/amazonus.php
+CODE: 'vouchers' => array(),
+LINE: 240
+----------------------------------------------------------------
+MOD: CSV Product Export
+CODE: , 'tool/log')
+LINE: 714
+----------------------------------------------------------------
+MOD: Installation without FTP settings
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['button_continue'] =
+LINE: 37
+CODE: 'extension/installer/ftp'
+LINE: 136
+CODE: function ftp(
+LINE: 301
+CODE: if (!$this->config->get('config_ftp_status')
+LINE: 319
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: $_['text_clear']
+LINE: 17
+
+FILE: admin/view/template/extension/installer.tpl
+CODE: <form class="form
+LINE: 34
+CODE: timer = setInterval(
+LINE: 87
+CODE: n next()
+LINE: 156
+CODE: 'path=' + data.path
+LINE: 167
+----------------------------------------------------------------
+MOD: Ka Extensions platform
+CODE: 'extension/modification')
+LINE: 191
+
+FILE: admin/controller/extension/modification.php
+CODE: n refresh(
+LINE: 56
+CODE: empty($data['redirect'])
+LINE: 433
+CODE: $this->getList(
+LINE: 459
+
+FILE: admin/model/extension/modification.php
+CODE: n deleteModification(
+LINE: 11
+CODE: n deleteModification(
+LINE: 35
+CODE: n disableModification(
+LINE: 53
+
+FILE: system/engine/event.php
+CODE: $this->registry = $registry
+LINE: 16
+CODE: include_once(
+LINE: 51
+CODE: $proxy = new Proxy(
+LINE: 56
+CODE: $proxy);
+LINE: 67
+CODE: function language(
+LINE: 151
+
+FILE: system/library/db.php
+CODE: public function getLastId(
+LINE: 45
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 297
+----------------------------------------------------------------
+MOD: Opencart API
+----------------------------------------------------------------

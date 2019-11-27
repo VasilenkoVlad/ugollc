@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <id>Exclude Products / Specials / Categories From Coupon</id>
+    <version>1.2</version>
+    <vqmver>2.6.0</vqmver>
+    <author>DigitCart.ir</author>
+    <file name="admin/controller/marketing/coupon.php">
+        <operation error="skip">
+            <search position="after"><![CDATA[$this->load->model('marketing/coupon');]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				$this->model_marketing_coupon->dcCreateTables();
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+        <operation error="skip">
+            <search position="before"><![CDATA[$data['entry_date_start'] = $this->language->get('entry_date_start');]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				$data['entry_product_exclude'] = $this->language->get('entry_product_exclude');
+				$data['help_product_exclude'] = $this->language->get('help_product_exclude');
+				$data['entry_category_exclude'] = $this->language->get('entry_category_exclude');
+				$data['help_category_exclude'] = $this->language->get('help_category_exclude');
+				$data['entry_special_exclude'] = $this->language->get('entry_special_exclude');
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+        <operation error="skip">
+            <search position="before"><![CDATA[if (isset($this->request->post['date_start'])) {]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				if (isset($this->request->post['coupon_product_exclude'])) {
+					$product_excludes = $this->request->post['coupon_product_exclude'];
+				} elseif (isset($this->request->get['coupon_id'])) {
+					$product_excludes = $this->model_marketing_coupon->getCouponproduct_excludes($this->request->get['coupon_id']);
+				} else {
+					$product_excludes = array();
+				}
+				$data['coupon_product_exclude'] = array();
+				foreach ($product_excludes as $product_id) {
+					$product_info = $this->model_catalog_product->getProduct($product_id);
+					if ($product_info) {
+						$data['coupon_product_exclude'][] = array(
+							'product_id' => $product_info['product_id'],
+							'name'       => $product_info['name']
+						);
+					}
+				}
+				if (isset($this->request->post['coupon_category_exclude'])) {
+					$categories_exclude = $this->request->post['coupon_category_exclude'];
+				} elseif (isset($this->request->get['coupon_id'])) {
+					$categories_exclude = $this->model_marketing_coupon->getCouponcategories_exclude($this->request->get['coupon_id']);
+				} else {
+					$categories_exclude = array();
+				}
+				$data['coupon_category_exclude'] = array();
+				foreach ($categories_exclude as $category_id) {
+					$category_info = $this->model_catalog_category->getCategory($category_id);
+					if ($category_info) {
+						$data['coupon_category_exclude'][] = array(
+							'category_id' => $category_info['category_id'],
+							'name'        => ($category_info['path'] ? $category_info['path'] . ' &gt; ' : '') . $category_info['name']
+						);
+					}
+				}
+				if (isset($this->request->post['special_exclude'])) {
+					$data['special_exclude'] = $this->request->post['special_exclude'];
+				} elseif (!empty($coupon_info)) {
+					$data['special_exclude'] = $this->model_marketing_coupon->getCouponSpecialExcludes($this->request->get['coupon_id']);
+				} else {
+					$data['special_exclude'] = false;
+				}
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+    </file>
+    <file name="admin/model/marketing/coupon.php">
+        <operation error="skip">
+            <search position="before"><![CDATA[public function addCoupon($data) {]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				public function dcCreateTables(){
+					$this->db->query("CREATE TABLE IF NOT EXISTS `" . DB_PREFIX . "coupon_special_exclude` (
+					  `coupon_id` int(11) NOT NULL,
+					  `special` TINYINT NOT NULL
+					)");
+					$this->db->query("CREATE TABLE IF NOT EXISTS `" . DB_PREFIX . "coupon_category_exclude` (
+					  `coupon_id` int(11) NOT NULL,
+					  `category_id` int(11) NOT NULL
+					)");
+					$this->db->query("CREATE TABLE IF NOT EXISTS `" . DB_PREFIX . "coupon_product_exclude` (
+					  `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
+					  `coupon_id` int(11) NOT NULL,
+					  `product_id` int(11) NOT NULL,
+					  PRIMARY KEY (`coupon_product_id`)
+					)");
+				}
+				public function getCouponproduct_excludes($coupon_id) {
+					$coupon_product_data = array();
+					$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "coupon_product_exclude WHERE coupon_id = '" . (int)$coupon_id . "'");
+					foreach ($query->rows as $result) {
+						$coupon_product_data[] = $result['product_id'];
+					}
+					return $coupon_product_data;
+				}
+				public function getCouponcategories_exclude($coupon_id) {
+					$coupon_category_data = array();
+					$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "coupon_category_exclude WHERE coupon_id = '" . (int)$coupon_id . "'");
+					foreach ($query->rows as $result) {
+						$coupon_category_data[] = $result['category_id'];
+					}
+					return $coupon_category_data;
+				}
+				public function getCouponSpecialExcludes($coupon_id){
+					$coupon_special_data = 0;
+					$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "coupon_special_exclude WHERE coupon_id = '" . (int)$coupon_id . "'");
+					if($query->num_rows){
+						$coupon_special_data = $query->row['special'];
+					}
+					return $coupon_special_data;
+				}
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+        <operation error="skip">
+            <search position="before"><![CDATA[return $coupon_id;]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				if (isset($data['coupon_product_exclude'])) {
+					foreach ($data['coupon_product_exclude'] as $product_id) {
+						$this->db->query("INSERT INTO " . DB_PREFIX . "coupon_product_exclude SET coupon_id = '" . (int)$coupon_id . "', product_id = '" . (int)$product_id . "'");
+					}
+				}
+				if (isset($data['coupon_category_exclude'])) {
+					foreach ($data['coupon_category_exclude'] as $category_id) {
+						$this->db->query("INSERT INTO " . DB_PREFIX . "coupon_category_exclude SET coupon_id = '" . (int)$coupon_id . "', category_id = '" . (int)$category_id . "'");
+					}
+				}
+				if (isset($data['special_exclude'])) {
+					$this->db->query("INSERT INTO " . DB_PREFIX . "coupon_special_exclude SET coupon_id = '" . (int)$coupon_id . "', special = '" . (int)$data['special_exclude'] . "'");
+				}
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+        <operation error="skip">
+            <search position="after"><![CDATA[public function editCoupon($coupon_id, $data) {]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				$this->db->query("DELETE FROM " . DB_PREFIX . "coupon_product_exclude WHERE coupon_id = '" . (int)$coupon_id . "'");
+				if (isset($data['coupon_product_exclude'])) {
+					foreach ($data['coupon_product_exclude'] as $product_id) {
+						$this->db->query("INSERT INTO " . DB_PREFIX . "coupon_product_exclude SET coupon_id = '" . (int)$coupon_id . "', product_id = '" . (int)$product_id . "'");
+					}
+				}
+				$this->db->query("DELETE FROM " . DB_PREFIX . "coupon_category_exclude WHERE coupon_id = '" . (int)$coupon_id . "'");
+				if (isset($data['coupon_category_exclude'])) {
+					foreach ($data['coupon_category_exclude'] as $category_id) {
+						$this->db->query("INSERT INTO " . DB_PREFIX . "coupon_category_exclude SET coupon_id = '" . (int)$coupon_id . "', category_id = '" . (int)$category_id . "'");
+					}
+				}
+				$this->db->query("DELETE FROM " . DB_PREFIX . "coupon_special_exclude WHERE coupon_id = '" . (int)$coupon_id . "'");
+				if (isset($data['special_exclude'])) {
+					$this->db->query("INSERT INTO " . DB_PREFIX . "coupon_special_exclude SET coupon_id = '" . (int)$coupon_id . "', special = '" . (int)$data['special_exclude'] . "'");
+				}
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+        <operation error="skip">
+            <search position="after"><![CDATA[$this->db->query("DELETE FROM " . DB_PREFIX . "coupon_history WHERE coupon_id = '" . (int)$coupon_id . "'");]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				$this->db->query("DELETE FROM " . DB_PREFIX . "coupon_special_exclude WHERE coupon_id = '" . (int)$coupon_id . "'");
+				$this->db->query("DELETE FROM " . DB_PREFIX . "coupon_product_exclude WHERE coupon_id = '" . (int)$coupon_id . "'");
+				$this->db->query("DELETE FROM " . DB_PREFIX . "coupon_category_exclude WHERE coupon_id = '" . (int)$coupon_id . "'");
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+    </file>
+    <file name="admin/language/*/marketing/coupon.php">
+        <operation error="skip">
+            <search position="before"><![CDATA[$_['entry_date_start']]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				$_['entry_product_exclude']       = 'Excluded products';
+				$_['help_product_exclude']        = 'Choose products that you do not want to include to this coupon';
+				$_['entry_category_exclude']      = 'Excluded categories';
+				$_['help_category_exclude']       = 'Choose categories that you do not want to include to this coupon';
+				$_['entry_special_exclude']       = 'Exclude special products';
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+    </file>
+    <file name="admin/view/template/marketing/coupon_form.tpl">
+        <operation error="skip">
+            <search position="before" offset="1"><![CDATA[<label class="col-sm-2 control-label" for="input-date-start"><?php echo $entry_date_start; ?></label>]]></search>
+            <add><![CDATA[
+			  <!-- DigiCart Coupon -->
+			  <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-product-exclude"><span data-toggle="tooltip" title="<?php echo $help_product_exclude; ?>"><?php echo $entry_product_exclude; ?></span></label>
+                <div class="col-sm-10">
+                  <input type="text" name="product_exclude" value="" placeholder="<?php echo $entry_product_exclude; ?>" id="input-product-exclude" class="form-control" />
+                  <div id="coupon-product-exclude" class="alert-danger well-sm" style="height: 150px; overflow: auto;">
+                    <?php foreach ($coupon_product_exclude as $coupon_product_exclude) { ?>
+                    <div id="coupon-product-exclude<?php echo $coupon_product_exclude['product_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $coupon_product_exclude['name']; ?>
+                      <input type="hidden" name="coupon_product_exclude[]" value="<?php echo $coupon_product_exclude['product_id']; ?>" />
+                    </div>
+                    <?php } ?>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-category-exclude"><span data-toggle="tooltip" title="<?php echo $help_category_exclude; ?>"><?php echo $entry_category_exclude; ?></span></label>
+                <div class="col-sm-10">
+                  <input type="text" name="category_exclude" value="" placeholder="<?php echo $entry_category_exclude; ?>" id="input-category-exclude" class="form-control" />
+                  <div id="coupon-category-exclude" class="alert-danger well-sm" style="height: 150px; overflow: auto;">
+                    <?php foreach ($coupon_category_exclude as $coupon_category) { ?>
+                    <div id="coupon-category-exclude<?php echo $coupon_category['category_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $coupon_category['name']; ?>
+                      <input type="hidden" name="coupon_category_exclude[]" value="<?php echo $coupon_category['category_id']; ?>" />
+                    </div>
+                    <?php } ?>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-special-exclude"><?php echo $entry_special_exclude; ?></label>
+                <div class="col-sm-10">
+                  <select name="special_exclude" id="input-special-exclude" class="form-control">
+                    <?php if ($special_exclude) { ?>
+                    <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
+                    <option value="0"><?php echo $text_disabled; ?></option>
+                    <?php } else { ?>
+                    <option value="1"><?php echo $text_enabled; ?></option>
+                    <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
+                    <?php } ?>
+                  </select>
+                </div>
+              </div>
+			  <!-- DigiCart Coupon -->
+			]]></add>
+        </operation>
+        <operation error="skip">
+            <search position="before"><![CDATA[$('input[name=\'product\']').autocomplete({]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				// Products Exclude
+				$('input[name=\'product_exclude\']').autocomplete({
+					'source': function(request, response) {
+						$.ajax({
+							url: 'index.php?route=catalog/product/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request),
+							dataType: 'json',			
+							success: function(json) {
+								response($.map(json, function(item) {
+									return {
+										label: item['name'],
+										value: item['product_id']
+									}
+								}));
+							}
+						});
+					},
+					'select': function(item) {
+						$('input[name=\'product_exclude\']').val('');
+						$('#coupon-product-exclude' + item['value']).remove();
+						$('#coupon-product-exclude').append('<div id="coupon-product-exclude' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="coupon_product_exclude[]" value="' + item['value'] + '" /></div>');	
+					}
+				});
+				$('#coupon-product-exclude').delegate('.fa-minus-circle', 'click', function() {
+					$(this).parent().remove();
+				});
+				// category_exclude
+				$('input[name=\'category_exclude\']').autocomplete({
+					'source': function(request, response) {
+						$.ajax({
+							url: 'index.php?route=catalog/category/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request),
+							dataType: 'json',
+							success: function(json) {
+								response($.map(json, function(item) {
+									return {
+										label: item['name'],
+										value: item['category_id']
+									}
+								}));
+							}
+						});
+					},
+					'select': function(item) {
+						$('input[name=\'category_exclude\']').val('');
+						$('#coupon-category-exclude' + item['value']).remove();
+						$('#coupon-category-exclude').append('<div id="coupon-category-exclude' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="coupon_category_exclude[]" value="' + item['value'] + '" /></div>');
+					}	
+				});
+				$('#coupon-category-exclude').delegate('.fa-minus-circle', 'click', function() {
+					$(this).parent().remove();
+				});
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+    </file>
+    <file name="catalog/model/checkout/coupon.php">
+        <operation error="skip">
+            <search position="before"><![CDATA[if ($this->customer->getId()) {]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				// Special Exclude
+				$coupon_special_exclude_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon_special_exclude` WHERE coupon_id = '" . (int)$coupon_query->row['coupon_id'] . "'");
+				$coupon_special_exclude = !empty($coupon_special_exclude_query->row['special']) ? $coupon_special_exclude_query->row['special'] : 0;
+				// Products Exclude
+				$coupon_product_data_exclude = array();
+				$coupon_product_query_exclude = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon_product_exclude` WHERE coupon_id = '" . (int)$coupon_query->row['coupon_id'] . "'");
+				foreach ($coupon_product_query_exclude->rows as $product) {
+					$coupon_product_data_exclude[] = $product['product_id'];
+				}
+				// Categories Exclude
+				$coupon_category_data_exclude = array();
+				$coupon_category_query_exclude = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon_category_exclude` cc LEFT JOIN `" . DB_PREFIX . "category_path` cp ON (cc.category_id = cp.path_id) WHERE cc.coupon_id = '" . (int)$coupon_query->row['coupon_id'] . "'");
+				foreach ($coupon_category_query_exclude->rows as $category) {
+					$coupon_category_data_exclude[] = $category['category_id'];
+				}
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+        <operation error="skip">
+            <search position="after" offset="3"><![CDATA[if (!$product_data) {]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				if($coupon_special_exclude){
+					$this->load->model('catalog/product');
+				}
+				$status2 = array();
+				$allowed_products = array();
+				foreach ($this->cart->getProducts() as $product) {
+					$allow_product_flag = true;
+					if(!empty($coupon_product_data_exclude)){
+						if(in_array($product['product_id'], $coupon_product_data_exclude)){
+							$allow_product_flag = false;
+						}
+					}
+					if($coupon_special_exclude){
+						$product_info = $this->model_catalog_product->getProduct($product['product_id']);
+						if($product_info['special']){
+							$allow_product_flag = false;
+						}
+					}
+					if(!empty($coupon_category_data_exclude)){
+						foreach ($coupon_category_data_exclude as $category_id) {
+							$coupon_category_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "product_to_category` WHERE `product_id` = '" . (int)$product['product_id'] . "' AND category_id = '" . (int)$category_id . "'");
+							if ($coupon_category_query->row['total']) {
+								$allow_product_flag = false;
+							}
+						}
+					}
+					if(!empty($product_data)){
+						if(!in_array($product['product_id'], $product_data)){
+							$allow_product_flag = false;
+						}
+					}
+					if($allow_product_flag){
+						$allowed_products[] = $product['product_id'];
+					}
+				}
+				if(empty($allowed_products)){
+					$status = false;
+				}
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+        <operation error="skip">
+            <search position="after"><![CDATA['date_start'    => $coupon_query->row['date_start'],]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				'coupon_special_exclude' => $coupon_special_exclude,
+				'coupon_product_data_exclude' => $coupon_product_data_exclude,
+				'coupon_category_data_exclude' => $coupon_category_data_exclude,
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+    </file>
+    <file name="catalog/model/total/coupon.php">
+        <operation error="skip">
+            <search position="before"><![CDATA[$discount_total = 0;]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				if($coupon_info['coupon_special_exclude']){
+					$this->load->model('catalog/product');
+				}
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+        <operation error="skip">
+            <search position="after" index="1"><![CDATA[$status = true;]]></search>
+            <add><![CDATA[
+				/* DigiCart Coupon */
+				if ($coupon_info['type'] == 'P') {
+					$status = !in_array($product['product_id'], $coupon_info['coupon_product_data_exclude']);
+					foreach ($coupon_info['coupon_category_data_exclude'] as $category_id) {
+						$coupon_category_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "product_to_category` WHERE `product_id` = '" . (int)$product['product_id'] . "' AND category_id = '" . (int)$category_id . "'");
+						if ($coupon_category_query->row['total']) {
+							$status = false;
+						}
+					}
+					if($coupon_info['coupon_special_exclude']){
+						$product_info = $this->model_catalog_product->getProduct($product['product_id']);
+						if($product_info['special']){
+							$status = false;
+						}
+					}
+				}
+				/* DigiCart Coupon */
+			]]></add>
+        </operation>
+    </file>
+</modification>

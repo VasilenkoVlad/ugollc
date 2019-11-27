@@ -1,0 +1,12 @@
+---------- Date: 2019-11-26 15:31:24 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /ugollc/admin/index.php?route=extension/installer/remove&token=EIHu8tSlsz8iJuvlrgcSKmxLpanC00h0
+MOD DETAILS:
+   modFile   : /opt/lampp/htdocs/ugollc/vqmod/xml/exclude_products_from_coupon-2031.xml
+   id        : Exclude Products / Specials / Categories From Coupon
+   version   : 1.2
+   vqmver    : 2.6.0
+   author    : DigitCart.ir
+VQModObject::parseMods - Could not resolve path for [catalog/model/total/coupon.php] (SKIPPED)
+----------------------------------------------------------------------
+
+

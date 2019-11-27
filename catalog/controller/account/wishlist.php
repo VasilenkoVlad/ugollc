@@ -103,6 +103,7 @@ class ControllerAccountWishList extends Controller {
 				$data['products'][] = array(
 					'product_id' => $product_info['product_id'],
 					'thumb'      => $image,
+                                        'quantity'   => $product_info['quantity'],
 					'name'       => $product_info['name'],
 					'model'      => $product_info['model'],
 					'stock'      => $stock,

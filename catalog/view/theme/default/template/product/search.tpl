@@ -165,8 +165,12 @@
           <?php } ?>
         </div>
         <?php } ?>
-      <div class="button-group">
+     <div class="button-group">
+        <?php if ($product['quantity'] > 0 ) { ?>
         <button class="btn-cart" type="button" title="<?php echo $button_cart; ?>" onclick="cart.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
+        <?php } else { ?>
+         <button class="btn-cart" type="button" title="Out of Stock" disable="true" style="background:red"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md" ><?php echo $button_cart; ?></span></button>
+        <?php } ?>
         <button class="btn-wishlist" type="button" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
         <button class="btn-compare" type="button" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
       </div>
