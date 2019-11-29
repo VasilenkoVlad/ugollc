@@ -10,7 +10,7 @@
 // You may not copy or reuse code within this file without written permission.
 //==============================================================================
 
-class ModelModuleRestrictCheckout extends Model {
+class ModelExtensionModuleRestrictCheckout extends Model {
 	private $type = 'module';
 	private $name = 'restrict_checkout';
 	private $row;
@@ -91,15 +91,22 @@ class ModelModuleRestrictCheckout extends Model {
 			}
 			array_multisort($sort_order, SORT_ASC, $order_totals);
 			
-			$total_data = array();
-			$order_total = 0;
+			$totals = array();
 			$taxes = $this->cart->getTaxes();
+			$total = 0;
+			
+			// Because __call can not keep var references so we put them into an array. 			
+			$total_data = array(
+				'totals' => &$totals,
+				'taxes'  => &$taxes,
+				'total'  => &$total
+			);
 			
 			foreach ($order_totals as $ot) {
 				if ($ot['code'] == 'shipping' && $this->type == 'shipping') break;
 				if (!$this->config->get($ot['code'] . '_status')) continue;
-				$this->load->model('total/' . $ot['code']);
-				$this->{'model_total_' . $ot['code']}->getTotal($total_data, $order_total, $taxes);
+				$this->load->model('extension/total/' . $ot['code']);
+				$this->{'model_extension_total_' . $ot['code']}->getTotal($total_data);
 			}
 		}
 		

@@ -5,7 +5,7 @@ class ControllerAccountBuyCredit extends Controller {
 	public function index() {
         $this->load->language('account/buy_credit');
 
-		$this->document->setTitle($this->language->get('heading_title'));
+	$this->document->setTitle($this->language->get('heading_title'));
 
         if (!$this->config->get('buy_credit_status')) {
             
@@ -18,6 +18,13 @@ class ControllerAccountBuyCredit extends Controller {
             $this->session->data['error'] = $this->language->get('error_logged');
 
             $this->response->redirect($this->url->link('account/login', '', 'SSL'));
+    	} else if ($this->cart->hasProducts()) {
+
+            $this->session->data['redirect'] = $this->url->link('account/buy_credit', '', 'SSL');
+
+            $this->session->data['error'] = $this->language->get('error_cart');
+
+            $this->response->redirect($this->url->link('checkout/cart', '', 'SSL'));
     	} 
 
 		if (!isset($this->session->data['credits'])) {

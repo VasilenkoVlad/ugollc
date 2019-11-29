@@ -20,6 +20,17 @@
     <button type="button" class="close" data-dismiss="alert">&times;</button>
   </div>
   <?php } ?>
+  <!-- ..$amount away from free shipping -->  
+  <?php      
+  $cart_sub_total = ltrim($totals[0]['text'],'$');  
+  if($cart_sub_total < $min_free_shipping_amnt){
+    $away_amount = $min_free_shipping_amnt - $cart_sub_total; ?>  
+  <div class="alert alert-info"><i class="fa fa-exclamation-circle"></i> 
+    You are only <?php echo "$".$away_amount ?> away from free delivery.
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  <?php }?>
+  <!-- amount away message end-->
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>

@@ -1,7 +1,24 @@
 <?php
 class ControllerCheckoutCheckout extends Controller {
 	public function index() {
-            		// Validate cart has products and has stock.
+            
+// Clear Thinking: restrict_checkout.xml
+				if ($this->config->get('restrict_checkout_status')) {
+					$this->load->model('extension/module/restrict_checkout');
+					$messages = $this->model_extension_module_restrict_checkout->restrict();
+					if ($messages) {
+						if ($this->request->get['route'] == 'checkout/checkout') {
+							$this->response->redirect($this->url->link('checkout/cart'));
+						} elseif (version_compare(VERSION, '2.0') < 0) {
+							$this->error['warning'] = implode('<br />&bull; ', $messages);
+						} else {
+							$this->session->data['error'] = implode('<br />&bull; ', $messages);
+						}
+					}
+				}
+				// end: restrict_checkout.xml
+                                
+                // Validate cart has products and has stock.
 		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers']) && empty($this->session->data['credits'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) { 
 			$this->response->redirect($this->url->link('checkout/cart'));
 		}
@@ -60,7 +77,8 @@ class ControllerCheckoutCheckout extends Controller {
 		$data['text_checkout_payment_address'] = sprintf($this->language->get('text_checkout_payment_address'), 2);
 		$data['text_checkout_shipping_address'] = sprintf($this->language->get('text_checkout_shipping_address'), 3);
 		$data['text_checkout_shipping_method'] = sprintf($this->language->get('text_checkout_shipping_method'), 4);
-
+                $data['min_free_shipping_amnt'] = $this->config->get('free_total');
+                
                 if ($this->cart->hasShipping()) {
 			$data['text_checkout_payment_method'] = sprintf($this->language->get('text_checkout_payment_method'), 5);
 			$data['text_checkout_confirm'] = sprintf($this->language->get('text_checkout_confirm'), 6);

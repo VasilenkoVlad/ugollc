@@ -919,7 +919,7 @@ class ModelCheckoutOrder extends Model {
                     $query = "SELECT value FROM oc_setting where `key` = 'config_send_sms_status' and `code` = 'config'";
                     $sms = $this->db->query($query);
                     if($sms->row['value'] == 1){
-                         $this->load->library('clicksend_lib/clicksend');
+                         //$this->load->library('clicksend_lib/clicksend');
                          $obj_clicksend = Clicksend::get_instance($this->registry);
                          $country_code = '+1';
                          $result = $obj_clicksend->send_add_transaction_sms($customer_query->row['telephone'],$country_code,$customer_query->row['firstname'],$order_id,$amount);	

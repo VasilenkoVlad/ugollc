@@ -156,7 +156,7 @@ class ControllerProductSearch extends Controller {
 
 		$data['compare'] = $this->url->link('product/compare');
 
-		$this->load->model('catalog/category');
+                $this->load->model('catalog/category');
 
 		// 3 Level Category Search
 		$data['categories'] = array();
@@ -196,7 +196,7 @@ class ControllerProductSearch extends Controller {
 
 		$data['products'] = array();
 
-		if (isset($this->request->get['search']) || isset($this->request->get['tag'])) {
+		if (isset($this->request->get['search']) || isset($this->request->get['tag']) || isset($this->request->get['category_id'])) {
 			$filter_data = array(
 				'filter_name'         => $search,
 				'filter_tag'          => $tag,

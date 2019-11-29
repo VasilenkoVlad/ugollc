@@ -1,6 +1,22 @@
 <?php
 class ControllerCheckoutCart extends Controller {
 	public function index() {
+                            // Clear Thinking: restrict_checkout.xml
+				if ($this->config->get('restrict_checkout_status')) {
+					$this->load->model('extension/module/restrict_checkout');
+					$messages = $this->model_extension_module_restrict_checkout->restrict();
+					if ($messages) {
+						if ($this->request->get['route'] == 'checkout/checkout') {
+							$this->response->redirect($this->url->link('checkout/cart'));
+						} elseif (version_compare(VERSION, '2.0') < 0) {
+							$this->error['warning'] = implode('<br />&bull; ', $messages);
+						} else {
+							$this->session->data['error'] = implode('<br />&bull; ', $messages);
+						}
+					}
+				}
+				// end: restrict_checkout.xml
+            
 		$this->load->language('checkout/cart');
 
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -67,6 +83,8 @@ class ControllerCheckoutCart extends Controller {
 			} else {
 				$data['weight'] = '';
 			}
+                        
+                        $data['min_free_shipping_amnt'] = $this->config->get('free_total');
 
 			$this->load->model('tool/image');
 			$this->load->model('tool/upload');
